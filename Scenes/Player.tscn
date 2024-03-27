@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://jopj67sfeyd4"]
+
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_5mqt7"]
+[ext_resource type="Texture2D" uid="uid://cx7xco5a5pq5b" path="res://icon.svg" id="2_0ckff"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kitkd"]
+atlas = ExtResource("2_0ckff")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wa3u0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kitkd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_radpy"]
+size = Vector2(13, 13)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_5mqt7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_wa3u0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_radpy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -50)
+zoom = Vector2(3, 3)
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+drag_bottom_margin = 1.0
