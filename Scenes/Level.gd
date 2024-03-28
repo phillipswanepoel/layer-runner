@@ -9,17 +9,28 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-	
-var speed : float = 100
+var speed : float = 60
 var progress : float = 0.0
+var fg_speed_factor : float = 1.0
+var mg_speed_factor : float = 0.5
+var bg_speed_factor : float = 0.2
+
 func _physics_process(delta):
-	var distance = speed * delta	
+	var distance = speed * delta
 	var path_followers = get_tree().get_nodes_in_group("path_followers")
-	for pf in path_followers:		
-		pf.progress += distance
+	
+	for pf in path_followers:
+		var mod_distance : float = 1.0
+		if pf.is_in_group("fg_followers"):
+			mod_distance = (distance * fg_speed_factor)
+		elif pf.is_in_group("mg_followers"):
+			mod_distance = (distance * mg_speed_factor)
+		elif pf.is_in_group("bg_followers"):
+			mod_distance = (distance * bg_speed_factor)
+			
+		pf.progress += mod_distance
+		if pf.progress_ratio > 0.95:
+			pf.queue_free()
 		
 @export var fg_buildings : Array[PackedScene] = []
 @onready var fg_timer = $FG/FGTimer
@@ -30,6 +41,7 @@ func _on_fg_timer_timeout() -> void:
 	var path_follow = PathFollow2D.new()
 	path_follow.rotates = false
 	path_follow.add_to_group("path_followers")
+	path_follow.add_to_group("fg_followers")
 	fg_path.add_child(path_follow)
 	path_follow.add_child(chosen_building)
 	
@@ -45,9 +57,13 @@ func _on_mg_timer_timeout() -> void:
 	var chosen_building : StaticBody2D = mg_buildings.pick_random().instantiate()	
 	chosen_building.set_collision_layer_value(1, false)
 	chosen_building.set_collision_layer_value(2, true)
+	
 	var path_follow = PathFollow2D.new()
 	path_follow.rotates = false
+	path_follow.loop = false
+	
 	path_follow.add_to_group("path_followers")
+	path_follow.add_to_group("mg_followers")
 	mg_path.add_child(path_follow)
 	path_follow.add_child(chosen_building)
 	
@@ -66,6 +82,7 @@ func _on_bg_timer_timeout() -> void:
 	var path_follow = PathFollow2D.new()
 	path_follow.rotates = false
 	path_follow.add_to_group("path_followers")
+	path_follow.add_to_group("bg_followers")
 	bg_path.add_child(path_follow)
 	path_follow.add_child(chosen_building)
 	

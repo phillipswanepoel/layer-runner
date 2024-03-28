@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhsyra65autqd"]
+
+[ext_resource type="Texture2D" uid="uid://d1243y738kh0b" path="res://Assets/Buildings/Background/Buildings Backgroundground 3.png" id="1_3uoup"]
+
+[node name="BuildingFg1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3uoup")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(27, 80, 27, -51, -15, -51, -15, -23, -14, -22, -12, -22, -11, -21, -11, -19, -20, -19, -20, -21, -19, -22, -17, -22, -16, -23, -16, -51, -23, -51, -23, -53, 27, -53, 27, -59, 28, -59, 28, -58, 29, -58, 29, -57, 30, -57, 30, -53, 33, -53, 33, -52, 34, -52, 34, -51, 30, -51, 30, 40, 31, 40, 31, 80)

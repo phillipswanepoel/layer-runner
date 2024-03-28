@@ -1,3 +1,5 @@
 character: 32x32,
 scene: 320x180,
 building: 40x80
+
+USE CANVAS_ITEMS STRETCH MODE IN VIEWPORT SETTINGS!!!!

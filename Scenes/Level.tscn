@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=17 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_hi33k"]
 [ext_resource type="Texture2D" uid="uid://cx7xco5a5pq5b" path="res://icon.svg" id="1_xj7bj"]
@@ -9,25 +9,25 @@
 [ext_resource type="PackedScene" uid="uid://jopj67sfeyd4" path="res://Scenes/Player.tscn" id="6_lh7b0"]
 [ext_resource type="PackedScene" uid="uid://davwwc0gopfu8" path="res://Scenes/Buildings/BuildingBG1.tscn" id="6_x6g3h"]
 [ext_resource type="PackedScene" uid="uid://d2shuh05agkkb" path="res://Scenes/Buildings/BuildingBG2.tscn" id="7_42axd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_20ujw"]
-size = Vector2(1598.25, 1943.5)
+[ext_resource type="Script" path="res://Scenes/ParallaxBackgroundScroll.gd" id="8_syn6b"]
+[ext_resource type="Texture2D" uid="uid://b1htek331jg1g" path="res://Assets/Backgrounds/Stars Background.png" id="8_y7bud"]
+[ext_resource type="Texture2D" uid="uid://cb8w35sl2wgw0" path="res://Assets/Backgrounds/Clouds Background.png" id="9_jdmu5"]
 
 [sub_resource type="Curve2D" id="Curve2D_jqfty"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 600, 480, 0, 0, 0, 0, -1456, 480)
+"points": PackedVector2Array(0, 0, 0, 0, 500, 121, 0, 0, 0, 0, -500, 121)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_ooip8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 600, 490, 0, 0, 0, 0, -1456, 490)
+"points": PackedVector2Array(0, 0, 0, 0, 500, 161, 0, 0, 0, 0, -500, 161)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_aaxsb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 600, 500, 0, 0, 0, 0, -1456, 500)
+"points": PackedVector2Array(0, 0, 0, 0, 500, 161, 0, 0, 0, 0, -500, 161)
 }
 point_count = 2
 
@@ -40,18 +40,28 @@ fg_buildings = Array[PackedScene]([ExtResource("2_qdqot"), ExtResource("3_ldb7c"
 mg_buildings = Array[PackedScene]([ExtResource("4_6cigh"), ExtResource("5_2v153")])
 bg_buildings = Array[PackedScene]([ExtResource("6_x6g3h"), ExtResource("7_42axd")])
 
-[node name="BuildingDestroyer" type="Area2D" parent="."]
-position = Vector2(780, -16)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("8_syn6b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingDestroyer"]
-position = Vector2(-1988, 609)
-shape = SubResource("RectangleShape2D_20ujw")
-debug_color = Color(0.831373, 0.352941, 0.45098, 0.419608)
+[node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.025)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars"]
+texture = ExtResource("8_y7bud")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.05)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+texture = ExtResource("9_jdmu5")
+centered = false
 
 [node name="BG" type="CanvasLayer" parent="."]
 layer = -3
 follow_viewport_enabled = true
-follow_viewport_scale = 0.6
 
 [node name="BGTimer" type="Timer" parent="BG"]
 one_shot = true
@@ -65,7 +75,6 @@ layer = -2
 offset = Vector2(0, -15)
 transform = Transform2D(1, 0, 0, 1, 0, -15)
 follow_viewport_enabled = true
-follow_viewport_scale = 0.75
 
 [node name="MGTimer" type="Timer" parent="MG"]
 one_shot = true
@@ -77,7 +86,6 @@ curve = SubResource("Curve2D_ooip8")
 [node name="FG" type="CanvasLayer" parent="."]
 layer = -1
 follow_viewport_enabled = true
-follow_viewport_scale = 0.9
 
 [node name="FGTimer" type="Timer" parent="FG"]
 one_shot = true
@@ -87,7 +95,7 @@ autostart = true
 curve = SubResource("Curve2D_aaxsb")
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(173, 397)
+position = Vector2(-128, 42)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
 modulate = Color(0, 0, 0, 1)
@@ -101,7 +109,10 @@ position = Vector2(841, 384)
 shape = SubResource("RectangleShape2D_kp5ef")
 
 [node name="Player" parent="." instance=ExtResource("6_lh7b0")]
-position = Vector2(112, 482)
+position = Vector2(25, 153)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 90)
 
 [connection signal="timeout" from="BG/BGTimer" to="." method="_on_bg_timer_timeout"]
 [connection signal="timeout" from="MG/MGTimer" to="." method="_on_mg_timer_timeout"]

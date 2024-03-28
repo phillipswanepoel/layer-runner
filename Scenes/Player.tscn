@@ -30,10 +30,3 @@ sprite_frames = SubResource("SpriteFrames_wa3u0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_radpy")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -50)
-zoom = Vector2(3, 3)
-drag_vertical_enabled = true
-drag_top_margin = 1.0
-drag_bottom_margin = 1.0
