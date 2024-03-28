@@ -12,8 +12,8 @@ func _ready():
 var speed : float = 60
 var progress : float = 0.0
 var fg_speed_factor : float = 1.0
-var mg_speed_factor : float = 0.5
-var bg_speed_factor : float = 0.2
+var mg_speed_factor : float = 0.6
+var bg_speed_factor : float = 0.3
 
 func _physics_process(delta):
 	var distance = speed * delta
@@ -46,7 +46,7 @@ func _on_fg_timer_timeout() -> void:
 	path_follow.add_child(chosen_building)
 	
 	#start timer with some random interval
-	var random_wait : float = rng.randf_range(1.5, 2.0)
+	var random_wait : float = rng.randf_range(0.5, 1.8)*(1/fg_speed_factor)
 	fg_timer.start(random_wait)
 	
 @export var mg_buildings : Array[PackedScene] = []
@@ -68,7 +68,7 @@ func _on_mg_timer_timeout() -> void:
 	path_follow.add_child(chosen_building)
 	
 	#start timer with some random interval
-	var random_wait : float = rng.randf_range(1.5, 2.0)
+	var random_wait : float = rng.randf_range(0.5, 2.0)*(1/mg_speed_factor)
 	mg_timer.start(random_wait)
 	
 @export var bg_buildings : Array[PackedScene] = []
@@ -87,6 +87,6 @@ func _on_bg_timer_timeout() -> void:
 	path_follow.add_child(chosen_building)
 	
 	#start timer with some random interval
-	var random_wait : float = rng.randf_range(1.5, 2.0)
+	var random_wait : float = rng.randf_range(0.5, 2.0)*(1/bg_speed_factor)
 	bg_timer.start(random_wait)
 

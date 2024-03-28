@@ -5,7 +5,9 @@
 [node name="BuildingFg1" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(23, -60)
 texture = ExtResource("1_648s4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(23, -60)
 polygon = PackedVector2Array(-23, 60, -23, -34, 4, -34, 4, -24, 22, -24, 22, 60)

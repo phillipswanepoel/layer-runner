@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmx207muoq074"]
+
+[ext_resource type="Texture2D" uid="uid://dm53gbkaucwiv" path="res://Assets/Buildings/Middleground/Buildings Middleground 4.png" id="1_2edoe"]
+
+[node name="BuildingFg1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, -60)
+texture = ExtResource("1_2edoe")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(15, -60)
+polygon = PackedVector2Array(-15, 60, -15, -28, 9, -52, 11, -52, 11, 60)
