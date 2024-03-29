@@ -1,11 +1,17 @@
 extends CharacterBody2D
 
 
-const SPEED : float = 100.0
+const SPEED : float = 50.0
 const JUMP_VELOCITY : float = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+@onready var anim_sprite = $AnimatedSprite2D
+@onready var collision_shapes = [$fgCollision, $mgCollision, $bgCollision]
+
+func _ready() -> void:
+	anim_sprite.play("fg_run")	
 
 func shrink():
 	if current_layer != 2.0:
@@ -17,12 +23,17 @@ func shrink():
 
 var current_layer : int = 0
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_focus_next"):
-		velocity.y = JUMP_VELOCITY
+	#handle layer shifting
+	if Input.is_action_just_pressed("ui_up"):		
 		shrink()
 		set_collision_mask_value(current_layer+1, false)	
 		current_layer = (current_layer + 1)%3		
 		set_collision_mask_value(current_layer+1, true)		
+	elif Input.is_action_just_pressed("ui_down"):		
+		shrink()
+		set_collision_mask_value(current_layer+1, false)	
+		current_layer = (current_layer + 1)%3		
+		set_collision_mask_value(current_layer+1, true)			
 	
 	# Add the gravity.
 	if not is_on_floor():

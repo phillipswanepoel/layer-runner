@@ -87,8 +87,6 @@ curve = SubResource("Curve2D_jqfty")
 
 [node name="MG" type="CanvasLayer" parent="."]
 layer = -2
-offset = Vector2(0, -15)
-transform = Transform2D(1, 0, 0, 1, 0, -15)
 follow_viewport_enabled = true
 
 [node name="MGTimer" type="Timer" parent="MG"]
