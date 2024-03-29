@@ -23,10 +23,19 @@ position = Vector2(21, -42)
 occluder = SubResource("OccluderPolygon2D_j38ni")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(20, -39)
+position = Vector2(39.1667, -49.1667)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.7
 range_layer_min = -1
 range_layer_max = -1
 texture = ExtResource("2_lh8pw")
-texture_scale = 0.08
+texture_scale = 0.06
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(10.8333, -24.1667)
+color = Color(0.917647, 0.517647, 0, 1)
+energy = 0.7
+range_layer_min = -1
+range_layer_max = -1
+texture = ExtResource("2_lh8pw")
+texture_scale = 0.03

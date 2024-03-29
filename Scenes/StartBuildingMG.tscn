@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dmbdwch8ega88" path="res://Scenes/Buildings/BuildingMG2.tscn" id="6_dwg27"]
 
 [node name="StartBuilding" type="Node2D"]
+modulate = Color(0.733333, 0.733333, 0.733333, 1)
 
 [node name="BuildingFg17" parent="." groups=["start"] instance=ExtResource("5_mnsnj")]
 z_index = -6

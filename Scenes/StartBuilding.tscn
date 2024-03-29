@@ -44,11 +44,8 @@ position = Vector2(201, 211)
 [node name="BuildingFg13" parent="." groups=["start"] instance=ExtResource("6_ck72x")]
 position = Vector2(209, 209)
 
-[node name="BuildingFg11" parent="." groups=["start"] instance=ExtResource("3_3og0l")]
-position = Vector2(274, 219)
-
 [node name="BuildingFg14" parent="." groups=["start"] instance=ExtResource("4_xbbof")]
-position = Vector2(280, 226)
+position = Vector2(274, 230)
 
 [node name="BuildingFg7" parent="." groups=["start"] instance=ExtResource("8_ioax7")]
 position = Vector2(60, 196)
