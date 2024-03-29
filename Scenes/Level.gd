@@ -9,6 +9,11 @@ var rng = RandomNumberGenerator.new()
 @onready var player = $FG/Player
 func _ready():	
 	player.change_player_layer.connect(_on_player_layer_change)
+	change_hi_score(HiScore.hi_score)
+	
+@onready var hi_score_label : Label = $Control/HiScoreLabel
+func change_hi_score(new_score : int):
+	hi_score_label.text = "Hi Score: " + str(new_score)
 	
 @onready var layers = [$FG, $MG, $BG]
 func _on_player_layer_change(new_layer: int):		
@@ -109,15 +114,19 @@ func _on_building_gaps_timeout() -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().reload_current_scene()
-
+	
+@onready var death_sound = $AudioStreamPlayer2D
 func _on_death_zone_body_entered(_body: Node2D) -> void:
+	HiScore.new_score(score)
+	change_hi_score(score)
+	death_sound.play()
 	$Control/Button.disabled = false
 	$Control/Button.visible = true
-	$Control/Label/ScoreTimer.queue_free()
+	$Control/ScoreLabel/ScoreTimer.queue_free()
 	
 
 @onready var score = 0
-@onready var score_label : Label = $Control/Label
+@onready var score_label : Label = $Control/ScoreLabel
 func _on_score_timer_timeout() -> void:
 	score += 1
 	score_label.text = 'Score: ' + str(score)
