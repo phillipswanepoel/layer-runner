@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwxx1acu6nycg"]
+[gd_scene load_steps=8 format=3 uid="uid://bwxx1acu6nycg"]
 
 [ext_resource type="PackedScene" uid="uid://c1l327ji5ienp" path="res://Scenes/Buildings/BuildingStart.tscn" id="1_ftikd"]
-[ext_resource type="Script" path="res://Scenes/Buildings/BuildingStart.gd" id="2_w6uka"]
+[ext_resource type="PackedScene" uid="uid://cvejj0ygvejsp" path="res://Scenes/Buildings/BuildingMG3.tscn" id="3_3og0l"]
+[ext_resource type="PackedScene" uid="uid://b45hy5ely05a6" path="res://Scenes/Buildings/BuildingFG2.tscn" id="4_xbbof"]
+[ext_resource type="PackedScene" uid="uid://coyvxrxcsraci" path="res://Scenes/Buildings/BuildingFG4.tscn" id="5_wvbcq"]
+[ext_resource type="PackedScene" uid="uid://dj015okx5ocy6" path="res://Scenes/Buildings/BuildingFG7.tscn" id="6_ck72x"]
+[ext_resource type="PackedScene" uid="uid://ccdgfdwu6vuqj" path="res://Scenes/Buildings/BuildingFG6.tscn" id="7_gqy2q"]
+[ext_resource type="PackedScene" uid="uid://b2qi7gfk2g4oy" path="res://Scenes/Buildings/BuildingFG5.tscn" id="8_ioax7"]
 
 [node name="StartBuilding" type="Node2D"]
-script = ExtResource("2_w6uka")
 
 [node name="BuildingFg1" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
 position = Vector2(0, 181)
@@ -12,14 +16,44 @@ position = Vector2(0, 181)
 [node name="BuildingFg2" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
 position = Vector2(66, 181)
 
-[node name="BuildingFg3" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
-position = Vector2(132, 181)
-
 [node name="BuildingFg4" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
-position = Vector2(198, 181)
+position = Vector2(135, 181)
 
 [node name="BuildingFg5" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
 position = Vector2(264, 181)
+
+[node name="BuildingFg12" parent="." groups=["start"] instance=ExtResource("3_3og0l")]
+position = Vector2(-3, 228)
+
+[node name="BuildingFg9" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
+position = Vector2(202, 181)
+
+[node name="BuildingFg3" parent="." groups=["start"] instance=ExtResource("4_xbbof")]
+position = Vector2(156, 203)
+
+[node name="BuildingFg8" parent="." groups=["start"] instance=ExtResource("5_wvbcq")]
+position = Vector2(123, 194)
+
+[node name="BuildingFg6" parent="." groups=["start"] instance=ExtResource("6_ck72x")]
+position = Vector2(7, 191)
+
+[node name="BuildingFg10" parent="." groups=["start"] instance=ExtResource("7_gqy2q")]
+position = Vector2(201, 211)
+
+[node name="BuildingFg13" parent="." groups=["start"] instance=ExtResource("6_ck72x")]
+position = Vector2(209, 209)
+
+[node name="BuildingFg11" parent="." groups=["start"] instance=ExtResource("3_3og0l")]
+position = Vector2(274, 219)
+
+[node name="BuildingFg14" parent="." groups=["start"] instance=ExtResource("4_xbbof")]
+position = Vector2(280, 226)
+
+[node name="BuildingFg7" parent="." groups=["start"] instance=ExtResource("8_ioax7")]
+position = Vector2(60, 196)
+
+[node name="BuildingFg15" parent="." groups=["start"] instance=ExtResource("5_wvbcq")]
+position = Vector2(317, 200)
 
 [node name="Destruct Timer" type="Timer" parent="."]
 wait_time = 8.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=38 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_hi33k"]
 [ext_resource type="PackedScene" uid="uid://cjwq2iuhkem5" path="res://Scenes/Buildings/BuildingFG1.tscn" id="2_qdqot"]
@@ -27,7 +27,10 @@
 [ext_resource type="PackedScene" uid="uid://by540i5vyurk6" path="res://Scenes/Buildings/BuildingBG6.tscn" id="21_pi3ct"]
 [ext_resource type="PackedScene" uid="uid://dck3wqdu83dns" path="res://Scenes/Buildings/BuildingBG7.tscn" id="22_egj70"]
 [ext_resource type="PackedScene" uid="uid://bwxx1acu6nycg" path="res://Scenes/StartBuilding.tscn" id="26_6dkg1"]
+[ext_resource type="PackedScene" uid="uid://batt6i6cbkfnt" path="res://Scenes/StartBuildingBG.tscn" id="26_h0awk"]
+[ext_resource type="PackedScene" uid="uid://28xnsdqkn3k" path="res://Scenes/StartBuildingMG.tscn" id="27_3ftoj"]
 [ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="28_43x3w"]
+[ext_resource type="Script" path="res://Scenes/PathFollow2D.gd" id="28_l8fg3"]
 
 [sub_resource type="Curve2D" id="Curve2D_jqfty"]
 _data = {
@@ -95,6 +98,15 @@ autostart = true
 [node name="Path2D" type="Path2D" parent="BG"]
 curve = SubResource("Curve2D_jqfty")
 
+[node name="PathFollow2D" type="PathFollow2D" parent="BG/Path2D"]
+position = Vector2(360, 190)
+rotation = 3.14159
+script = ExtResource("28_l8fg3")
+
+[node name="StartBuilding" parent="BG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("26_h0awk")]
+position = Vector2(360, 190)
+rotation = 3.14159
+
 [node name="CanvasModulate" type="CanvasModulate" parent="BG"]
 color = Color(0.506068, 0.470528, 0.599706, 1)
 
@@ -113,6 +125,15 @@ autostart = true
 [node name="Path2D" type="Path2D" parent="MG"]
 curve = SubResource("Curve2D_ooip8")
 
+[node name="PathFollow2D" type="PathFollow2D" parent="MG/Path2D"]
+position = Vector2(360, 180)
+rotation = 3.14159
+script = ExtResource("28_l8fg3")
+
+[node name="StartBuilding" parent="MG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("27_3ftoj")]
+position = Vector2(360, 180)
+rotation = 3.14159
+
 [node name="CanvasModulate" type="CanvasModulate" parent="MG"]
 color = Color(0.615686, 0.662745, 0.733333, 1)
 
@@ -128,11 +149,17 @@ autostart = true
 [node name="Path2D" type="Path2D" parent="FG"]
 curve = SubResource("Curve2D_aaxsb")
 
+[node name="PathFollow2D" type="PathFollow2D" parent="FG/Path2D"]
+position = Vector2(360, 200)
+rotation = 3.14159
+script = ExtResource("28_l8fg3")
+
+[node name="StartBuilding" parent="FG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("26_6dkg1")]
+position = Vector2(359, 201)
+rotation = 3.14159
+
 [node name="Player" parent="FG" instance=ExtResource("6_lh7b0")]
 position = Vector2(26.6667, 63.3333)
-
-[node name="StartBuilding" parent="FG" instance=ExtResource("26_6dkg1")]
-position = Vector2(1, -1)
 
 [node name="CanvasModulate3" type="CanvasModulate" parent="FG"]
 color = Color(0.8, 0.8, 0.8, 1)
