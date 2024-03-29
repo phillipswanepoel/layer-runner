@@ -16,7 +16,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready() -> void:
 	anim_sprite.play("fg_run")	
 
-func change_layer(dir : int):
+signal change_player_layer(new_layer)
+func change_layer(dir : int):	
 	# disable collision shapes
 	for cs in collision_shapes:
 		cs.disabled = true
@@ -29,21 +30,32 @@ func change_layer(dir : int):
 	collision_shapes[current_layer].disabled = false	
 	set_collision_mask_value(current_layer+1, true)		
 	
-	#change sprite
+	#change sprite and visual layer
 	anim_sprite.play(animations[current_layer])
+	change_player_layer.emit(current_layer)
 	#change movement
 	SPEED = speeds[current_layer]
 	JUMP_VELOCITY = jumps[current_layer]
+	
 
 var current_layer : int = 0
 func _physics_process(delta):
-	#handle layer shifting
-	if Input.is_action_just_pressed("ui_up"):
+	#handle layer shifting		
+	var will_collide = false
+	if Input.is_action_just_pressed("ui_up"):				
 		if current_layer < 2:		
-			change_layer(1)			
-	elif Input.is_action_just_pressed("ui_down"):	
+			change_layer(1)		
+			will_collide = test_move(transform, Vector2.ZERO)		
+			
+	elif Input.is_action_just_pressed("ui_down"):			
 		if current_layer > 0:	
-			change_layer(-1)				
+			change_layer(-1)		
+			will_collide = test_move(transform, Vector2.ZERO)					
+			
+	#if will_collide is true: this is a problem, character must now fall
+	if will_collide:
+		for i in range(3):
+			set_collision_mask_value(i+1, false)
 	
 	# Add the gravity.
 	if not is_on_floor():

@@ -6,8 +6,14 @@ extends Node2D
 # 2. Collision layer
 var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var player = $Player
+func _ready():	
+	player.change_player_layer.connect(_on_player_layer_change)
+	
+@onready var layers = [$FG, $MG, $BG]
+func _on_player_layer_change(new_layer: int):	
+	print("SIGNAL CALLED")
+	player.reparent(layers[new_layer])
 
 var speed : float = 60
 var progress : float = 0.0
@@ -46,7 +52,7 @@ func _on_fg_timer_timeout() -> void:
 	path_follow.add_child(chosen_building)
 	
 	#start timer with some random interval
-	var random_wait : float = rng.randf_range(0.7, 2.0)*(1/fg_speed_factor)
+	var random_wait : float = rng.randf_range(0.7, 1.5)*(1/fg_speed_factor)
 	fg_timer.start(random_wait)
 	
 @export var mg_buildings : Array[PackedScene] = []
