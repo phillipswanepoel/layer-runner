@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2qi7gfk2g4oy"]
+[gd_scene load_steps=4 format=3 uid="uid://b2qi7gfk2g4oy"]
 
 [ext_resource type="Texture2D" uid="uid://cgxiyn04s0qq8" path="res://Assets/Buildings/Foreground/Buildings Foreground 5.png" id="1_gei7y"]
+[ext_resource type="Texture2D" uid="uid://bw5sev87g0umx" path="res://Assets/FX/light.png" id="2_tv8f5"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e5hnj"]
 polygon = PackedVector2Array(4.1, -21.1, 4.1, -16.8, 4.7, -15.6, 14.5, -15.6, 18.1, -12, 18.1, -8.6, 24.6, -8.6, 27.6, -4.6, 31.4, -4.6, 36.1, -1.1, 36.1, 42.5, -36.1, 42.5, -36.1, -1.6, -34.5, -1.6, -31.5, -4.6, -27.1, -4.6, -23.5, -8.6, -17.1, -8.6, -17.1, -12, -13.5, -15.6, -4.1, -15.6, -4.1, -16.6, -2.9, -21.6, -1.5, -21.6, -1.1, -22, -1.1, -23.2, 0.0999985, -23.8)
@@ -12,9 +13,26 @@ position = Vector2(33, -42)
 texture = ExtResource("1_gei7y")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(33, -42)
 polygon = PackedVector2Array(-33, 43, -33, -1, -25, -1, -25, -5, -16, -5, -16, -7, -14, -7, -14, -12, -3, -12, -3, -13, -2, -13, -2, -14, -1, -14, -1, -16, 0, -16, 0, -20, 1, -20, 1, -16, 2, -16, 2, -14, 3, -14, 3, -13, 4, -13, 4, -12, 15, -12, 15, -7, 17, -7, 17, -5, 26, -5, 26, -1, 33, -1, 33, 43)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(33, -42)
 occluder = SubResource("OccluderPolygon2D_e5hnj")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(34, -45)
+color = Color(0.917647, 0.517647, 0, 1)
+energy = 0.7
+range_layer_min = -5
+texture = ExtResource("2_tv8f5")
+texture_scale = 0.06
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(25, -16)
+color = Color(0.917647, 0.517647, 0, 1)
+energy = 0.7
+range_layer_min = -5
+texture = ExtResource("2_tv8f5")
+texture_scale = 0.04

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2shuh05agkkb"]
+[gd_scene load_steps=3 format=3 uid="uid://d2shuh05agkkb"]
 
 [ext_resource type="Texture2D" uid="uid://cihfugklit1f2" path="res://Assets/Buildings/Background/Buildings Backgroundground 2.png" id="1_8mrut"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gw8tl"]
+polygon = PackedVector2Array(-23.9, -65, 35.2, -65, 39.2, -57, 35.5, -57, 33, -55.7, 33, -30.5, 36.3, -25, 35.2, -23, 34, -23, 31, -19, 26.2, -19, 21, -24.2, 21, -29.1, 24, -31.1, 24, -55, -22, -55, -22, 80, -33, 80, -33, -56, -37.4, -59.3, -36.4, -62, -35.1, -62, -31, -68.6, -31, -70.5, -28.2, -71.3)
 
 [node name="BuildingFg1" type="StaticBody2D"]
 
@@ -11,3 +14,7 @@ texture = ExtResource("1_8mrut")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(29, -80)
 polygon = PackedVector2Array(-29, 80, -29, -59, -33, -59, -33, -61, -29, -61, -29, -67, -28, -67, -28, -66, -27, -66, -27, -63, -26, -63, -26, -61, 34, -61, 34, -59, 29, -59, 29, -30, 30, -30, 31, -29, 31, -28, 32, -28, 32, -25, 31, -24, 30, -23, 27, -23, 25, -25, 25, -28, 26, -28, 26, -29, 27, -30, 28, -30, 28, -59, -26, -59, -26, 80)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(29, -80)
+occluder = SubResource("OccluderPolygon2D_gw8tl")
