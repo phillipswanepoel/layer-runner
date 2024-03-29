@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwxx1acu6nycg"]
+
+[ext_resource type="PackedScene" uid="uid://c1l327ji5ienp" path="res://Scenes/Buildings/BuildingStart.tscn" id="1_ftikd"]
+[ext_resource type="Script" path="res://Scenes/Buildings/BuildingStart.gd" id="2_w6uka"]
+
+[node name="StartBuilding" type="Node2D"]
+script = ExtResource("2_w6uka")
+
+[node name="BuildingFg1" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
+position = Vector2(0, 181)
+
+[node name="BuildingFg2" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
+position = Vector2(66, 181)
+
+[node name="BuildingFg3" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
+position = Vector2(132, 181)
+
+[node name="BuildingFg4" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
+position = Vector2(217, 181)
+
+[node name="Destruct Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Destruct Timer" to="." method="_on_destruct_timer_timeout"]

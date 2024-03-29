@@ -1,7 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=31 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_hi33k"]
-[ext_resource type="Texture2D" uid="uid://cx7xco5a5pq5b" path="res://icon.svg" id="1_xj7bj"]
 [ext_resource type="PackedScene" uid="uid://cjwq2iuhkem5" path="res://Scenes/Buildings/BuildingFG1.tscn" id="2_qdqot"]
 [ext_resource type="PackedScene" uid="uid://b45hy5ely05a6" path="res://Scenes/Buildings/BuildingFG2.tscn" id="3_ldb7c"]
 [ext_resource type="PackedScene" uid="uid://dl8j3e4ff4iuw" path="res://Scenes/Buildings/BuildingMG1.tscn" id="4_6cigh"]
@@ -27,27 +26,25 @@
 [ext_resource type="PackedScene" uid="uid://ywh2wiabvugm" path="res://Scenes/Buildings/BuildingBG5.tscn" id="20_cd36b"]
 [ext_resource type="PackedScene" uid="uid://by540i5vyurk6" path="res://Scenes/Buildings/BuildingBG6.tscn" id="21_pi3ct"]
 [ext_resource type="PackedScene" uid="uid://dck3wqdu83dns" path="res://Scenes/Buildings/BuildingBG7.tscn" id="22_egj70"]
+[ext_resource type="PackedScene" uid="uid://bwxx1acu6nycg" path="res://Scenes/StartBuilding.tscn" id="26_6dkg1"]
 
 [sub_resource type="Curve2D" id="Curve2D_jqfty"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 500, 170, 0, 0, 0, 0, -500, 170)
+"points": PackedVector2Array(0, 0, 0, 0, 360, 170, 0, 0, 0, 0, -500, 170)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_ooip8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 500, 180, 0, 0, 0, 0, -500, 180)
+"points": PackedVector2Array(0, 0, 0, 0, 360, 180, 0, 0, 0, 0, -500, 180)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_aaxsb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 500, 180, 0, 0, 0, 0, -500, 180)
+"points": PackedVector2Array(0, 0, 0, 0, 360, 180, 0, 0, 0, 0, -500, 180)
 }
 point_count = 2
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp5ef"]
-size = Vector2(2628, 511)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hi33k")
@@ -79,6 +76,7 @@ layer = -3
 follow_viewport_enabled = true
 
 [node name="BGTimer" type="Timer" parent="BG"]
+wait_time = 10.0
 one_shot = true
 autostart = true
 
@@ -90,6 +88,7 @@ layer = -2
 follow_viewport_enabled = true
 
 [node name="MGTimer" type="Timer" parent="MG"]
+wait_time = 5.0
 one_shot = true
 autostart = true
 
@@ -101,28 +100,17 @@ layer = -1
 follow_viewport_enabled = true
 
 [node name="FGTimer" type="Timer" parent="FG"]
+wait_time = 0.1
 one_shot = true
 autostart = true
 
 [node name="Path2D" type="Path2D" parent="FG"]
 curve = SubResource("Curve2D_aaxsb")
 
-[node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(-128, 42)
-
-[node name="Sprite2D" type="Sprite2D" parent="Floor"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(-473, 120)
-scale = Vector2(20.4813, 3.95661)
-texture = ExtResource("1_xj7bj")
-centered = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(841, 384)
-shape = SubResource("RectangleShape2D_kp5ef")
+[node name="StartBuilding" parent="." instance=ExtResource("26_6dkg1")]
 
 [node name="Player" parent="." instance=ExtResource("6_lh7b0")]
-position = Vector2(25, 153)
+position = Vector2(18, 98)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 90)
