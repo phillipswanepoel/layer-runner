@@ -1,0 +1,213 @@
+[gd_scene load_steps=10 format=3 uid="uid://bexgphgjqhlec"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_1aabn"]
+[ext_resource type="Texture2D" uid="uid://ctv5pdivgmim3" path="res://Assets/Backgrounds/Clouds Background Day.png" id="1_2o8vt"]
+[ext_resource type="Texture2D" uid="uid://ogqk15i0nie8" path="res://Assets/Backgrounds/Main Menu Day No Text.png" id="1_6tjjs"]
+[ext_resource type="Texture2D" uid="uid://bvkquxxsnqgtp" path="res://Assets/Backgrounds/Main Menu Night No Text.png" id="2_s8d5s"]
+[ext_resource type="Texture2D" uid="uid://bxxmcxbo7ojc6" path="res://Assets/Backgrounds/Clouds Background Night.png" id="2_xqpa5"]
+[ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="3_fmb13"]
+
+[sub_resource type="Animation" id="Animation_37hhp"]
+resource_name = "day-night"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Day:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Night:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5, 10, 15, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/PlayButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5, 7.5, 10, 15, 17.5, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/SettingsButton:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5, 7.5, 10, 15, 17.5, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(0, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/QuitButton:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5, 7.5, 10, 15, 17.5, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.823636, 0.57644, 0.348791, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vlyhd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Day:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Night:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/PlayButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/QuitButton:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/SettingsButton:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l02bv"]
+_data = {
+"RESET": SubResource("Animation_vlyhd"),
+"day-night": SubResource("Animation_37hhp")
+}
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_1aabn")
+
+[node name="Day" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(160, 90)
+texture = ExtResource("1_6tjjs")
+
+[node name="Night" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(160, 90)
+texture = ExtResource("2_s8d5s")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="Button" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 69.0
+offset_top = 16.0
+offset_right = 141.0
+offset_bottom = 44.0
+theme = ExtResource("3_fmb13")
+text = "Play"
+flat = true
+
+[node name="SettingsButton" type="Button" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 155.0
+offset_top = 32.0
+offset_right = 227.0
+offset_bottom = 50.0
+theme = ExtResource("3_fmb13")
+theme_override_font_sizes/font_size = 8
+text = "Settings"
+flat = true
+
+[node name="QuitButton" type="Button" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 70.0
+offset_top = 70.0
+offset_right = 110.0
+offset_bottom = 88.0
+theme = ExtResource("3_fmb13")
+theme_override_font_sizes/font_size = 8
+text = "Quit"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l02bv")
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="DayClouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("1_2o8vt")
+centered = false
+
+[node name="NightClouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("2_xqpa5")
+centered = false

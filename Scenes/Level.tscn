@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=40 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_hi33k"]
 [ext_resource type="PackedScene" uid="uid://cjwq2iuhkem5" path="res://Scenes/Buildings/BuildingFG1.tscn" id="2_qdqot"]
@@ -53,6 +53,14 @@ point_count = 2
 [sub_resource type="LabelSettings" id="LabelSettings_ry1ex"]
 font_size = 8
 shadow_size = 0
+
+[sub_resource type="InputEventKey" id="InputEventKey_gthan"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_ciqjb"]
+events = [SubResource("InputEventKey_gthan")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbb60"]
 size = Vector2(629.75, 110)
@@ -204,6 +212,7 @@ theme = ExtResource("28_43x3w")
 theme_override_font_sizes/font_size = 24
 disabled = true
 action_mode = 0
+shortcut = SubResource("Shortcut_ciqjb")
 text = "Restart?"
 flat = true
 
