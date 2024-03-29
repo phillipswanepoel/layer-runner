@@ -3,3 +3,7 @@ scene: 320x180,
 building: 40x80
 
 USE CANVAS_ITEMS STRETCH MODE IN VIEWPORT SETTINGS!!!!
+
+todo:
+	1. score
+	2. increase speed and random delay over time

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=35 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_hi33k"]
 [ext_resource type="PackedScene" uid="uid://cjwq2iuhkem5" path="res://Scenes/Buildings/BuildingFG1.tscn" id="2_qdqot"]
@@ -27,10 +27,12 @@
 [ext_resource type="PackedScene" uid="uid://by540i5vyurk6" path="res://Scenes/Buildings/BuildingBG6.tscn" id="21_pi3ct"]
 [ext_resource type="PackedScene" uid="uid://dck3wqdu83dns" path="res://Scenes/Buildings/BuildingBG7.tscn" id="22_egj70"]
 [ext_resource type="PackedScene" uid="uid://bwxx1acu6nycg" path="res://Scenes/StartBuilding.tscn" id="26_6dkg1"]
+[ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="28_43x3w"]
+[ext_resource type="Script" path="res://Scenes/Label.gd" id="29_005ur"]
 
 [sub_resource type="Curve2D" id="Curve2D_jqfty"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 360, 170, 0, 0, 0, 0, -500, 170)
+"points": PackedVector2Array(0, 0, 0, 0, 360, 190, 0, 0, 0, 0, -500, 190)
 }
 point_count = 2
 
@@ -45,6 +47,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 360, 180, 0, 0, 0, 0, -500, 180)
 }
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbb60"]
+size = Vector2(629.75, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl6fj"]
+size = Vector2(205.5, 380.5)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hi33k")
@@ -83,6 +91,9 @@ autostart = true
 [node name="Path2D" type="Path2D" parent="BG"]
 curve = SubResource("Curve2D_jqfty")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="BG"]
+color = Color(0.54902, 0.513726, 0.643137, 1)
+
 [node name="MG" type="CanvasLayer" parent="."]
 layer = -2
 follow_viewport_enabled = true
@@ -94,6 +105,9 @@ autostart = true
 
 [node name="Path2D" type="Path2D" parent="MG"]
 curve = SubResource("Curve2D_ooip8")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="MG"]
+color = Color(0.729412, 0.764706, 0.819608, 1)
 
 [node name="FG" type="CanvasLayer" parent="."]
 layer = -1
@@ -115,6 +129,68 @@ position = Vector2(18, 98)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 90)
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("28_43x3w")
+text = "Score: 0
+"
+script = ExtResource("29_005ur")
+
+[node name="Timer" type="Timer" parent="Control/Label"]
+wait_time = 0.1
+autostart = true
+
+[node name="Button" type="Button" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.4
+anchor_bottom = 0.7
+offset_left = 90.0
+offset_top = 49.0
+offset_right = 90.0
+offset_bottom = 49.0
+theme = ExtResource("28_43x3w")
+disabled = true
+text = "Restart?"
+
+[node name="BuildingGaps" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="DeathZone" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(190, 283)
+shape = SubResource("RectangleShape2D_jbb60")
+debug_color = Color(0.764706, 0.415686, 0.45098, 0.419608)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(179, -101)
+shape = SubResource("RectangleShape2D_jbb60")
+debug_color = Color(0.764706, 0.415686, 0.45098, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(-185, 95)
+shape = SubResource("RectangleShape2D_xl6fj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(532, 94)
+shape = SubResource("RectangleShape2D_xl6fj")
+
 [connection signal="timeout" from="BG/BGTimer" to="." method="_on_bg_timer_timeout"]
 [connection signal="timeout" from="MG/MGTimer" to="." method="_on_mg_timer_timeout"]
 [connection signal="timeout" from="FG/FGTimer" to="." method="_on_fg_timer_timeout"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="BuildingGaps" to="." method="_on_building_gaps_timeout"]
+[connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
