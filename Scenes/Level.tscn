@@ -28,7 +28,6 @@
 [ext_resource type="PackedScene" uid="uid://dck3wqdu83dns" path="res://Scenes/Buildings/BuildingBG7.tscn" id="22_egj70"]
 [ext_resource type="PackedScene" uid="uid://bwxx1acu6nycg" path="res://Scenes/StartBuilding.tscn" id="26_6dkg1"]
 [ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="28_43x3w"]
-[ext_resource type="Script" path="res://Scenes/Label.gd" id="29_005ur"]
 
 [sub_resource type="Curve2D" id="Curve2D_jqfty"]
 _data = {
@@ -47,6 +46,10 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 360, 180, 0, 0, 0, 0, -500, 180)
 }
 point_count = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_ry1ex"]
+font_size = 8
+shadow_size = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbb60"]
 size = Vector2(629.75, 110)
@@ -142,32 +145,38 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Control"]
-visible = false
+self_modulate = Color(1, 0.380392, 0.313726, 1)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 63.0
+offset_bottom = 25.0
 theme = ExtResource("28_43x3w")
 text = "Score: 0
 "
-script = ExtResource("29_005ur")
+label_settings = SubResource("LabelSettings_ry1ex")
 
-[node name="Timer" type="Timer" parent="Control/Label"]
+[node name="ScoreTimer" type="Timer" parent="Control/Label"]
 wait_time = 0.1
 autostart = true
 
 [node name="Button" type="Button" parent="Control"]
 visible = false
+self_modulate = Color(1, 0.380392, 0.313726, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 3.4
 anchor_bottom = 0.7
-offset_left = 90.0
-offset_top = 49.0
-offset_right = 90.0
-offset_bottom = 49.0
+offset_left = 68.0
+offset_top = 25.0
+offset_right = 132.0
+offset_bottom = 35.0
 theme = ExtResource("28_43x3w")
+theme_override_font_sizes/font_size = 24
 disabled = true
+action_mode = 0
 text = "Restart?"
+flat = true
 
 [node name="BuildingGaps" type="Timer" parent="."]
 wait_time = 10.0
@@ -197,6 +206,7 @@ shape = SubResource("RectangleShape2D_xl6fj")
 [connection signal="timeout" from="BG/BGTimer" to="." method="_on_bg_timer_timeout"]
 [connection signal="timeout" from="MG/MGTimer" to="." method="_on_mg_timer_timeout"]
 [connection signal="timeout" from="FG/FGTimer" to="." method="_on_fg_timer_timeout"]
+[connection signal="timeout" from="Control/Label/ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="BuildingGaps" to="." method="_on_building_gaps_timeout"]
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]

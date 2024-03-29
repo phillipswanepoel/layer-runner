@@ -113,3 +113,11 @@ func _on_button_pressed() -> void:
 func _on_death_zone_body_entered(_body: Node2D) -> void:
 	$Control/Button.disabled = false
 	$Control/Button.visible = true
+	$Control/Label/ScoreTimer.queue_free()
+	
+
+@onready var score = 0
+@onready var score_label : Label = $Control/Label
+func _on_score_timer_timeout() -> void:
+	score += 1
+	score_label.text = 'Score: ' + str(score)
