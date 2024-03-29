@@ -71,11 +71,19 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	var is_running : bool = false
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		is_running = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	#run = sprite faster
+	if is_running:
+		anim_sprite.speed_scale = 1.5
+	else:
+		anim_sprite.speed_scale = 1
 
 	move_and_slide()
 	

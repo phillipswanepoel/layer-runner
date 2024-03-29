@@ -20,7 +20,8 @@ polygon = PackedVector2Array(0, 0, 0, -67, 69, -67, 69, 0)
 position = Vector2(41, -54)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.7
-range_layer_min = -5
+range_layer_min = -1
+range_layer_max = -1
 texture = ExtResource("2_8ktkw")
 texture_scale = 0.08
 
@@ -28,7 +29,8 @@ texture_scale = 0.08
 position = Vector2(20, -17)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.7
-range_layer_min = -5
+range_layer_min = -1
+range_layer_max = -1
 texture = ExtResource("2_8ktkw")
 texture_scale = 0.04
 

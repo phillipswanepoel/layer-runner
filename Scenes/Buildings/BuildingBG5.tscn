@@ -7,6 +7,7 @@
 polygon = PackedVector2Array(14, -64.1, 17, -62.1, 17, -35, 30.8, -35, 35, -30.8, 35, 80, -32, 80, -32, -43, -30.1, -43, -28.1, -46, -12, -46, -12, -62.1, -9, -64.1, -9, -66, 14, -66)
 
 [node name="BuildingFg1" type="StaticBody2D"]
+scale = Vector2(1.1, 1.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(28, -80)
@@ -25,7 +26,8 @@ occluder = SubResource("OccluderPolygon2D_2dww7")
 position = Vector2(30, -117)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.7
-range_layer_min = -5
+range_layer_min = -3
+range_layer_max = -3
 texture = ExtResource("2_y8uy5")
 texture_scale = 0.09
 
@@ -33,7 +35,8 @@ texture_scale = 0.09
 position = Vector2(49, -69)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.7
-range_layer_min = -5
+range_layer_min = -3
+range_layer_max = -3
 texture = ExtResource("2_y8uy5")
 texture_scale = 0.06
 
@@ -41,7 +44,8 @@ texture_scale = 0.06
 position = Vector2(13, -49)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.7
-range_layer_min = -5
+range_layer_min = -3
+range_layer_max = -3
 texture = ExtResource("2_y8uy5")
 texture_scale = 0.06
 
@@ -49,6 +53,7 @@ texture_scale = 0.06
 position = Vector2(46, -20)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.7
-range_layer_min = -5
+range_layer_min = -3
+range_layer_max = -3
 texture = ExtResource("2_y8uy5")
 texture_scale = 0.03

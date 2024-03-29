@@ -43,7 +43,7 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_aaxsb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 360, 180, 0, 0, 0, 0, -500, 180)
+"points": PackedVector2Array(0, 0, 0, 0, 360, 200, 0, 0, 0, 0, -500, 200)
 }
 point_count = 2
 
@@ -81,6 +81,7 @@ motion_mirroring = Vector2(320, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
 texture = ExtResource("9_jdmu5")
 centered = false
+offset = Vector2(0, -15)
 
 [node name="BG" type="CanvasLayer" parent="."]
 layer = -3
@@ -95,7 +96,7 @@ autostart = true
 curve = SubResource("Curve2D_jqfty")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="BG"]
-color = Color(0.54902, 0.513726, 0.643137, 1)
+color = Color(0.506068, 0.470528, 0.599706, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="BG"]
 shadow_enabled = true
@@ -113,7 +114,7 @@ autostart = true
 curve = SubResource("Curve2D_ooip8")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="MG"]
-color = Color(0.729412, 0.764706, 0.819608, 1)
+color = Color(0.615686, 0.662745, 0.733333, 1)
 
 [node name="FG" type="CanvasLayer" parent="."]
 layer = -1
@@ -128,12 +129,13 @@ autostart = true
 curve = SubResource("Curve2D_aaxsb")
 
 [node name="Player" parent="FG" instance=ExtResource("6_lh7b0")]
-position = Vector2(18, 98)
+position = Vector2(26.6667, 63.3333)
 
 [node name="StartBuilding" parent="FG" instance=ExtResource("26_6dkg1")]
+position = Vector2(1, -1)
 
 [node name="CanvasModulate3" type="CanvasModulate" parent="FG"]
-color = Color(0.733333, 0.733333, 0.733333, 1)
+color = Color(0.8, 0.8, 0.8, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 90)
@@ -168,9 +170,9 @@ anchors_preset = -1
 anchor_right = 3.4
 anchor_bottom = 0.7
 offset_left = 68.0
-offset_top = 25.0
+offset_top = 65.0
 offset_right = 132.0
-offset_bottom = 35.0
+offset_bottom = 75.0
 theme = ExtResource("28_43x3w")
 theme_override_font_sizes/font_size = 24
 disabled = true
