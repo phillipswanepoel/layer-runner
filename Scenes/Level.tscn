@@ -199,7 +199,7 @@ autostart = true
 
 [node name="Button" type="Button" parent="Control"]
 visible = false
-self_modulate = Color(1, 0.380392, 0.313726, 1)
+self_modulate = Color(0.603922, 0.34902, 0, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 3.4
@@ -213,6 +213,8 @@ theme_override_font_sizes/font_size = 24
 disabled = true
 action_mode = 0
 shortcut = SubResource("Shortcut_ciqjb")
+shortcut_feedback = false
+shortcut_in_tooltip = false
 text = "Restart?"
 flat = true
 
