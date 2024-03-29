@@ -1,18 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://batt6i6cbkfnt"]
+[gd_scene load_steps=2 format=3 uid="uid://batt6i6cbkfnt"]
 
 [ext_resource type="PackedScene" uid="uid://dck3wqdu83dns" path="res://Scenes/Buildings/BuildingBG7.tscn" id="2_kxdsk"]
-[ext_resource type="PackedScene" uid="uid://cvdk844k0m0c2" path="res://Scenes/Buildings/BuildingBG4.tscn" id="3_ioc7h"]
 
 [node name="StartBuilding" type="Node2D"]
 
 [node name="BuildingFg20" parent="." groups=["start"] instance=ExtResource("2_kxdsk")]
 z_index = -6
-position = Vector2(254, 140)
+position = Vector2(254, 137)
 collision_layer = 4
 
-[node name="BuildingFg19" parent="." groups=["start"] instance=ExtResource("3_ioc7h")]
+[node name="BuildingFg21" parent="." groups=["start"] instance=ExtResource("2_kxdsk")]
 z_index = -6
-position = Vector2(83, 122)
+position = Vector2(39, 201)
+collision_layer = 4
+
+[node name="BuildingFg22" parent="." groups=["start"] instance=ExtResource("2_kxdsk")]
+z_index = -6
+position = Vector2(111, 128)
 collision_layer = 4
 
 [node name="Destruct Timer" type="Timer" parent="."]
@@ -23,4 +27,5 @@ autostart = true
 [connection signal="timeout" from="Destruct Timer" to="." method="_on_destruct_timer_timeout"]
 
 [editable path="BuildingFg20"]
-[editable path="BuildingFg19"]
+[editable path="BuildingFg21"]
+[editable path="BuildingFg22"]
