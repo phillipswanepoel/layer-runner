@@ -94,6 +94,9 @@ curve = SubResource("Curve2D_jqfty")
 [node name="CanvasModulate" type="CanvasModulate" parent="BG"]
 color = Color(0.54902, 0.513726, 0.643137, 1)
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="BG"]
+shadow_enabled = true
+
 [node name="MG" type="CanvasLayer" parent="."]
 layer = -2
 follow_viewport_enabled = true
@@ -121,10 +124,13 @@ autostart = true
 [node name="Path2D" type="Path2D" parent="FG"]
 curve = SubResource("Curve2D_aaxsb")
 
-[node name="StartBuilding" parent="." instance=ExtResource("26_6dkg1")]
-
-[node name="Player" parent="." instance=ExtResource("6_lh7b0")]
+[node name="Player" parent="FG" instance=ExtResource("6_lh7b0")]
 position = Vector2(18, 98)
+
+[node name="StartBuilding" parent="FG" instance=ExtResource("26_6dkg1")]
+
+[node name="CanvasModulate3" type="CanvasModulate" parent="FG"]
+color = Color(0.733333, 0.733333, 0.733333, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 90)

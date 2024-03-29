@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjwq2iuhkem5"]
+[gd_scene load_steps=3 format=3 uid="uid://cjwq2iuhkem5"]
 
 [ext_resource type="Texture2D" uid="uid://cebtnh3vqcei4" path="res://Assets/Buildings/Foreground/Buildings Foreground 1.png" id="1_b4l6b"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3nio7"]
+polygon = PackedVector2Array(20.1, -40.1, 20.1, 42.5, -23.1, 42.5, -23.1, -33.6, -21.6, -33.6, -18.6, -37.6, -7.1, -37.6, -7.1, -40.1, -4.1, -42.1, 17.1, -42.5)
 
 [node name="BuildingFg1" type="StaticBody2D"]
 
@@ -9,5 +12,10 @@ position = Vector2(20, -42)
 texture = ExtResource("1_b4l6b")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(20, -42)
 polygon = PackedVector2Array(-20, 42, -20, -34, -4, -34, -4, -41, 17, -41, 17, 42)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(20, -42)
+occluder = SubResource("OccluderPolygon2D_3nio7")

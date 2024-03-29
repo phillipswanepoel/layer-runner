@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvejj0ygvejsp"]
+[gd_scene load_steps=3 format=3 uid="uid://cvejj0ygvejsp"]
 
 [ext_resource type="Texture2D" uid="uid://yyseutdcnm87" path="res://Assets/Buildings/Middleground/Buildings Middleground 3.png" id="1_cjuk6"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ewat1"]
+polygon = PackedVector2Array(0.0999985, -38.4, 11.1, -28.5, 11.1, 60, -15.1, 60, -15.1, -29.1, -13.5, -29.1, -4.1, -38.5, -4.1, -40.1, 0.0999985, -40.1)
 
 [node name="BuildingFg1" type="StaticBody2D"]
 
@@ -11,3 +14,7 @@ texture = ExtResource("1_cjuk6")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(12, -60)
 polygon = PackedVector2Array(-12, 60, -12, -28, -3, -37, -1, -37, 8, -28, 8, 60)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(12, -60)
+occluder = SubResource("OccluderPolygon2D_ewat1")

@@ -6,7 +6,7 @@ extends Node2D
 # 2. Collision layer
 var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
-@onready var player = $Player
+@onready var player = $FG/Player
 func _ready():	
 	player.change_player_layer.connect(_on_player_layer_change)
 	
@@ -110,6 +110,6 @@ func _on_building_gaps_timeout() -> void:
 func _on_button_pressed() -> void:
 	get_tree().reload_current_scene()
 
-func _on_death_zone_body_entered(body: Node2D) -> void:
+func _on_death_zone_body_entered(_body: Node2D) -> void:
 	$Control/Button.disabled = false
 	$Control/Button.visible = true
