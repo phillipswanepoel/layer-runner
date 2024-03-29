@@ -46,7 +46,7 @@ func _physics_process(delta):
 	cum_delta += delta
 	if cum_delta > 1:
 		cum_delta = 0
-		speed += 1.5
+		speed += 2
 		
 @export var fg_buildings : Array[PackedScene] = []
 @onready var fg_timer = $FG/FGTimer
@@ -110,7 +110,7 @@ func _on_bg_timer_timeout() -> void:
 
 
 func _on_building_gaps_timeout() -> void:
-	rand_ceiling += 0.1
+	rand_ceiling += 0.05
 
 func _on_button_pressed() -> void:
 	get_tree().reload_current_scene()
