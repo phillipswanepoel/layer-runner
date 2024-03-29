@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b2qi7gfk2g4oy" path="res://Scenes/Buildings/BuildingFG5.tscn" id="8_ioax7"]
 
 [node name="StartBuilding" type="Node2D"]
+modulate = Color(0.733333, 0.733333, 0.733333, 1)
 
 [node name="BuildingFg1" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
 position = Vector2(0, 181)
@@ -29,13 +30,13 @@ position = Vector2(-3, 228)
 position = Vector2(202, 181)
 
 [node name="BuildingFg3" parent="." groups=["start"] instance=ExtResource("4_xbbof")]
-position = Vector2(156, 203)
+position = Vector2(156, 212)
 
 [node name="BuildingFg8" parent="." groups=["start"] instance=ExtResource("5_wvbcq")]
-position = Vector2(123, 194)
+position = Vector2(123, 198)
 
 [node name="BuildingFg6" parent="." groups=["start"] instance=ExtResource("6_ck72x")]
-position = Vector2(7, 191)
+position = Vector2(7, 198)
 
 [node name="BuildingFg10" parent="." groups=["start"] instance=ExtResource("7_gqy2q")]
 position = Vector2(201, 211)
@@ -53,7 +54,7 @@ position = Vector2(280, 226)
 position = Vector2(60, 196)
 
 [node name="BuildingFg15" parent="." groups=["start"] instance=ExtResource("5_wvbcq")]
-position = Vector2(317, 200)
+position = Vector2(317, 203)
 
 [node name="Destruct Timer" type="Timer" parent="."]
 wait_time = 8.0
@@ -61,3 +62,5 @@ one_shot = true
 autostart = true
 
 [connection signal="timeout" from="Destruct Timer" to="." method="_on_destruct_timer_timeout"]
+
+[editable path="BuildingFg1"]
