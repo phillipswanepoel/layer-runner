@@ -6,12 +6,13 @@ extends Node2D
 func _ready() -> void:
 	anim.play("day-night")
 
-
 func _on_play_button_pressed() -> void:
+	Sound.play_button_sound()
 	get_tree().change_scene_to_file("res://Scenes/Level.tscn")
 
 func _on_settings_button_pressed() -> void:
-	pass # Replace with function body.
+	Sound.play_button_sound()
 	
 func _on_quit_button_pressed() -> void:
+	Sound.play_button_sound()
 	get_tree().quit()

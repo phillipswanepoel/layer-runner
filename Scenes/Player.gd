@@ -44,12 +44,14 @@ func _physics_process(delta):
 	#handle layer shifting		
 	var will_collide = false
 	if Input.is_action_just_pressed("ui_up"):				
-		if current_layer < 2:		
+		if current_layer < 2:	
+			Sound.play_warp_sound()	
 			change_layer(1)		
 			will_collide = test_move(transform, Vector2.ZERO)		
 			
 	elif Input.is_action_just_pressed("ui_down"):			
 		if current_layer > 0:	
+			Sound.play_warp_sound2()	
 			change_layer(-1)		
 			will_collide = test_move(transform, Vector2.ZERO)					
 			
