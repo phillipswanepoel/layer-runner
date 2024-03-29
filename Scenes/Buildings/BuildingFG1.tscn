@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjwq2iuhkem5"]
 
-[ext_resource type="Texture2D" uid="uid://cebtnh3vqcei4" path="res://Assets/Buildings/Foreground/Buildings Foreground 1.png" id="1_b4l6b"]
+[ext_resource type="Texture2D" uid="uid://bbpg2oggek7nr" path="res://Assets/Buildings/Foreground Updated/Buildings Foreground 1 NEW.png" id="1_5ovrn"]
 [ext_resource type="Texture2D" uid="uid://bw5sev87g0umx" path="res://Assets/FX/light.png" id="2_dggtu"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3nio7"]
@@ -11,11 +11,10 @@ scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(20, -42)
-texture = ExtResource("1_b4l6b")
+texture = ExtResource("1_5ovrn")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2(20, -42)
+position = Vector2(20, -39.1667)
 polygon = PackedVector2Array(-20, 42, -20, -34, -4, -34, -4, -41, 17, -41, 17, 42)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

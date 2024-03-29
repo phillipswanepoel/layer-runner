@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://coyvxrxcsraci"]
 
-[ext_resource type="Texture2D" uid="uid://cnoa4e7j4iti3" path="res://Assets/Buildings/Foreground/Buildings Foreground 4.png" id="1_u7try"]
+[ext_resource type="Texture2D" uid="uid://bsxb1q5ed0m10" path="res://Assets/Buildings/Foreground Updated/Buildings Foreground 4 NEW.png" id="1_mv60j"]
 [ext_resource type="Texture2D" uid="uid://bw5sev87g0umx" path="res://Assets/FX/light.png" id="2_p6kiw"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ertve"]
@@ -11,7 +11,7 @@ scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(20, -42)
-texture = ExtResource("1_u7try")
+texture = ExtResource("1_mv60j")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
