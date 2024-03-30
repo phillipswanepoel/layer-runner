@@ -2,8 +2,8 @@
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_pw07p"]
 resource_name = "Reverb"
-room_size = 0.6
-damping = 0.4
+room_size = 0.4
+damping = 0.2
 dry = 0.8
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_3p2w7"]

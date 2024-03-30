@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7srgdqwla2e6"]
+[gd_scene load_steps=7 format=3 uid="uid://b7srgdqwla2e6"]
 
 [ext_resource type="AudioStream" uid="uid://dgjpnyyvwt31i" path="res://Assets/Sound/T. Bless - Froggy Fraud Adventure.mp3" id="1_knvw2"]
 [ext_resource type="Script" path="res://Scenes/Sound.gd" id="1_mlmkg"]
 [ext_resource type="AudioStream" uid="uid://bfo1584noe15a" path="res://Assets/Sound/Unrealsfx - Magical Game UI - Menu Bamboo Button.wav" id="3_oldka"]
 [ext_resource type="AudioStream" uid="uid://ds65h2bcrq8a5" path="res://Assets/Sound/warp/PM_FN_Spawns_Portals_Teleports_5.mp3" id="4_tjdeg"]
 [ext_resource type="AudioStream" uid="uid://cejermiugcq4w" path="res://Assets/Sound/Stefano Trezzi - Retro Beeps - 8bit Negative Alert.wav" id="5_ggg7n"]
+[ext_resource type="AudioStream" uid="uid://d31v7m18u8rpn" path="res://Assets/Sound/zapsplat_foley_money_british_coin_50p_set_down_tiled_floor_002_90503.mp3" id="6_vu8q6"]
 
 [node name="Sound" type="Node2D"]
 script = ExtResource("1_mlmkg")
@@ -35,3 +36,7 @@ bus = &"Low"
 stream = ExtResource("5_ggg7n")
 volume_db = -10.0
 bus = &"Death"
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_vu8q6")
+bus = &"Reverb"

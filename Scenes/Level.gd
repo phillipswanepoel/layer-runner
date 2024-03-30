@@ -131,7 +131,7 @@ func _on_bg_timer_timeout() -> void:
 var follower_layers = ["fg_followers", "mg_followers", "bg_followers"]
 @onready var layers_paths = [fg_path, mg_path, bg_path]
 func spawn_coin(pos : Vector2, layer: int):	
-	var coin_instance : StaticBody2D = coin.instantiate()	
+	var coin_instance : Area2D = coin.instantiate()	
 	var path_follow = PathFollow2D.new()
 	path_follow.h_offset = pos.x
 	path_follow.v_offset = pos.y		
@@ -147,19 +147,19 @@ func _on_building_gaps_timeout() -> void:
 	rand_floor += 0.25
 
 func _on_button_pressed() -> void:
+	HiScore.reset_score()
 	get_tree().reload_current_scene()
 	
 func _on_death_zone_body_entered(_body: Node2D) -> void:
-	HiScore.new_score(score)
-	change_hi_score(score)
+	HiScore.new_score(HiScore.score)
+	change_hi_score(HiScore.score)
 	Sound.play_death_sound()	
 	$Control/Button.disabled = false
 	$Control/Button.visible = true
 	$Control/ScoreLabel/ScoreTimer.queue_free()
 	
 
-@onready var score = 0
 @onready var score_label : Label = $Control/ScoreLabel
 func _on_score_timer_timeout() -> void:
-	score += 1
-	score_label.text = 'Score: ' + str(score)
+	HiScore.score += 1
+	score_label.text = 'Score: ' + str(HiScore.score)
