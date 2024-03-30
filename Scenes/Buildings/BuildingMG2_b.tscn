@@ -9,7 +9,7 @@ polygon = PackedVector2Array(-14, -36.1, -11, -34.1, -11, -28, 8.8, -28, 13, -23
 [node name="BuildingFg1" type="StaticBody2D"]
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(17, -107)
+position = Vector2(17, -117)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(50, -60)

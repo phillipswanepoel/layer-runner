@@ -60,4 +60,4 @@ texture = ExtResource("2_t0xhd")
 texture_scale = 0.09
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(49.1667, -50)
+position = Vector2(62.5, -53.3333)

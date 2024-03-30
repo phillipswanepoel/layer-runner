@@ -1,7 +1,6 @@
-[gd_scene load_steps=39 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=40 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_hi33k"]
-[ext_resource type="PackedScene" uid="uid://cjwq2iuhkem5" path="res://Scenes/Buildings/BuildingFG1.tscn" id="2_qdqot"]
 [ext_resource type="PackedScene" uid="uid://bsbtm18fhi1fu" path="res://Scenes/Buildings/BuildingFG3_b.tscn" id="3_8uc6k"]
 [ext_resource type="PackedScene" uid="uid://dl8j3e4ff4iuw" path="res://Scenes/Buildings/BuildingMG1.tscn" id="4_6cigh"]
 [ext_resource type="PackedScene" uid="uid://dxne21x0ea6ht" path="res://Scenes/Buildings/BuildingFG4_b.tscn" id="4_mt2dv"]
@@ -11,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ccdgfdwu6vuqj" path="res://Scenes/Buildings/BuildingFG6.tscn" id="7_1fdn6"]
 [ext_resource type="PackedScene" uid="uid://d2shuh05agkkb" path="res://Scenes/Buildings/BuildingBG2.tscn" id="7_42axd"]
 [ext_resource type="PackedScene" uid="uid://bjqq8h4wisnwg" path="res://Scenes/Buildings/BuildingFG7_b.tscn" id="7_uhcxe"]
+[ext_resource type="PackedScene" uid="uid://c6kpmv6vfhhpc" path="res://Scenes/Buildings/BuildingFG1_b.tscn" id="8_eyt81"]
 [ext_resource type="PackedScene" uid="uid://dyiom864sked4" path="res://Scenes/Buildings/BuildingFG8_b.tscn" id="8_s141t"]
 [ext_resource type="Script" path="res://Scenes/ParallaxBackgroundScroll.gd" id="8_syn6b"]
 [ext_resource type="Texture2D" uid="uid://b1htek331jg1g" path="res://Assets/Backgrounds/Stars Background.png" id="8_y7bud"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cvdk844k0m0c2" path="res://Scenes/Buildings/BuildingBG4.tscn" id="19_dm54y"]
 [ext_resource type="PackedScene" uid="uid://ywh2wiabvugm" path="res://Scenes/Buildings/BuildingBG5.tscn" id="20_cd36b"]
 [ext_resource type="PackedScene" uid="uid://by540i5vyurk6" path="res://Scenes/Buildings/BuildingBG6.tscn" id="21_pi3ct"]
+[ext_resource type="PackedScene" uid="uid://cdad8mj0lha77" path="res://Scenes/Coin.tscn" id="22_dow26"]
 [ext_resource type="PackedScene" uid="uid://dck3wqdu83dns" path="res://Scenes/Buildings/BuildingBG7.tscn" id="22_egj70"]
 [ext_resource type="PackedScene" uid="uid://bwxx1acu6nycg" path="res://Scenes/StartBuilding.tscn" id="26_6dkg1"]
 [ext_resource type="PackedScene" uid="uid://batt6i6cbkfnt" path="res://Scenes/StartBuildingBG.tscn" id="26_h0awk"]
@@ -69,9 +70,10 @@ size = Vector2(205.5, 380.5)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hi33k")
-fg_buildings = Array[PackedScene]([ExtResource("2_qdqot"), ExtResource("2_qdqot"), ExtResource("3_8uc6k"), ExtResource("3_8uc6k"), ExtResource("4_mt2dv"), ExtResource("4_mt2dv"), ExtResource("6_hj8ur"), ExtResource("7_1fdn6"), ExtResource("7_uhcxe"), ExtResource("7_uhcxe"), ExtResource("8_s141t"), ExtResource("8_s141t")])
+fg_buildings = Array[PackedScene]([ExtResource("3_8uc6k"), ExtResource("3_8uc6k"), ExtResource("4_mt2dv"), ExtResource("4_mt2dv"), ExtResource("6_hj8ur"), ExtResource("7_1fdn6"), ExtResource("7_uhcxe"), ExtResource("7_uhcxe"), ExtResource("8_s141t"), ExtResource("8_s141t"), ExtResource("8_eyt81"), ExtResource("8_eyt81")])
 mg_buildings = Array[PackedScene]([ExtResource("4_6cigh"), ExtResource("10_62587"), ExtResource("11_fcsg1"), ExtResource("12_lkhef"), ExtResource("14_tg3fu"), ExtResource("15_6jfh0"), ExtResource("4_6cigh"), ExtResource("10_62587"), ExtResource("15_6jfh0")])
 bg_buildings = Array[PackedScene]([ExtResource("6_x6g3h"), ExtResource("7_42axd"), ExtResource("18_qm8r5"), ExtResource("19_dm54y"), ExtResource("20_cd36b"), ExtResource("21_pi3ct"), ExtResource("22_egj70")])
+coin = ExtResource("22_dow26")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("8_syn6b")

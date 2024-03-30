@@ -67,6 +67,11 @@ func _on_fg_timer_timeout() -> void:
 	var random_wait : float = rng.randf_range(rand_floor+0.1, rand_ceiling+0.1)*(1/fg_speed_factor)
 	fg_timer.start(random_wait)
 	
+	var coin_chance = rng.randf()
+	if coin_chance <= 0.99:		
+		var coin_pos = chosen_building.get_node("Marker2D").position
+		spawn_coin(coin_pos, 0)
+	
 @export var mg_buildings : Array[PackedScene] = []
 @onready var mg_timer = $MG/MGTimer
 @onready var mg_path = $MG/Path2D
@@ -89,6 +94,11 @@ func _on_mg_timer_timeout() -> void:
 	var random_wait : float = rng.randf_range(rand_floor, rand_ceiling)*(1/mg_speed_factor)
 	mg_timer.start(random_wait)
 	
+	var coin_chance = rng.randf()
+	if coin_chance <= 0.25:
+		var coin_pos = chosen_building.get_node("Marker2D").position
+		spawn_coin(coin_pos, 1)
+	
 @export var bg_buildings : Array[PackedScene] = []
 @onready var bg_timer = $BG/BGTimer
 @onready var bg_path = $BG/Path2D
@@ -107,7 +117,30 @@ func _on_bg_timer_timeout() -> void:
 	#start timer with some random interval
 	var random_wait : float = rng.randf_range(rand_floor-0.1, rand_ceiling-0.1)*(1/bg_speed_factor)
 	bg_timer.start(random_wait)
+	
+	#spawn coin
+	var coin_chance = rng.randf()	
+	if coin_chance <= 0.25:
+		#a.get_viewport_transform() * a.global_transform
+		#var building_pos = chosen_building.position
+		var coin_pos = chosen_building.get_node("Marker2D").position	
+		#var relative_pos = coin_pos - building_pos
+		spawn_coin(coin_pos, 2)
 
+@export var coin : PackedScene
+var follower_layers = ["fg_followers", "mg_followers", "bg_followers"]
+@onready var layers_paths = [fg_path, mg_path, bg_path]
+func spawn_coin(pos : Vector2, layer: int):	
+	var coin_instance : StaticBody2D = coin.instantiate()	
+	var path_follow = PathFollow2D.new()
+	path_follow.h_offset = pos.x
+	path_follow.v_offset = pos.y		
+
+	path_follow.rotates = false
+	path_follow.add_to_group("path_followers")
+	path_follow.add_to_group(follower_layers[layer])
+	layers_paths[layer].add_child(path_follow)
+	path_follow.add_child(coin_instance)	
 
 func _on_building_gaps_timeout() -> void:
 	rand_ceiling += 0.05

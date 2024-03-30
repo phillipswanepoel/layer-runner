@@ -32,4 +32,4 @@ position = Vector2(12, -42)
 occluder = SubResource("OccluderPolygon2D_pfbsm")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(11.6667, -58.3333)
+position = Vector2(13.3333, -69.1667)
