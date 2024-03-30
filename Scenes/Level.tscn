@@ -70,7 +70,7 @@ size = Vector2(205.5, 380.5)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hi33k")
 fg_buildings = Array[PackedScene]([ExtResource("2_qdqot"), ExtResource("2_qdqot"), ExtResource("3_8uc6k"), ExtResource("3_8uc6k"), ExtResource("4_mt2dv"), ExtResource("4_mt2dv"), ExtResource("6_hj8ur"), ExtResource("7_1fdn6"), ExtResource("7_uhcxe"), ExtResource("7_uhcxe"), ExtResource("8_s141t"), ExtResource("8_s141t")])
-mg_buildings = Array[PackedScene]([ExtResource("4_6cigh"), ExtResource("10_62587"), ExtResource("11_fcsg1"), ExtResource("12_lkhef"), ExtResource("14_tg3fu"), ExtResource("15_6jfh0"), ExtResource("4_6cigh"), ExtResource("10_62587"), ExtResource("14_tg3fu"), ExtResource("15_6jfh0")])
+mg_buildings = Array[PackedScene]([ExtResource("4_6cigh"), ExtResource("10_62587"), ExtResource("11_fcsg1"), ExtResource("12_lkhef"), ExtResource("14_tg3fu"), ExtResource("15_6jfh0"), ExtResource("4_6cigh"), ExtResource("10_62587"), ExtResource("15_6jfh0")])
 bg_buildings = Array[PackedScene]([ExtResource("6_x6g3h"), ExtResource("7_42axd"), ExtResource("18_qm8r5"), ExtResource("19_dm54y"), ExtResource("20_cd36b"), ExtResource("21_pi3ct"), ExtResource("22_egj70")])
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
