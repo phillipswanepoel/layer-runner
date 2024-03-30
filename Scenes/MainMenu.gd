@@ -26,6 +26,7 @@ func _on_music_volume_slider_value_changed(value: float) -> void:
 
 func _on_sound_volume_slider_value_changed(value: float) -> void:
 	Sound.update_sound_volume(value)
+	Sound.play_button_sound()
 
 func _on_button_pressed() -> void:
 	buttons_main.visible = true

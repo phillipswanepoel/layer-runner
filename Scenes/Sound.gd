@@ -15,7 +15,6 @@ func play_warp_sound2():
 @onready var death_sound = $DeathSound
 func play_death_sound():
 	death_sound.play()
-
 	
 @onready var bus_music = AudioServer.get_bus_index("Music")
 @onready var sound_busses = [AudioServer.get_bus_index("Reverb"),
