@@ -64,7 +64,7 @@ func _on_fg_timer_timeout() -> void:
 	path_follow.add_child(chosen_building)
 	
 	#start timer with some random interval
-	var random_wait : float = rng.randf_range(rand_floor, rand_ceiling)*(1/fg_speed_factor)
+	var random_wait : float = rng.randf_range(rand_floor+0.1, rand_ceiling+0.1)*(1/fg_speed_factor)
 	fg_timer.start(random_wait)
 	
 @export var mg_buildings : Array[PackedScene] = []

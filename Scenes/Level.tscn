@@ -1,24 +1,23 @@
-[gd_scene load_steps=41 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=40 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_hi33k"]
 [ext_resource type="PackedScene" uid="uid://cjwq2iuhkem5" path="res://Scenes/Buildings/BuildingFG1.tscn" id="2_qdqot"]
-[ext_resource type="PackedScene" uid="uid://b45hy5ely05a6" path="res://Scenes/Buildings/BuildingFG2.tscn" id="3_ldb7c"]
+[ext_resource type="PackedScene" uid="uid://bsbtm18fhi1fu" path="res://Scenes/Buildings/BuildingFG3_b.tscn" id="3_8uc6k"]
 [ext_resource type="PackedScene" uid="uid://dl8j3e4ff4iuw" path="res://Scenes/Buildings/BuildingMG1.tscn" id="4_6cigh"]
-[ext_resource type="PackedScene" uid="uid://bf5isq80tt8gj" path="res://Scenes/Buildings/BuildingFG3.tscn" id="4_13s12"]
-[ext_resource type="PackedScene" uid="uid://dmbdwch8ega88" path="res://Scenes/Buildings/BuildingMG2.tscn" id="5_2v153"]
-[ext_resource type="PackedScene" uid="uid://coyvxrxcsraci" path="res://Scenes/Buildings/BuildingFG4.tscn" id="5_rcqo5"]
+[ext_resource type="PackedScene" uid="uid://dxne21x0ea6ht" path="res://Scenes/Buildings/BuildingFG4_b.tscn" id="4_mt2dv"]
 [ext_resource type="PackedScene" uid="uid://b2qi7gfk2g4oy" path="res://Scenes/Buildings/BuildingFG5.tscn" id="6_hj8ur"]
 [ext_resource type="PackedScene" uid="uid://jopj67sfeyd4" path="res://Scenes/Player.tscn" id="6_lh7b0"]
 [ext_resource type="PackedScene" uid="uid://davwwc0gopfu8" path="res://Scenes/Buildings/BuildingBG1.tscn" id="6_x6g3h"]
 [ext_resource type="PackedScene" uid="uid://ccdgfdwu6vuqj" path="res://Scenes/Buildings/BuildingFG6.tscn" id="7_1fdn6"]
 [ext_resource type="PackedScene" uid="uid://d2shuh05agkkb" path="res://Scenes/Buildings/BuildingBG2.tscn" id="7_42axd"]
-[ext_resource type="PackedScene" uid="uid://dj015okx5ocy6" path="res://Scenes/Buildings/BuildingFG7.tscn" id="8_cpykg"]
+[ext_resource type="PackedScene" uid="uid://bjqq8h4wisnwg" path="res://Scenes/Buildings/BuildingFG7_b.tscn" id="7_uhcxe"]
+[ext_resource type="PackedScene" uid="uid://dyiom864sked4" path="res://Scenes/Buildings/BuildingFG8_b.tscn" id="8_s141t"]
 [ext_resource type="Script" path="res://Scenes/ParallaxBackgroundScroll.gd" id="8_syn6b"]
 [ext_resource type="Texture2D" uid="uid://b1htek331jg1g" path="res://Assets/Backgrounds/Stars Background.png" id="8_y7bud"]
-[ext_resource type="PackedScene" uid="uid://ogdd6hy5xrqt" path="res://Scenes/Buildings/BuildingFG8.tscn" id="9_4pgdf"]
 [ext_resource type="Texture2D" uid="uid://cb8w35sl2wgw0" path="res://Assets/Backgrounds/Clouds Background.png" id="9_jdmu5"]
-[ext_resource type="PackedScene" uid="uid://cvejj0ygvejsp" path="res://Scenes/Buildings/BuildingMG3.tscn" id="12_thby2"]
-[ext_resource type="PackedScene" uid="uid://bmx207muoq074" path="res://Scenes/Buildings/BuildingMG4.tscn" id="13_dol7c"]
+[ext_resource type="PackedScene" uid="uid://6qtbsycu4utl" path="res://Scenes/Buildings/BuildingMG2_b.tscn" id="10_62587"]
+[ext_resource type="PackedScene" uid="uid://d2rh0rl5xx8w2" path="res://Scenes/Buildings/BuildingMG3_b.tscn" id="11_fcsg1"]
+[ext_resource type="PackedScene" uid="uid://cg40ouic3cm3v" path="res://Scenes/Buildings/BuildingMG4_b.tscn" id="12_lkhef"]
 [ext_resource type="PackedScene" uid="uid://b4rp13ga5l4go" path="res://Scenes/Buildings/BuildingMG5.tscn" id="14_tg3fu"]
 [ext_resource type="PackedScene" uid="uid://hkt5ccvolabb" path="res://Scenes/Buildings/BuildingMG6.tscn" id="15_6jfh0"]
 [ext_resource type="PackedScene" uid="uid://dhsyra65autqd" path="res://Scenes/Buildings/BuildingBG3.tscn" id="18_qm8r5"]
@@ -71,8 +70,8 @@ size = Vector2(205.5, 380.5)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hi33k")
-fg_buildings = Array[PackedScene]([ExtResource("2_qdqot"), ExtResource("3_ldb7c"), ExtResource("4_13s12"), ExtResource("5_rcqo5"), ExtResource("6_hj8ur"), ExtResource("7_1fdn6"), ExtResource("8_cpykg"), ExtResource("9_4pgdf")])
-mg_buildings = Array[PackedScene]([ExtResource("4_6cigh"), ExtResource("5_2v153"), ExtResource("12_thby2"), ExtResource("13_dol7c"), ExtResource("14_tg3fu"), ExtResource("15_6jfh0")])
+fg_buildings = Array[PackedScene]([ExtResource("2_qdqot"), ExtResource("2_qdqot"), ExtResource("3_8uc6k"), ExtResource("3_8uc6k"), ExtResource("4_mt2dv"), ExtResource("4_mt2dv"), ExtResource("6_hj8ur"), ExtResource("7_1fdn6"), ExtResource("7_uhcxe"), ExtResource("7_uhcxe"), ExtResource("8_s141t"), ExtResource("8_s141t")])
+mg_buildings = Array[PackedScene]([ExtResource("4_6cigh"), ExtResource("10_62587"), ExtResource("11_fcsg1"), ExtResource("12_lkhef"), ExtResource("14_tg3fu"), ExtResource("15_6jfh0"), ExtResource("4_6cigh"), ExtResource("10_62587"), ExtResource("14_tg3fu"), ExtResource("15_6jfh0")])
 bg_buildings = Array[PackedScene]([ExtResource("6_x6g3h"), ExtResource("7_42axd"), ExtResource("18_qm8r5"), ExtResource("19_dm54y"), ExtResource("20_cd36b"), ExtResource("21_pi3ct"), ExtResource("22_egj70")])
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -105,6 +104,7 @@ one_shot = true
 autostart = true
 
 [node name="Path2D" type="Path2D" parent="BG"]
+position = Vector2(0, -5)
 curve = SubResource("Curve2D_jqfty")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="BG/Path2D"]
@@ -113,7 +113,7 @@ rotation = 3.14159
 script = ExtResource("28_l8fg3")
 
 [node name="StartBuilding" parent="BG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("26_h0awk")]
-position = Vector2(360, 190)
+position = Vector2(360, 185)
 rotation = 3.14159
 
 [node name="CanvasModulate" type="CanvasModulate" parent="BG"]
@@ -156,6 +156,7 @@ one_shot = true
 autostart = true
 
 [node name="Path2D" type="Path2D" parent="FG"]
+position = Vector2(0, 5)
 curve = SubResource("Curve2D_aaxsb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="FG/Path2D"]
@@ -164,7 +165,7 @@ rotation = 3.14159
 script = ExtResource("28_l8fg3")
 
 [node name="StartBuilding" parent="FG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("26_6dkg1")]
-position = Vector2(359, 201)
+position = Vector2(359, 205)
 rotation = 3.14159
 
 [node name="Player" parent="FG" instance=ExtResource("6_lh7b0")]

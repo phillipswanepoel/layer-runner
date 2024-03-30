@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjwq2iuhkem5"]
+[gd_scene load_steps=4 format=3 uid="uid://c6kpmv6vfhhpc"]
 
-[ext_resource type="Texture2D" uid="uid://mc234hxnaois" path="res://Assets/Buildings/Foreground Updated/Buildings Foreground 1 NEW_b.png" id="1_n8ei4"]
-[ext_resource type="Texture2D" uid="uid://bw5sev87g0umx" path="res://Assets/FX/light.png" id="2_dggtu"]
+[ext_resource type="Texture2D" uid="uid://mc234hxnaois" path="res://Assets/Buildings/Foreground Updated/Buildings Foreground 1 NEW_b.png" id="1_26wqn"]
+[ext_resource type="Texture2D" uid="uid://bw5sev87g0umx" path="res://Assets/FX/light.png" id="2_vqist"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_06sdj"]
 polygon = PackedVector2Array(21, -42.9, 27, -37.9, 27, 45, -40, 45, -40, -34, -37, -38, -21.9, -38, -16, -42.9, -16, -45, 21, -45)
@@ -11,7 +11,7 @@ scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(40, -45)
-texture = ExtResource("1_n8ei4")
+texture = ExtResource("1_26wqn")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
@@ -24,7 +24,7 @@ color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.7
 range_layer_min = -1
 range_layer_max = -1
-texture = ExtResource("2_dggtu")
+texture = ExtResource("2_vqist")
 texture_scale = 0.04
 
 [node name="PointLight2D3" type="PointLight2D" parent="."]
@@ -33,7 +33,7 @@ color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.7
 range_layer_min = -1
 range_layer_max = -1
-texture = ExtResource("2_dggtu")
+texture = ExtResource("2_vqist")
 texture_scale = 0.03
 
 [node name="PointLight2D4" type="PointLight2D" parent="."]
@@ -42,7 +42,7 @@ color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.7
 range_layer_min = -1
 range_layer_max = -1
-texture = ExtResource("2_dggtu")
+texture = ExtResource("2_vqist")
 texture_scale = 0.02
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
