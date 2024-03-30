@@ -89,19 +89,19 @@ theme_override_font_sizes/normal_font_size = 8
 text = "Jump"
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(271, 39)
+position = Vector2(276, 39)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("9_hamgi")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(271, 18)
+position = Vector2(276, 18)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10_32tk3")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 246.0
+offset_left = 251.0
 offset_top = 51.0
-offset_right = 320.0
+offset_right = 325.0
 offset_bottom = 80.0
 theme = ExtResource("9_5jq3q")
 theme_override_font_sizes/normal_font_size = 8
