@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=41 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_hi33k"]
 [ext_resource type="PackedScene" uid="uid://bsbtm18fhi1fu" path="res://Scenes/Buildings/BuildingFG3_b.tscn" id="3_8uc6k"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://28xnsdqkn3k" path="res://Scenes/StartBuildingMG.tscn" id="27_3ftoj"]
 [ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="28_43x3w"]
 [ext_resource type="Script" path="res://Scenes/PathFollow2D.gd" id="28_l8fg3"]
+[ext_resource type="Texture2D" uid="uid://dqhn4frrmsfmb" path="res://Assets/Coins/Coin.png" id="32_26rxc"]
 
 [sub_resource type="Curve2D" id="Curve2D_jqfty"]
 _data = {
@@ -190,7 +191,7 @@ layout_mode = 0
 offset_left = 17.0
 offset_top = 3.0
 offset_right = 77.0
-offset_bottom = 26.0
+offset_bottom = 14.0
 theme = ExtResource("28_43x3w")
 text = "Score: 0
 "
@@ -199,6 +200,18 @@ label_settings = SubResource("LabelSettings_ry1ex")
 [node name="ScoreTimer" type="Timer" parent="Control/ScoreLabel"]
 wait_time = 0.1
 autostart = true
+
+[node name="CoinLabel" type="Label" parent="Control"]
+self_modulate = Color(1, 0.380392, 0.313726, 1)
+layout_mode = 0
+offset_left = 36.0
+offset_top = 18.0
+offset_right = 84.0
+offset_bottom = 29.0
+theme = ExtResource("28_43x3w")
+text = "0
+"
+label_settings = SubResource("LabelSettings_ry1ex")
 
 [node name="HiScoreLabel" type="Label" parent="Control"]
 self_modulate = Color(1, 0.380392, 0.313726, 1)
@@ -214,8 +227,20 @@ text = "Hi Score: 0
 label_settings = SubResource("LabelSettings_ry1ex")
 horizontal_alignment = 2
 
-[node name="Button" type="Button" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Control"]
+self_modulate = Color(0.65098, 0.517647, 0.364706, 1)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 15.0
+offset_right = 33.0
+offset_bottom = 31.0
+texture = ExtResource("32_26rxc")
+
+[node name="DeadGui" type="Control" parent="Control"]
 visible = false
+anchors_preset = 0
+
+[node name="RestartButton" type="Button" parent="Control/DeadGui"]
 self_modulate = Color(0.603922, 0.34902, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -264,6 +289,6 @@ shape = SubResource("RectangleShape2D_xl6fj")
 [connection signal="timeout" from="MG/MGTimer" to="." method="_on_mg_timer_timeout"]
 [connection signal="timeout" from="FG/FGTimer" to="." method="_on_fg_timer_timeout"]
 [connection signal="timeout" from="Control/ScoreLabel/ScoreTimer" to="." method="_on_score_timer_timeout"]
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/DeadGui/RestartButton" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="BuildingGaps" to="." method="_on_building_gaps_timeout"]
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]

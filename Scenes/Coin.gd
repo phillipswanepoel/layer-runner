@@ -1,12 +1,15 @@
 extends Area2D
 
+signal coin_consumed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.play("default")
 
 func _on_body_entered(_body: Node2D) -> void:
 	HiScore.score += 50	
+	HiScore.coin_count += 1
 	Sound.play_coin_sound(layer)
+	coin_consumed.emit()
 	queue_free()
 
 @onready var layer = 0
