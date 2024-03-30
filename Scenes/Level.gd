@@ -158,8 +158,7 @@ func _on_death_zone_body_entered(_body: Node2D) -> void:
 	Sound.play_death_sound()	
 	$Control/Button.disabled = false
 	$Control/Button.visible = true
-	$Control/ScoreLabel/ScoreTimer.queue_free()
-	
+	$Control/ScoreLabel/ScoreTimer.queue_free()	
 
 @onready var score_label : Label = $Control/ScoreLabel
 func _on_score_timer_timeout() -> void:

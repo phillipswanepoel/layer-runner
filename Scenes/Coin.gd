@@ -18,7 +18,7 @@ func set_layer(l : int):
 	var sprite = $AnimatedSprite2D
 	layer = l
 	if layer == 2:
-		sprite.scale = Vector2(0.1, 0.1)
+		sprite.scale = Vector2(0.15, 0.15)
 		colliders[0].disabled = true
 		colliders[1].disabled = true
 		colliders[2].disabled = false

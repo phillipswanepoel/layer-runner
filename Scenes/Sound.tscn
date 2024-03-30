@@ -39,7 +39,7 @@ bus = &"Death"
 
 [node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_vu8q6")
-volume_db = -5.0
+volume_db = -8.0
 pitch_scale = 0.8
 bus = &"Reverb"
 
