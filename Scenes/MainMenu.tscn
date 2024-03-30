@@ -244,7 +244,7 @@ tracks/3/path = NodePath("CanvasLayer3/Control1/SettingsButton:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 5, 7.5, 10, 15, 17.5, 20),
+"times": PackedFloat32Array(0, 4, 6.5, 9, 14, 16.5, 19),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(0, 0, 0, 1)]
@@ -256,7 +256,7 @@ tracks/4/path = NodePath("CanvasLayer3/Control1/QuitButton:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 5, 7.5, 10, 15, 17.5, 20),
+"times": PackedFloat32Array(0, 4, 6.5, 9, 14, 16.5, 19),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.823636, 0.57644, 0.348791, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823636, 0.57644, 0.348791, 1), Color(0, 0, 0, 1)]
@@ -268,7 +268,7 @@ tracks/5/path = NodePath("CanvasLayer2/DayBG:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 5, 10, 15, 20),
+"times": PackedFloat32Array(0, 4, 9, 14, 19),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -280,7 +280,7 @@ tracks/6/path = NodePath("CanvasLayer2/NightBG:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 5, 10, 15, 20),
+"times": PackedFloat32Array(0, 4, 9, 14, 19),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -292,10 +292,10 @@ tracks/7/path = NodePath("ParallaxBackground/ParallaxLayer/CloudsDay:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 5, 7.5, 15, 20),
+"times": PackedFloat32Array(0, 5, 9, 14, 19),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(0.913725, 0.815686, 0.913725, 1), Color(1, 1, 1, 1), Color(0.784314, 0.698039, 0.847059, 1), Color(0.784314, 0.698039, 0.847059, 1), Color(0.913725, 0.815686, 0.913725, 1)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -316,7 +316,7 @@ tracks/9/path = NodePath("CanvasLayer3/Control1/SettingsButton:theme_override_co
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 5, 7.5, 10, 15, 17.5, 20),
+"times": PackedFloat32Array(0, 4, 6.5, 9, 14, 16.5, 19),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(0, 0, 0, 1)]
@@ -328,7 +328,7 @@ tracks/10/path = NodePath("CanvasLayer3/Control1/QuitButton:theme_override_color
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 5, 7.5, 10, 15, 17.5, 20),
+"times": PackedFloat32Array(0, 4, 6.5, 9, 14, 16.5, 19),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(0, 0, 0, 1)]
@@ -340,7 +340,7 @@ tracks/11/path = NodePath("CanvasLayer3/Settings/MusicLabel:theme_override_color
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 5, 7.5, 10, 15, 17.5, 20),
+"times": PackedFloat32Array(0, 4, 6.5, 9, 14, 16.5, 19),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [null, null, Color(0.823529, 0.576471, 0.34902, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823529, 0.576471, 0.34902, 1), null]
@@ -352,7 +352,7 @@ tracks/12/path = NodePath("CanvasLayer3/Settings/SoundLabel:theme_override_color
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 5, 7.5, 10, 15, 17.5, 20),
+"times": PackedFloat32Array(0, 4, 6.5, 9, 14, 16.5, 19),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [null, null, Color(0.823529, 0.576471, 0.34902, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823529, 0.576471, 0.34902, 1), null]
@@ -382,6 +382,9 @@ z_index = -1
 z_as_relative = false
 texture = ExtResource("2_a8ebj")
 centered = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer2/DayBG"]
+color = Color(0.870588, 0.584314, 0.827451, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 0
