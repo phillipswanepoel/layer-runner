@@ -33,7 +33,7 @@ func change_layer(dir : int):
 	
 	
 	for i in range(5, 8):
-		set_collision_layer_value(i+1, false)
+		set_collision_layer_value(i, false)
 	if current_layer == 0:
 		set_collision_layer_value(5, true)	
 	elif current_layer == 1:

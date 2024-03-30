@@ -31,4 +31,6 @@ func set_layer(l : int):
 		colliders[2].disabled = true
 		set_collision_mask_value(5, false) 
 		set_collision_mask_value(6, true) 
+
+		
 		
