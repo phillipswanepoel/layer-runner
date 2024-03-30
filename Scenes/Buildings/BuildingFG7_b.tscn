@@ -60,7 +60,8 @@ position = Vector2(40, -42.8333)
 occluder = SubResource("OccluderPolygon2D_41acc")
 
 [node name="PointLight2D6" type="PointLight2D" parent="."]
-position = Vector2(39.1667, -35)
+position = Vector2(35.8333, -28.9833)
+scale = Vector2(0.683594, 0.882487)
 color = Color(1, 0.643137, 0.321569, 1)
 energy = 0.4
 range_layer_min = -3

@@ -6,7 +6,7 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v0kyp"]
 polygon = PackedVector2Array(17, -64.1, 20, -62.1, 20, 80, -29, 80, -29, -43, -27.1, -43, -25.1, -46, -9, -46, -9, -62.1, -6, -64.1, -6, -66, 17, -66)
 
-[node name="BuildingFg1" type="StaticBody2D"]
+[node name="BuildingFg2" type="StaticBody2D"]
 scale = Vector2(1.1, 1.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -52,20 +52,21 @@ texture_scale = 0.05
 [node name="PointLight2D4" type="PointLight2D" parent="."]
 position = Vector2(32.7273, -124.545)
 color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.7
+energy = 0.4
 range_layer_min = -3
 range_layer_max = -3
 texture = ExtResource("2_cdjat")
 texture_scale = 0.03
 
 [node name="PointLight2D5" type="PointLight2D" parent="."]
-position = Vector2(21.8182, -74.5454)
+position = Vector2(22.2727, -75.9091)
+scale = Vector2(0.375601, 1.14046)
 color = Color(1, 0.643137, 0.321569, 1)
 energy = 0.2
 range_layer_min = -3
 range_layer_max = -3
 texture = ExtResource("2_cdjat")
-texture_scale = 0.19
+texture_scale = 0.13
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(30.9091, -166.364)

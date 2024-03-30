@@ -6,7 +6,7 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jlc8e"]
 polygon = PackedVector2Array(14.1, -52.7, 14.1, 60, -18.1, 60, -18.1, -29.1, -16.5, -29.1, 7.9, -53.5, 7.9, -55.8)
 
-[node name="BuildingFg1" type="StaticBody2D"]
+[node name="BuildingFg2" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(15, -60)
@@ -25,6 +25,15 @@ occluder = SubResource("OccluderPolygon2D_jlc8e")
 position = Vector2(17, -85)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.6
+range_layer_min = -2
+range_layer_max = -2
+texture = ExtResource("2_nholr")
+texture_scale = 0.05
+
+[node name="PointLight2D6" type="PointLight2D" parent="."]
+position = Vector2(7, -7)
+color = Color(0.917647, 0.517647, 0, 1)
+energy = 0.5
 range_layer_min = -2
 range_layer_max = -2
 texture = ExtResource("2_nholr")
@@ -49,7 +58,8 @@ texture = ExtResource("2_nholr")
 texture_scale = 0.05
 
 [node name="PointLight2D5" type="PointLight2D" parent="."]
-position = Vector2(13, -62)
+position = Vector2(12.5, -56.72)
+scale = Vector2(0.217849, 0.920673)
 color = Color(1, 0.643137, 0.321569, 1)
 energy = 0.35
 range_layer_min = -3
