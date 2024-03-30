@@ -5,6 +5,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim.play("day-night")
+	$CanvasLayer/Boy.play("default")
 
 func _on_play_button_pressed() -> void:
 	Sound.play_button_sound()

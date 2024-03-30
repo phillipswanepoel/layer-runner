@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bexgphgjqhlec"]
+[gd_scene load_steps=22 format=3 uid="uid://bexgphgjqhlec"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_1aabn"]
 [ext_resource type="Texture2D" uid="uid://ctv5pdivgmim3" path="res://Assets/Backgrounds/Clouds Background Day.png" id="1_2o8vt"]
@@ -9,8 +9,58 @@
 [ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="3_fmb13"]
 [ext_resource type="Texture2D" uid="uid://b1htek331jg1g" path="res://Assets/Backgrounds/Stars Background.png" id="3_h8bcv"]
 [ext_resource type="Script" path="res://Scenes/ParallaxBackground.gd" id="4_ltyqg"]
-[ext_resource type="Texture2D" uid="uid://bi72yjxuce5" path="res://Assets/Character/Main Menu Night Character.png" id="9_3b0cm"]
+[ext_resource type="Texture2D" uid="uid://dq6kyyuotv5dn" path="res://Assets/Character/Character Menu Anim Sheet.png" id="9_4lbcy"]
 [ext_resource type="Texture2D" uid="uid://w51wklgig7tt" path="res://Assets/GUI/back_button.png" id="10_7k1de"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mk2e"]
+atlas = ExtResource("9_4lbcy")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx1uq"]
+atlas = ExtResource("9_4lbcy")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rsuy"]
+atlas = ExtResource("9_4lbcy")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dv2k"]
+atlas = ExtResource("9_4lbcy")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dwqm"]
+atlas = ExtResource("9_4lbcy")
+region = Rect2(1280, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oo3a"]
+atlas = ExtResource("9_4lbcy")
+region = Rect2(1600, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hxw4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mk2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx1uq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rsuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dv2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dwqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3oo3a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="Animation" id="Animation_vlyhd"]
 length = 0.001
@@ -352,11 +402,6 @@ centered = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Characters" type="Sprite2D" parent="CanvasLayer"]
-z_index = 2
-texture = ExtResource("9_3b0cm")
-centered = false
-
 [node name="DayBuildings" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
 z_index = 1
@@ -370,6 +415,13 @@ z_index = 1
 z_as_relative = false
 position = Vector2(160, 90)
 texture = ExtResource("3_2yb5r")
+
+[node name="Boy" type="AnimatedSprite2D" parent="CanvasLayer"]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_2hxw4")
+frame = 3
+frame_progress = 0.571778
+centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
