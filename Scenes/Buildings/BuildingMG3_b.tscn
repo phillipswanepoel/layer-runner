@@ -13,35 +13,45 @@ position = Vector2(50, -60)
 texture = ExtResource("1_ytywn")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(12, -60)
 polygon = PackedVector2Array(-12, 60, -12, -29, 3, -44, 5, -44, 20, -29, 20, 60)
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 position = Vector2(7, -75)
 color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.7
+energy = 0.8
 range_layer_min = -2
 range_layer_max = -2
 texture = ExtResource("2_84gcv")
 texture_scale = 0.04
 
 [node name="PointLight2D3" type="PointLight2D" parent="."]
-position = Vector2(5, -21)
+position = Vector2(9, -15)
 color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.7
+energy = 0.4
 range_layer_min = -2
 range_layer_max = -2
 texture = ExtResource("2_84gcv")
-texture_scale = 0.06
+texture_scale = 0.05
 
 [node name="PointLight2D4" type="PointLight2D" parent="."]
-position = Vector2(14, -46)
+position = Vector2(26, -50)
 color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.7
+energy = 0.5
 range_layer_min = -2
 range_layer_max = -2
 texture = ExtResource("2_84gcv")
-texture_scale = 0.06
+texture_scale = 0.05
+
+[node name="PointLight2D5" type="PointLight2D" parent="."]
+position = Vector2(17, -50)
+color = Color(1, 0.643137, 0.321569, 1)
+energy = 0.2
+range_layer_min = -3
+range_layer_max = -3
+texture = ExtResource("2_84gcv")
+texture_scale = 0.12
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(50, -60)

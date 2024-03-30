@@ -19,31 +19,40 @@ position = Vector2(30, -42)
 polygon = PackedVector2Array(-30, 42, -30, 17, -10, 17, -10, 1.16667, 10.8333, 1.16667, 10.8333, -21.3333, 40, -21.3333, 40, 42)
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(12, -15)
+position = Vector2(12.5, -19.1667)
 color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.7
+energy = 0.3
 range_layer_min = -1
 range_layer_max = -1
 texture = ExtResource("2_834ct")
-texture_scale = 0.04
+texture_scale = 0.03
 
 [node name="PointLight2D3" type="PointLight2D" parent="."]
-position = Vector2(37.5, -25)
+position = Vector2(61.6667, -54.1667)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.7
+range_layer_min = -1
+range_layer_max = -1
+texture = ExtResource("2_834ct")
+texture_scale = 0.06
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(63.3333, -29.1667)
+color = Color(0.917647, 0.517647, 0, 1)
+energy = 0.5
 range_layer_min = -1
 range_layer_max = -1
 texture = ExtResource("2_834ct")
 texture_scale = 0.04
 
-[node name="PointLight2D4" type="PointLight2D" parent="."]
-position = Vector2(50, -53)
+[node name="PointLight2D5" type="PointLight2D" parent="."]
+position = Vector2(34.1667, -24.1667)
 color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.7
+energy = 0.3
 range_layer_min = -1
 range_layer_max = -1
 texture = ExtResource("2_834ct")
-texture_scale = 0.05
+texture_scale = 0.03
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(40, -42.8333)
