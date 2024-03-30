@@ -66,3 +66,6 @@ range_layer_min = -3
 range_layer_max = -3
 texture = ExtResource("2_cdjat")
 texture_scale = 0.19
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(30.9091, -155.455)

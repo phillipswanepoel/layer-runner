@@ -46,6 +46,9 @@ range_layer_max = -1
 texture = ExtResource("2_834ct")
 texture_scale = 0.04
 
+[node name="Marker2D" type="Marker2D" parent="PointLight2D4"]
+position = Vector2(-50.8333, -3.3333)
+
 [node name="PointLight2D5" type="PointLight2D" parent="."]
 position = Vector2(34.1667, -24.1667)
 color = Color(0.917647, 0.517647, 0, 1)

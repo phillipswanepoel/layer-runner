@@ -10,6 +10,9 @@ polygon = PackedVector2Array(23, -29.4, 29, -24.4, 29, 42.5, -40, 42.5, -40, -27
 modulate = Color(0.733333, 0.733333, 0.733333, 1)
 scale = Vector2(1.2, 1.2)
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(33.3333, -81.6667)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(40, -42)
 texture = ExtResource("1_gotmc")

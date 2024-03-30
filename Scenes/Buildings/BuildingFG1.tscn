@@ -58,3 +58,6 @@ texture_scale = 0.09
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(40, -45)
 occluder = SubResource("OccluderPolygon2D_06sdj")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(42.5, -94.1667)

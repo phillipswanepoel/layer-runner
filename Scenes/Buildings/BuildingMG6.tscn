@@ -83,3 +83,6 @@ range_layer_min = -3
 range_layer_max = -3
 texture = ExtResource("2_var8p")
 texture_scale = 0.13
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(47, -93)

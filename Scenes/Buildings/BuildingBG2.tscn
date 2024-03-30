@@ -19,3 +19,6 @@ polygon = PackedVector2Array(-29, 80, -29, -59, -33, -59, -33, -61, -29, -61, -2
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(29, -80)
 occluder = SubResource("OccluderPolygon2D_gw8tl")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(51.8182, -114.545)
