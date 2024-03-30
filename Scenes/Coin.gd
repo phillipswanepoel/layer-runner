@@ -18,14 +18,14 @@ func set_layer(l : int):
 	var sprite = $AnimatedSprite2D
 	layer = l
 	if layer == 2:
-		sprite.scale = Vector2(0.15, 0.15)
+		sprite.scale = Vector2(0.1, 0.1)
 		colliders[0].disabled = true
 		colliders[1].disabled = true
 		colliders[2].disabled = false
 		set_collision_mask_value(5, false) 
 		set_collision_mask_value(7, true) 		
 	elif layer == 1:
-		sprite.scale = Vector2(0.2, 0.2)
+		sprite.scale = Vector2(0.25, 0.25)
 		colliders[0].disabled = true
 		colliders[1].disabled = false
 		colliders[2].disabled = true

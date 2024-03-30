@@ -42,3 +42,8 @@ func update_sound_volume(new : float):
 	for bus in sound_busses:
 		AudioServer.set_bus_volume_db(bus, linear_to_db(new/10.0))
 		
+
+
+func _on_music_finished() -> void:
+	$Music.stop()
+	$Music.play()

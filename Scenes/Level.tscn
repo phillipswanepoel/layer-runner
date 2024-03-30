@@ -203,7 +203,7 @@ autostart = true
 [node name="HiScoreLabel" type="Label" parent="Control"]
 self_modulate = Color(1, 0.380392, 0.313726, 1)
 layout_mode = 0
-offset_left = 223.0
+offset_left = 184.0
 offset_top = 3.0
 offset_right = 303.0
 offset_bottom = 26.0
@@ -212,6 +212,7 @@ theme_override_font_sizes/font_size = 4
 text = "Hi Score: 0
 "
 label_settings = SubResource("LabelSettings_ry1ex")
+horizontal_alignment = 2
 
 [node name="Button" type="Button" parent="Control"]
 visible = false
