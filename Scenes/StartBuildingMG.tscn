@@ -8,7 +8,7 @@ modulate = Color(0.733333, 0.733333, 0.733333, 1)
 
 [node name="BuildingFg17" parent="." groups=["start"] instance=ExtResource("5_mnsnj")]
 z_index = -6
-position = Vector2(148, 112)
+position = Vector2(137, 121)
 collision_layer = 2
 
 [node name="BuildingFg16" parent="." groups=["start"] instance=ExtResource("6_dwg27")]
@@ -18,7 +18,7 @@ collision_layer = 2
 
 [node name="BuildingFg18" parent="." groups=["start"] instance=ExtResource("6_dwg27")]
 z_index = -6
-position = Vector2(289, 143)
+position = Vector2(283, 171)
 collision_layer = 2
 
 [node name="Destruct Timer" type="Timer" parent="."]

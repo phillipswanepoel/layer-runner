@@ -7,7 +7,7 @@ modulate = Color(0.733333, 0.733333, 0.733333, 1)
 
 [node name="BuildingFg20" parent="." groups=["start"] instance=ExtResource("2_kxdsk")]
 z_index = -6
-position = Vector2(254, 137)
+position = Vector2(217, 197)
 collision_layer = 4
 
 [node name="BuildingFg21" parent="." groups=["start"] instance=ExtResource("2_kxdsk")]
