@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bexgphgjqhlec"]
+[gd_scene load_steps=15 format=3 uid="uid://bexgphgjqhlec"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_1aabn"]
 [ext_resource type="Texture2D" uid="uid://ctv5pdivgmim3" path="res://Assets/Backgrounds/Clouds Background Day.png" id="1_2o8vt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="3_fmb13"]
 [ext_resource type="Texture2D" uid="uid://b1htek331jg1g" path="res://Assets/Backgrounds/Stars Background.png" id="3_h8bcv"]
 [ext_resource type="Script" path="res://Scenes/ParallaxBackground.gd" id="4_ltyqg"]
+[ext_resource type="Texture2D" uid="uid://bi72yjxuce5" path="res://Assets/Character/Main Menu Night Character.png" id="9_3b0cm"]
 [ext_resource type="Texture2D" uid="uid://w51wklgig7tt" path="res://Assets/GUI/back_button.png" id="10_7k1de"]
 
 [sub_resource type="Animation" id="Animation_vlyhd"]
@@ -350,6 +351,11 @@ texture = ExtResource("2_xqpa5")
 centered = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Characters" type="Sprite2D" parent="CanvasLayer"]
+z_index = 2
+texture = ExtResource("9_3b0cm")
+centered = false
 
 [node name="DayBuildings" type="Sprite2D" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)

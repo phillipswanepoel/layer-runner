@@ -6,7 +6,7 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lyp82"]
 polygon = PackedVector2Array(3, -3.1, 6, -1.1, 6, 26, 20.8, 26, 25, 30.2, 25, 80, -23, 80, -23, -2, -20.8, -2, -20, -2.8, -20, -5, 3, -5)
 
-[node name="BuildingFg1" type="StaticBody2D"]
+[node name="BuildingFg2" type="StaticBody2D"]
 scale = Vector2(1.1, 1.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

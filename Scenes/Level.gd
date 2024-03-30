@@ -142,8 +142,7 @@ func spawn_coin(pos : Vector2, layer: int):
 	layers_paths[layer].add_child(path_follow)
 	path_follow.add_child(coin_instance)	
 
-func _on_building_gaps_timeout() -> void:
-	print("lul!")
+func _on_building_gaps_timeout() -> void:	
 	rand_ceiling += 0.25
 	rand_floor += 0.25
 

@@ -6,7 +6,7 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_28cdf"]
 polygon = PackedVector2Array(-28.9, -25.6, -25.9, -23.6, -25.9, -6.1, 24.9, -6.1, 24.9, -16.1, 26.4, -16.1, 28.4, -19.1, 46.1, -19.1, 46.1, -17.6, 49.1, -15.6, 49.1, 60, 24.9, 60, 24.9, 26.1, -25.9, 26.1, -25.9, 60, -50, 60, -50, -23.7, -47.1, -25.6, -47.1, -27.1, -28.9, -27.1)
 
-[node name="BuildingFg1" type="StaticBody2D"]
+[node name="BuildingFg2" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(47, -60)

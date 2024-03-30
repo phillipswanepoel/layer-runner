@@ -6,7 +6,7 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e5hnj"]
 polygon = PackedVector2Array(4.1, -21.1, 4.1, -16.8, 4.7, -15.6, 14.5, -15.6, 18.1, -12, 18.1, -8.6, 24.6, -8.6, 27.6, -4.6, 31.4, -4.6, 36.1, -1.1, 36.1, 42.5, -36.1, 42.5, -36.1, -1.6, -34.5, -1.6, -31.5, -4.6, -27.1, -4.6, -23.5, -8.6, -17.1, -8.6, -17.1, -12, -13.5, -15.6, -4.1, -15.6, -4.1, -16.6, -2.9, -21.6, -1.5, -21.6, -1.1, -22, -1.1, -23.2, 0.0999985, -23.8)
 
-[node name="BuildingFg1" type="StaticBody2D"]
+[node name="BuildingFg2" type="StaticBody2D"]
 modulate = Color(0.733333, 0.733333, 0.733333, 1)
 scale = Vector2(1.2, 1.2)
 
