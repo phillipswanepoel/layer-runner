@@ -66,12 +66,12 @@ one_shot = true
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(425, 41)
+position = Vector2(478, 41)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("8_qbitp")
 
 [node name="PointLight2D4" type="PointLight2D" parent="."]
-position = Vector2(426, 28)
+position = Vector2(479, 28)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.85
 range_layer_min = -1
@@ -80,35 +80,35 @@ texture = ExtResource("14_ca11v")
 texture_scale = 0.2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 409.0
+offset_left = 462.0
 offset_top = 51.0
-offset_right = 483.0
+offset_right = 536.0
 offset_bottom = 80.0
 theme = ExtResource("9_5jq3q")
 theme_override_font_sizes/normal_font_size = 8
 text = "Jump"
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(567, 39)
+position = Vector2(271, 39)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("9_hamgi")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(567, 19)
+position = Vector2(271, 18)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10_32tk3")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 543.0
+offset_left = 246.0
 offset_top = 51.0
-offset_right = 617.0
+offset_right = 320.0
 offset_bottom = 80.0
 theme = ExtResource("9_5jq3q")
 theme_override_font_sizes/normal_font_size = 8
 text = "move"
 
 [node name="PointLight2D3" type="PointLight2D" parent="."]
-position = Vector2(557, 8)
+position = Vector2(262, 3)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.85
 range_layer_min = -1
@@ -117,35 +117,35 @@ texture = ExtResource("14_ca11v")
 texture_scale = 0.2
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(664, 38)
+position = Vector2(841, 38)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11_yndk5")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
-position = Vector2(642, 38)
+position = Vector2(819, 38)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12_8v26e")
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
-offset_left = 638.0
+offset_left = 815.0
 offset_top = 51.0
-offset_right = 743.0
+offset_right = 920.0
 offset_bottom = 103.0
 theme = ExtResource("9_5jq3q")
 theme_override_font_sizes/normal_font_size = 8
 text = "swap"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
-offset_left = 630.0
+offset_left = 807.0
 offset_top = 59.0
-offset_right = 735.0
+offset_right = 912.0
 offset_bottom = 111.0
 theme = ExtResource("9_5jq3q")
 theme_override_font_sizes/normal_font_size = 8
 text = "layers"
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(653, 7)
+position = Vector2(830, 7)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.85
 range_layer_min = -1

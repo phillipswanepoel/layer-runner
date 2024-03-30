@@ -1,14 +1,54 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dqk3bpubsidfh"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dqk3bpubsidfh"]
 
+[ext_resource type="Texture2D" uid="uid://c610ht74w8g3m" path="res://Assets/GUI/slider_grabber5.png" id="1_jq30f"]
 [ext_resource type="FontFile" uid="uid://ch45ppmcxobwc" path="res://Assets/Fonts/Early GameBoy.ttf" id="1_o8t46"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sv31s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0jh6b"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urml1"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kope"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tx2cq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cuuh"]
+bg_color = Color(0.823529, 0.576471, 0.34902, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+anti_aliasing_size = 0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ckj1"]
+bg_color = Color(0.823529, 0.576471, 0.34902, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+anti_aliasing_size = 0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxy7y"]
+bg_color = Color(1, 0.92549, 0.839216, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+anti_aliasing_size = 0.5
 
 [resource]
 default_font = ExtResource("1_o8t46")
@@ -16,5 +56,13 @@ Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_color = Color(0.956863, 0.831373, 0.72549, 1)
 Button/styles/disabled = SubResource("StyleBoxEmpty_sv31s")
 Button/styles/focus = SubResource("StyleBoxEmpty_0jh6b")
+Button/styles/hover = SubResource("StyleBoxFlat_urml1")
 Button/styles/normal = SubResource("StyleBoxEmpty_2kope")
 Button/styles/pressed = SubResource("StyleBoxEmpty_tx2cq")
+HSlider/constants/center_grabber = -1
+HSlider/icons/grabber = ExtResource("1_jq30f")
+HSlider/icons/grabber_disabled = ExtResource("1_jq30f")
+HSlider/icons/grabber_highlight = ExtResource("1_jq30f")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_5cuuh")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_3ckj1")
+HSlider/styles/slider = SubResource("StyleBoxFlat_mxy7y")

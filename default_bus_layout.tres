@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://gudmcplcgibd"]
+[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://gudmcplcgibd"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_pw07p"]
 resource_name = "Reverb"
@@ -12,12 +12,6 @@ resonance = 0.3
 
 [sub_resource type="AudioEffectLowShelfFilter" id="AudioEffectLowShelfFilter_ph3aq"]
 resource_name = "LowShelfFilter"
-
-[sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_gtfxx"]
-resource_name = "HighPassFilter"
-
-[sub_resource type="AudioEffectHighShelfFilter" id="AudioEffectHighShelfFilter_516sl"]
-resource_name = "HighShelfFilter"
 
 [resource]
 bus/1/name = &"Reverb"
@@ -38,13 +32,15 @@ bus/2/effect/0/effect = SubResource("AudioEffectLowPassFilter_3p2w7")
 bus/2/effect/0/enabled = true
 bus/2/effect/1/effect = SubResource("AudioEffectLowShelfFilter_ph3aq")
 bus/2/effect/1/enabled = true
-bus/3/name = &"High"
+bus/3/name = &"Death"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = 0.0
 bus/3/send = &"Master"
-bus/3/effect/0/effect = SubResource("AudioEffectHighPassFilter_gtfxx")
-bus/3/effect/0/enabled = true
-bus/3/effect/1/effect = SubResource("AudioEffectHighShelfFilter_516sl")
-bus/3/effect/1/enabled = true
+bus/4/name = &"Music"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = -7.26851
+bus/4/send = &"Master"

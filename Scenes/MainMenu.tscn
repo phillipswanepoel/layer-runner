@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bexgphgjqhlec"]
+[gd_scene load_steps=14 format=3 uid="uid://bexgphgjqhlec"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_1aabn"]
 [ext_resource type="Texture2D" uid="uid://ctv5pdivgmim3" path="res://Assets/Backgrounds/Clouds Background Day.png" id="1_2o8vt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="3_fmb13"]
 [ext_resource type="Texture2D" uid="uid://b1htek331jg1g" path="res://Assets/Backgrounds/Stars Background.png" id="3_h8bcv"]
 [ext_resource type="Script" path="res://Scenes/ParallaxBackground.gd" id="4_ltyqg"]
+[ext_resource type="Texture2D" uid="uid://w51wklgig7tt" path="res://Assets/GUI/back_button.png" id="10_7k1de"]
 
 [sub_resource type="Animation" id="Animation_vlyhd"]
 length = 0.001
@@ -39,7 +40,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = false
-tracks/2/path = NodePath("CanvasLayer3/Control/PlayButton:modulate")
+tracks/2/path = NodePath("CanvasLayer3/Control1/PlayButton:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -51,7 +52,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = false
-tracks/3/path = NodePath("CanvasLayer3/Control/QuitButton:modulate")
+tracks/3/path = NodePath("CanvasLayer3/Control1/QuitButton:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -63,7 +64,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = false
-tracks/4/path = NodePath("CanvasLayer3/Control/SettingsButton:modulate")
+tracks/4/path = NodePath("CanvasLayer3/Control1/SettingsButton:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -111,7 +112,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("CanvasLayer3/Control/PlayButton:theme_override_colors/font_color")
+tracks/8/path = NodePath("CanvasLayer3/Control1/PlayButton:theme_override_colors/font_color")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -123,7 +124,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("CanvasLayer3/Control/QuitButton:theme_override_colors/font_color")
+tracks/9/path = NodePath("CanvasLayer3/Control1/QuitButton:theme_override_colors/font_color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -135,7 +136,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("CanvasLayer3/Control/SettingsButton:theme_override_colors/font_color")
+tracks/10/path = NodePath("CanvasLayer3/Control1/SettingsButton:theme_override_colors/font_color")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -176,7 +177,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = false
-tracks/2/path = NodePath("CanvasLayer3/Control/PlayButton:modulate")
+tracks/2/path = NodePath("CanvasLayer3/Control1/PlayButton:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -188,7 +189,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = false
-tracks/3/path = NodePath("CanvasLayer3/Control/SettingsButton:modulate")
+tracks/3/path = NodePath("CanvasLayer3/Control1/SettingsButton:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -200,7 +201,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = false
-tracks/4/path = NodePath("CanvasLayer3/Control/QuitButton:modulate")
+tracks/4/path = NodePath("CanvasLayer3/Control1/QuitButton:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -248,7 +249,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("CanvasLayer3/Control/PlayButton:theme_override_colors/font_color")
+tracks/8/path = NodePath("CanvasLayer3/Control1/PlayButton:theme_override_colors/font_color")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -260,7 +261,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("CanvasLayer3/Control/SettingsButton:theme_override_colors/font_color")
+tracks/9/path = NodePath("CanvasLayer3/Control1/SettingsButton:theme_override_colors/font_color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -272,7 +273,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("CanvasLayer3/Control/QuitButton:theme_override_colors/font_color")
+tracks/10/path = NodePath("CanvasLayer3/Control1/QuitButton:theme_override_colors/font_color")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -280,6 +281,30 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823529, 0.576471, 0.34902, 1), Color(0, 0, 0, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer3/Settings/MusicLabel:theme_override_colors/font_color")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 5, 7.5, 10, 15, 17.5, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [null, null, Color(0.823529, 0.576471, 0.34902, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823529, 0.576471, 0.34902, 1), null]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer3/Settings/SoundLabel:theme_override_colors/font_color")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 5, 7.5, 10, 15, 17.5, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [null, null, Color(0.823529, 0.576471, 0.34902, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.823529, 0.576471, 0.34902, 1), null]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l02bv"]
@@ -351,14 +376,14 @@ offset = Vector2(160, 90)
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 layer = 2
 
-[node name="Control" type="Control" parent="CanvasLayer3"]
+[node name="Control1" type="Control" parent="CanvasLayer3"]
 z_index = 100
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PlayButton" type="Button" parent="CanvasLayer3/Control"]
+[node name="PlayButton" type="Button" parent="CanvasLayer3/Control1"]
 layout_mode = 0
 offset_left = 69.0
 offset_top = 16.0
@@ -371,7 +396,7 @@ action_mode = 0
 text = "Play"
 flat = true
 
-[node name="SettingsButton" type="Button" parent="CanvasLayer3/Control"]
+[node name="SettingsButton" type="Button" parent="CanvasLayer3/Control1"]
 layout_mode = 0
 offset_left = 155.0
 offset_top = 32.0
@@ -385,7 +410,7 @@ action_mode = 0
 text = "Settings"
 flat = true
 
-[node name="QuitButton" type="Button" parent="CanvasLayer3/Control"]
+[node name="QuitButton" type="Button" parent="CanvasLayer3/Control1"]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 70.0
@@ -399,6 +424,66 @@ action_mode = 0
 text = "Quit"
 flat = true
 
-[connection signal="pressed" from="CanvasLayer3/Control/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CanvasLayer3/Control/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="CanvasLayer3/Control/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Settings" type="Control" parent="CanvasLayer3"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 23.0
+offset_top = -73.0
+offset_right = 63.0
+offset_bottom = -33.0
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CanvasLayer3/Settings"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 106.0
+offset_right = 195.0
+offset_bottom = 122.0
+theme = ExtResource("3_fmb13")
+value = 50.0
+
+[node name="SoundVolumeSlider" type="HSlider" parent="CanvasLayer3/Settings"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 125.0
+offset_right = 195.0
+offset_bottom = 141.0
+theme = ExtResource("3_fmb13")
+value = 50.0
+
+[node name="MusicLabel" type="Label" parent="CanvasLayer3/Settings"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 101.0
+offset_right = 209.0
+offset_bottom = 124.0
+theme = ExtResource("3_fmb13")
+theme_override_font_sizes/font_size = 8
+text = "Music "
+
+[node name="SoundLabel" type="Label" parent="CanvasLayer3/Settings"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 120.0
+offset_right = 230.0
+offset_bottom = 143.0
+theme = ExtResource("3_fmb13")
+theme_override_font_sizes/font_size = 8
+text = "Sound"
+
+[node name="Button" type="Button" parent="CanvasLayer3/Settings"]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 91.0
+offset_right = 198.0
+offset_bottom = 102.0
+theme = ExtResource("3_fmb13")
+action_mode = 0
+icon = ExtResource("10_7k1de")
+
+[connection signal="pressed" from="CanvasLayer3/Control1/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer3/Control1/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer3/Control1/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="CanvasLayer3/Settings/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer3/Settings/SoundVolumeSlider" to="." method="_on_sound_volume_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer3/Settings/Button" to="." method="_on_button_pressed"]

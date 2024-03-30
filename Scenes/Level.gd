@@ -46,7 +46,7 @@ func _physics_process(delta):
 	cum_delta += delta
 	if cum_delta > 1:
 		cum_delta = 0
-		speed += 2
+		speed += 1.8
 		
 @export var fg_buildings : Array[PackedScene] = []
 @onready var fg_timer = $FG/FGTimer
@@ -115,11 +115,10 @@ func _on_building_gaps_timeout() -> void:
 func _on_button_pressed() -> void:
 	get_tree().reload_current_scene()
 	
-@onready var death_sound = $AudioStreamPlayer2D
 func _on_death_zone_body_entered(_body: Node2D) -> void:
 	HiScore.new_score(score)
 	change_hi_score(score)
-	death_sound.play()
+	Sound.play_death_sound()	
 	$Control/Button.disabled = false
 	$Control/Button.visible = true
 	$Control/ScoreLabel/ScoreTimer.queue_free()
