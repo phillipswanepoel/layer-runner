@@ -69,7 +69,7 @@ texture_scale = 0.05
 [node name="PointLight2D7" type="PointLight2D" parent="."]
 position = Vector2(44, -68)
 color = Color(1, 0.643137, 0.321569, 1)
-energy = 0.2
+energy = 0.45
 range_layer_min = -3
 range_layer_max = -3
 texture = ExtResource("2_p0und")

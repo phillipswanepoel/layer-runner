@@ -116,7 +116,7 @@ position = Vector2(360, 185)
 rotation = 3.14159
 
 [node name="CanvasModulate" type="CanvasModulate" parent="BG"]
-color = Color(0.521569, 0.486275, 0.615686, 1)
+color = Color(0.517647, 0.482353, 0.611765, 1)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="BG"]
 shadow_enabled = true
@@ -143,7 +143,7 @@ position = Vector2(360, 180)
 rotation = 3.14159
 
 [node name="CanvasModulate" type="CanvasModulate" parent="MG"]
-color = Color(0.54902, 0.596078, 0.67451, 1)
+color = Color(0.537255, 0.584314, 0.662745, 1)
 
 [node name="FG" type="CanvasLayer" parent="."]
 layer = -1
@@ -171,7 +171,7 @@ rotation = 3.14159
 position = Vector2(26.6667, 63.3333)
 
 [node name="CanvasModulate3" type="CanvasModulate" parent="FG"]
-color = Color(0.733333, 0.733333, 0.733333, 1)
+color = Color(0.8, 0.8, 0.8, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 90)

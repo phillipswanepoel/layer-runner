@@ -60,7 +60,7 @@ occluder = SubResource("OccluderPolygon2D_f5g7a")
 [node name="PointLight2D6" type="PointLight2D" parent="."]
 position = Vector2(29, -49)
 color = Color(1, 0.643137, 0.321569, 1)
-energy = 0.2
+energy = 0.3
 range_layer_min = -3
 range_layer_max = -3
 texture = ExtResource("2_uyti0")
