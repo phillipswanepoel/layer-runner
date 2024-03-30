@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwxx1acu6nycg"]
+[gd_scene load_steps=15 format=3 uid="uid://bwxx1acu6nycg"]
 
 [ext_resource type="PackedScene" uid="uid://c1l327ji5ienp" path="res://Scenes/Buildings/BuildingStart.tscn" id="1_ftikd"]
 [ext_resource type="PackedScene" uid="uid://cvejj0ygvejsp" path="res://Scenes/Buildings/BuildingMG3.tscn" id="3_3og0l"]
@@ -7,6 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://dj015okx5ocy6" path="res://Scenes/Buildings/BuildingFG7.tscn" id="6_ck72x"]
 [ext_resource type="PackedScene" uid="uid://ccdgfdwu6vuqj" path="res://Scenes/Buildings/BuildingFG6.tscn" id="7_gqy2q"]
 [ext_resource type="PackedScene" uid="uid://b2qi7gfk2g4oy" path="res://Scenes/Buildings/BuildingFG5.tscn" id="8_ioax7"]
+[ext_resource type="Texture2D" uid="uid://btk6vbddmh306" path="res://Assets/GUI/spacebar.png" id="8_qbitp"]
+[ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="9_5jq3q"]
+[ext_resource type="Texture2D" uid="uid://b8j6s8rbra4qu" path="res://Assets/GUI/Arrows left and right.png" id="9_hamgi"]
+[ext_resource type="Texture2D" uid="uid://cce3464ft6ynn" path="res://Assets/GUI/AD.png" id="10_32tk3"]
+[ext_resource type="Texture2D" uid="uid://bm7qgskui7exo" path="res://Assets/GUI/arrows up and down.png" id="11_yndk5"]
+[ext_resource type="Texture2D" uid="uid://dvnwrqwdj1iv8" path="res://Assets/GUI/WS.png" id="12_8v26e"]
+[ext_resource type="Texture2D" uid="uid://bw5sev87g0umx" path="res://Assets/FX/light.png" id="14_ca11v"]
 
 [node name="StartBuilding" type="Node2D"]
 modulate = Color(0.733333, 0.733333, 0.733333, 1)
@@ -57,6 +64,94 @@ position = Vector2(317, 203)
 wait_time = 8.0
 one_shot = true
 autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(425, 41)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_qbitp")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(426, 28)
+color = Color(0.917647, 0.517647, 0, 1)
+energy = 0.85
+range_layer_min = -1
+range_layer_max = -1
+texture = ExtResource("14_ca11v")
+texture_scale = 0.2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 409.0
+offset_top = 51.0
+offset_right = 483.0
+offset_bottom = 80.0
+theme = ExtResource("9_5jq3q")
+theme_override_font_sizes/normal_font_size = 8
+text = "Jump"
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(567, 39)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("9_hamgi")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(567, 19)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_32tk3")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 543.0
+offset_top = 51.0
+offset_right = 617.0
+offset_bottom = 80.0
+theme = ExtResource("9_5jq3q")
+theme_override_font_sizes/normal_font_size = 8
+text = "move"
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(557, 8)
+color = Color(0.917647, 0.517647, 0, 1)
+energy = 0.85
+range_layer_min = -1
+range_layer_max = -1
+texture = ExtResource("14_ca11v")
+texture_scale = 0.2
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(664, 38)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("11_yndk5")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(642, 38)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_8v26e")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 638.0
+offset_top = 51.0
+offset_right = 743.0
+offset_bottom = 103.0
+theme = ExtResource("9_5jq3q")
+theme_override_font_sizes/normal_font_size = 8
+text = "swap"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+offset_left = 630.0
+offset_top = 59.0
+offset_right = 735.0
+offset_bottom = 111.0
+theme = ExtResource("9_5jq3q")
+theme_override_font_sizes/normal_font_size = 8
+text = "layers"
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(653, 7)
+color = Color(0.917647, 0.517647, 0, 1)
+energy = 0.85
+range_layer_min = -1
+range_layer_max = -1
+texture = ExtResource("14_ca11v")
+texture_scale = 0.2
 
 [connection signal="timeout" from="Destruct Timer" to="." method="_on_destruct_timer_timeout"]
 
