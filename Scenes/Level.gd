@@ -64,11 +64,11 @@ func _on_fg_timer_timeout() -> void:
 	path_follow.add_child(chosen_building)
 	
 	#start timer with some random interval
-	var random_wait : float = rng.randf_range(rand_floor+0.1, rand_ceiling+0.1)*(1/fg_speed_factor)
+	var random_wait : float = rng.randf_range(rand_floor+0.1, rand_ceiling+0.1)*(1/fg_speed_factor)*(60/speed)
 	fg_timer.start(random_wait)
 	
 	var coin_chance = rng.randf()
-	if coin_chance <= 0.99:		
+	if coin_chance <= 0.25:		
 		var coin_pos = chosen_building.get_node("Marker2D").position
 		spawn_coin(coin_pos, 0)
 	
@@ -91,11 +91,11 @@ func _on_mg_timer_timeout() -> void:
 	path_follow.add_child(chosen_building)
 	
 	#start timer with some random interval
-	var random_wait : float = rng.randf_range(rand_floor, rand_ceiling)*(1/mg_speed_factor)
+	var random_wait : float = rng.randf_range(rand_floor, rand_ceiling)*(1/mg_speed_factor)*(60/speed)
 	mg_timer.start(random_wait)
 	
 	var coin_chance = rng.randf()
-	if coin_chance <= 0.25:
+	if coin_chance <= 0.2:
 		var coin_pos = chosen_building.get_node("Marker2D").position
 		spawn_coin(coin_pos, 1)
 	
@@ -115,7 +115,7 @@ func _on_bg_timer_timeout() -> void:
 	path_follow.add_child(chosen_building)
 	
 	#start timer with some random interval
-	var random_wait : float = rng.randf_range(rand_floor-0.1, rand_ceiling-0.1)*(1/bg_speed_factor)
+	var random_wait : float = rng.randf_range(rand_floor-0.1, rand_ceiling-0.1)*(1/bg_speed_factor)*(60/speed)
 	bg_timer.start(random_wait)
 	
 	#spawn coin
@@ -143,7 +143,9 @@ func spawn_coin(pos : Vector2, layer: int):
 	path_follow.add_child(coin_instance)	
 
 func _on_building_gaps_timeout() -> void:
-	rand_ceiling += 0.05
+	print("lul!")
+	rand_ceiling += 0.25
+	rand_floor += 0.25
 
 func _on_button_pressed() -> void:
 	get_tree().reload_current_scene()

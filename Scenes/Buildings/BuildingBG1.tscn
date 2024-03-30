@@ -69,4 +69,4 @@ texture = ExtResource("2_cdjat")
 texture_scale = 0.13
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(30.9091, -166.364)
+position = Vector2(32.7273, -166.364)

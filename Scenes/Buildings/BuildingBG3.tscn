@@ -21,4 +21,4 @@ position = Vector2(23, -80)
 occluder = SubResource("OccluderPolygon2D_83dlk")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(27.2727, -152.727)
+position = Vector2(28.1818, -152.727)

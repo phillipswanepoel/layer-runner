@@ -59,4 +59,4 @@ position = Vector2(50, -60)
 occluder = SubResource("OccluderPolygon2D_mfnxf")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(16, -124)
+position = Vector2(15, -124)
