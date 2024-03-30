@@ -31,6 +31,16 @@ func change_layer(dir : int):
 	collision_shapes[current_layer].disabled = false	
 	set_collision_mask_value(current_layer+1, true)		
 	
+	
+	for i in range(5, 8):
+		set_collision_layer_value(i+1, false)
+	if current_layer == 0:
+		set_collision_layer_value(5, true)	
+	elif current_layer == 1:
+		set_collision_layer_value(6, true)	
+	else:
+		set_collision_layer_value(7, true)	
+	
 	#change sprite and visual layer
 	anim_sprite.play(animations[current_layer])
 	change_player_layer.emit(current_layer)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdad8mj0lha77"]
+[gd_scene load_steps=14 format=3 uid="uid://cdad8mj0lha77"]
 
 [ext_resource type="Script" path="res://Scenes/Coin.gd" id="1_r7xvq"]
 [ext_resource type="Texture2D" uid="uid://bdmlvglojgvnc" path="res://Assets/Coins/Coin_Sheet.png" id="1_rsaqy"]
@@ -60,12 +60,18 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m544w"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_u43uo"]
 radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v35xg"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7885d"]
+radius = 2.0
 
 [node name="Coin" type="Area2D"]
 collision_layer = 16
-collision_mask = 8
+collision_mask = 16
 script = ExtResource("1_r7xvq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -75,6 +81,14 @@ frame = 1
 frame_progress = 0.00706485
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_m544w")
+shape = SubResource("CircleShape2D_u43uo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v35xg")
+disabled = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7885d")
+disabled = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

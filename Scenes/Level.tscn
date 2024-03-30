@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cvdk844k0m0c2" path="res://Scenes/Buildings/BuildingBG4.tscn" id="19_dm54y"]
 [ext_resource type="PackedScene" uid="uid://ywh2wiabvugm" path="res://Scenes/Buildings/BuildingBG5.tscn" id="20_cd36b"]
 [ext_resource type="PackedScene" uid="uid://by540i5vyurk6" path="res://Scenes/Buildings/BuildingBG6.tscn" id="21_pi3ct"]
-[ext_resource type="PackedScene" path="res://Scenes/Coin.tscn" id="22_dow26"]
+[ext_resource type="PackedScene" uid="uid://cdad8mj0lha77" path="res://Scenes/Coin.tscn" id="22_dow26"]
 [ext_resource type="PackedScene" uid="uid://dck3wqdu83dns" path="res://Scenes/Buildings/BuildingBG7.tscn" id="22_egj70"]
 [ext_resource type="PackedScene" uid="uid://bwxx1acu6nycg" path="res://Scenes/StartBuilding.tscn" id="26_6dkg1"]
 [ext_resource type="PackedScene" uid="uid://batt6i6cbkfnt" path="res://Scenes/StartBuildingBG.tscn" id="26_h0awk"]

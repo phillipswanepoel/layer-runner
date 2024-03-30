@@ -128,10 +128,11 @@ func _on_bg_timer_timeout() -> void:
 		spawn_coin(coin_pos, 2)
 
 @export var coin : PackedScene
+var layer_group = ["fg", "mg", "bg"]
 var follower_layers = ["fg_followers", "mg_followers", "bg_followers"]
 @onready var layers_paths = [fg_path, mg_path, bg_path]
 func spawn_coin(pos : Vector2, layer: int):	
-	var coin_instance : Area2D = coin.instantiate()	
+	var coin_instance : Area2D = coin.instantiate()		
 	var path_follow = PathFollow2D.new()
 	path_follow.h_offset = pos.x
 	path_follow.v_offset = pos.y		
@@ -141,6 +142,7 @@ func spawn_coin(pos : Vector2, layer: int):
 	path_follow.add_to_group(follower_layers[layer])
 	layers_paths[layer].add_child(path_follow)
 	path_follow.add_child(coin_instance)	
+	coin_instance.set_layer(layer)
 
 func _on_building_gaps_timeout() -> void:	
 	rand_ceiling += 0.25

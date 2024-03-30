@@ -17,7 +17,14 @@ func play_death_sound():
 	death_sound.play()
 	
 @onready var coin_sound = $CoinSound
-func play_coin_sound():
+func play_coin_sound(layer : int):
+	if layer == 0:
+		coin_sound.pitch_scale = 1
+	elif layer == 1:
+		coin_sound.pitch_scale = 0.8
+	else:
+		coin_sound.pitch_scale = 0.6
+				
 	coin_sound.play()
 	
 @onready var bus_music = AudioServer.get_bus_index("Music")
