@@ -156,11 +156,17 @@ func _on_death_zone_body_entered(_body: Node2D) -> void:
 	HiScore.new_score(HiScore.score)
 	change_hi_score(HiScore.score)
 	Sound.play_death_sound()	
-	$Control/Button.disabled = false
-	$Control/Button.visible = true
+	$Control/RestartButton.disabled = false
+	$Control/RestartButton.visible = true
+	$Control/MainMenuButton.disabled = false
+	$Control/MainMenuButton.visible = true
 	$Control/ScoreLabel/ScoreTimer.queue_free()	
 
 @onready var score_label : Label = $Control/ScoreLabel
 func _on_score_timer_timeout() -> void:
 	HiScore.score += 1
 	score_label.text = 'Score: ' + str(HiScore.score)
+
+
+func _on_main_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")

@@ -214,7 +214,7 @@ text = "Hi Score: 0
 label_settings = SubResource("LabelSettings_ry1ex")
 horizontal_alignment = 2
 
-[node name="Button" type="Button" parent="Control"]
+[node name="RestartButton" type="Button" parent="Control"]
 visible = false
 self_modulate = Color(0.603922, 0.34902, 0, 1)
 layout_mode = 1
@@ -233,6 +233,27 @@ shortcut = SubResource("Shortcut_ciqjb")
 shortcut_feedback = false
 shortcut_in_tooltip = false
 text = "Restart?"
+flat = true
+
+[node name="MainMenuButton" type="Button" parent="Control"]
+visible = false
+self_modulate = Color(0.603922, 0.34902, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.4
+anchor_bottom = 0.7
+offset_left = 61.0
+offset_top = 102.0
+offset_right = 125.0
+offset_bottom = 112.0
+theme = ExtResource("28_43x3w")
+theme_override_font_sizes/font_size = 16
+disabled = true
+action_mode = 0
+shortcut = SubResource("Shortcut_ciqjb")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Main Menu"
 flat = true
 
 [node name="BuildingGaps" type="Timer" parent="."]
@@ -264,6 +285,7 @@ shape = SubResource("RectangleShape2D_xl6fj")
 [connection signal="timeout" from="MG/MGTimer" to="." method="_on_mg_timer_timeout"]
 [connection signal="timeout" from="FG/FGTimer" to="." method="_on_fg_timer_timeout"]
 [connection signal="timeout" from="Control/ScoreLabel/ScoreTimer" to="." method="_on_score_timer_timeout"]
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/RestartButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="timeout" from="BuildingGaps" to="." method="_on_building_gaps_timeout"]
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
