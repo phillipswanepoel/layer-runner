@@ -8,6 +8,8 @@ var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 @onready var player = $FG/Player
 func _ready():	
+	HiScore.score = 0
+	score_label.text = 'Score: ' + str(HiScore.score)
 	player.change_player_layer.connect(_on_player_layer_change)
 	change_hi_score(HiScore.hi_score)
 	
