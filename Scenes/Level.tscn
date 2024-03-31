@@ -145,7 +145,7 @@ position = Vector2(360, 180)
 rotation = 3.14159
 
 [node name="CanvasModulate" type="CanvasModulate" parent="MG"]
-color = Color(0.0509804, 0.168627, 0.270588, 1)
+color = Color(0.537, 0.584, 0.663, 1)
 
 [node name="FG" type="CanvasLayer" parent="."]
 layer = -1
