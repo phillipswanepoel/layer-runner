@@ -145,7 +145,7 @@ position = Vector2(360, 180)
 rotation = 3.14159
 
 [node name="CanvasModulate" type="CanvasModulate" parent="MG"]
-color = Color(0.537255, 0.584314, 0.662745, 1)
+color = Color(0.0509804, 0.168627, 0.270588, 1)
 
 [node name="FG" type="CanvasLayer" parent="."]
 layer = -1
@@ -250,7 +250,6 @@ theme = ExtResource("28_43x3w")
 theme_override_font_sizes/font_size = 16
 disabled = true
 action_mode = 0
-shortcut = SubResource("Shortcut_ciqjb")
 shortcut_feedback = false
 shortcut_in_tooltip = false
 text = "Main Menu"
