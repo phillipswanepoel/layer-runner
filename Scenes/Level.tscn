@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=43 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_hi33k"]
 [ext_resource type="PackedScene" uid="uid://bsbtm18fhi1fu" path="res://Scenes/Buildings/BuildingFG3_b.tscn" id="3_8uc6k"]
@@ -32,6 +32,7 @@
 [ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="28_43x3w"]
 [ext_resource type="Script" path="res://Scenes/PathFollow2D.gd" id="28_l8fg3"]
 [ext_resource type="Texture2D" uid="uid://dqhn4frrmsfmb" path="res://Assets/Coins/Coin.png" id="32_26rxc"]
+[ext_resource type="Texture2D" uid="uid://w51wklgig7tt" path="res://Assets/GUI/back_button.png" id="33_0joj5"]
 
 [sub_resource type="Curve2D" id="Curve2D_jqfty"]
 _data = {
@@ -54,6 +55,8 @@ point_count = 2
 [sub_resource type="LabelSettings" id="LabelSettings_ry1ex"]
 font_size = 8
 shadow_size = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jx5l8"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_gthan"]
 device = -1
@@ -252,6 +255,7 @@ offset_right = 132.0
 offset_bottom = 75.0
 theme = ExtResource("28_43x3w")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jx5l8")
 disabled = true
 action_mode = 0
 shortcut = SubResource("Shortcut_ciqjb")
@@ -259,6 +263,48 @@ shortcut_feedback = false
 shortcut_in_tooltip = false
 text = "Restart?"
 flat = true
+
+[node name="UpgradeButton" type="Button" parent="Control/DeadGui"]
+self_modulate = Color(0.603922, 0.34902, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.4
+anchor_bottom = 0.7
+offset_left = 63.0
+offset_top = 99.0
+offset_right = 255.0
+offset_bottom = 129.0
+theme = ExtResource("28_43x3w")
+theme_override_font_sizes/font_size = 16
+disabled = true
+action_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Upgrades"
+flat = true
+
+[node name="UpgradeGui" type="Control" parent="Control"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container" type="VBoxContainer" parent="Control/UpgradeGui"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeBackButton" type="Button" parent="Control/UpgradeGui"]
+self_modulate = Color(0.50974, 0.333475, 0.165109, 1)
+layout_mode = 0
+offset_left = 82.0
+offset_top = 27.0
+offset_right = 93.0
+offset_bottom = 38.0
+theme = ExtResource("28_43x3w")
+disabled = true
+action_mode = 0
+icon = ExtResource("33_0joj5")
 
 [node name="BuildingGaps" type="Timer" parent="."]
 wait_time = 10.0
@@ -290,5 +336,7 @@ shape = SubResource("RectangleShape2D_xl6fj")
 [connection signal="timeout" from="FG/FGTimer" to="." method="_on_fg_timer_timeout"]
 [connection signal="timeout" from="Control/ScoreLabel/ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="pressed" from="Control/DeadGui/RestartButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/DeadGui/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="Control/UpgradeGui/UpgradeBackButton" to="." method="_on_upgrade_back_button_pressed"]
 [connection signal="timeout" from="BuildingGaps" to="." method="_on_building_gaps_timeout"]
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]

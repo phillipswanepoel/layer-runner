@@ -3,6 +3,7 @@ extends Node
 @onready var score = 0
 @onready var hi_score = 0
 @onready var coin_count = 0
+@onready var upgrade_list = ["DoubleJump"]
 func new_score(s : int) -> void:
 	if s > hi_score:
 		hi_score = s

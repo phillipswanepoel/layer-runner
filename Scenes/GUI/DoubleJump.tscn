@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm04ynafowkfu"]
+
+[ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="1_sqsta"]
+[ext_resource type="Texture2D" uid="uid://yo5na8cpyku" path="res://Assets/GUI/double_jump.png" id="2_tno3n"]
+
+[node name="DoubleJump" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_sqsta")
+icon = ExtResource("2_tno3n")

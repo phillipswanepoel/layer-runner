@@ -153,17 +153,14 @@ func _on_button_pressed() -> void:
 	HiScore.reset_score()
 	get_tree().reload_current_scene()
 	
+@onready var restart_button = $Control/DeadGui/RestartButton
 func _on_death_zone_body_entered(_body: Node2D) -> void:
 	HiScore.new_score(HiScore.score)
 	change_hi_score(HiScore.score)
 	Sound.play_death_sound()	
-	$Control/DeadGui/RestartButton.disabled = false
-	show_dead_gui()
+	toggle_dead_gui()
 	$Control/ScoreLabel/ScoreTimer.queue_free()	
 	
-func show_dead_gui() -> void:
-	$Control/DeadGui.visible = true
-
 @onready var score_label : Label = $Control/ScoreLabel
 func _on_score_timer_timeout() -> void:
 	HiScore.score += 1
@@ -172,3 +169,25 @@ func _on_score_timer_timeout() -> void:
 @onready var coin_label : Label = $Control/CoinLabel
 func _on_coin_consumed() -> void:	
 	coin_label.text = str(HiScore.coin_count)
+	
+@onready var dead_gui = $Control/DeadGui
+func toggle_dead_gui():	
+	restart_button.disabled = !restart_button.disabled	
+	upgrade_button.disabled = !upgrade_button.disabled
+	dead_gui.visible = !dead_gui.visible	
+	
+@onready var upgrade_gui = $Control/UpgradeGui
+@onready var upgrade_back_button = $Control/UpgradeGui/UpgradeBackButton
+func toggle_upgrade_gui():
+	upgrade_gui.visible = !upgrade_gui.visible
+	upgrade_back_button.disabled = !upgrade_back_button.disabled
+
+@onready var upgrade_button = $Control/DeadGui/UpgradeButton
+func _on_upgrade_button_pressed() -> void:
+	toggle_dead_gui()
+	toggle_upgrade_gui()
+	
+func _on_upgrade_back_button_pressed() -> void:
+	toggle_dead_gui()
+	toggle_upgrade_gui()
+	
