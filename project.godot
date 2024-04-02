@@ -15,9 +15,13 @@ run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Scenes/Sound/default_bus_layout.tres"
+
 [autoload]
 
-Sound="*res://Scenes/Sound.tscn"
+Sound="*res://Scenes/Sound/Sound.tscn"
 HiScore="*res://Autoload/HiScore.gd"
 
 [display]

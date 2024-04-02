@@ -1,38 +1,38 @@
 [gd_scene load_steps=43 format=3 uid="uid://bms8uuxojgtle"]
 
-[ext_resource type="Script" path="res://Scenes/Level.gd" id="1_hi33k"]
-[ext_resource type="PackedScene" uid="uid://bsbtm18fhi1fu" path="res://Scenes/Buildings/BuildingFG3_b.tscn" id="3_8uc6k"]
-[ext_resource type="PackedScene" uid="uid://dl8j3e4ff4iuw" path="res://Scenes/Buildings/BuildingMG1.tscn" id="4_6cigh"]
-[ext_resource type="PackedScene" uid="uid://dxne21x0ea6ht" path="res://Scenes/Buildings/BuildingFG4_b.tscn" id="4_mt2dv"]
-[ext_resource type="PackedScene" uid="uid://b2qi7gfk2g4oy" path="res://Scenes/Buildings/BuildingFG5.tscn" id="6_hj8ur"]
-[ext_resource type="PackedScene" uid="uid://jopj67sfeyd4" path="res://Scenes/Player.tscn" id="6_lh7b0"]
-[ext_resource type="PackedScene" uid="uid://davwwc0gopfu8" path="res://Scenes/Buildings/BuildingBG1.tscn" id="6_x6g3h"]
-[ext_resource type="PackedScene" uid="uid://ccdgfdwu6vuqj" path="res://Scenes/Buildings/BuildingFG6.tscn" id="7_1fdn6"]
-[ext_resource type="PackedScene" uid="uid://d2shuh05agkkb" path="res://Scenes/Buildings/BuildingBG2.tscn" id="7_42axd"]
-[ext_resource type="PackedScene" uid="uid://bjqq8h4wisnwg" path="res://Scenes/Buildings/BuildingFG7_b.tscn" id="7_uhcxe"]
-[ext_resource type="PackedScene" uid="uid://c6kpmv6vfhhpc" path="res://Scenes/Buildings/BuildingFG1_b.tscn" id="8_eyt81"]
-[ext_resource type="PackedScene" uid="uid://dyiom864sked4" path="res://Scenes/Buildings/BuildingFG8_b.tscn" id="8_s141t"]
-[ext_resource type="Script" path="res://Scenes/ParallaxBackgroundScroll.gd" id="8_syn6b"]
-[ext_resource type="Texture2D" uid="uid://b1htek331jg1g" path="res://Assets/Backgrounds/Stars Background.png" id="8_y7bud"]
-[ext_resource type="Texture2D" uid="uid://cb8w35sl2wgw0" path="res://Assets/Backgrounds/Clouds Background.png" id="9_jdmu5"]
-[ext_resource type="PackedScene" uid="uid://6qtbsycu4utl" path="res://Scenes/Buildings/BuildingMG2_b.tscn" id="10_62587"]
-[ext_resource type="PackedScene" uid="uid://d2rh0rl5xx8w2" path="res://Scenes/Buildings/BuildingMG3_b.tscn" id="11_fcsg1"]
-[ext_resource type="PackedScene" uid="uid://cg40ouic3cm3v" path="res://Scenes/Buildings/BuildingMG4_b.tscn" id="12_lkhef"]
-[ext_resource type="PackedScene" uid="uid://b4rp13ga5l4go" path="res://Scenes/Buildings/BuildingMG5.tscn" id="14_tg3fu"]
-[ext_resource type="PackedScene" uid="uid://hkt5ccvolabb" path="res://Scenes/Buildings/BuildingMG6.tscn" id="15_6jfh0"]
-[ext_resource type="PackedScene" uid="uid://dhsyra65autqd" path="res://Scenes/Buildings/BuildingBG3.tscn" id="18_qm8r5"]
-[ext_resource type="PackedScene" uid="uid://cvdk844k0m0c2" path="res://Scenes/Buildings/BuildingBG4.tscn" id="19_dm54y"]
-[ext_resource type="PackedScene" uid="uid://ywh2wiabvugm" path="res://Scenes/Buildings/BuildingBG5.tscn" id="20_cd36b"]
-[ext_resource type="PackedScene" uid="uid://by540i5vyurk6" path="res://Scenes/Buildings/BuildingBG6.tscn" id="21_pi3ct"]
-[ext_resource type="PackedScene" uid="uid://cdad8mj0lha77" path="res://Scenes/Coin.tscn" id="22_dow26"]
-[ext_resource type="PackedScene" uid="uid://dck3wqdu83dns" path="res://Scenes/Buildings/BuildingBG7.tscn" id="22_egj70"]
-[ext_resource type="PackedScene" uid="uid://bwxx1acu6nycg" path="res://Scenes/StartBuilding.tscn" id="26_6dkg1"]
-[ext_resource type="PackedScene" uid="uid://batt6i6cbkfnt" path="res://Scenes/StartBuildingBG.tscn" id="26_h0awk"]
-[ext_resource type="PackedScene" uid="uid://28xnsdqkn3k" path="res://Scenes/StartBuildingMG.tscn" id="27_3ftoj"]
-[ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="28_43x3w"]
-[ext_resource type="Script" path="res://Scenes/PathFollow2D.gd" id="28_l8fg3"]
-[ext_resource type="Texture2D" uid="uid://dqhn4frrmsfmb" path="res://Assets/Coins/Coin.png" id="32_26rxc"]
-[ext_resource type="Texture2D" uid="uid://w51wklgig7tt" path="res://Assets/GUI/back_button.png" id="33_0joj5"]
+[ext_resource type="Script" path="res://Scenes/Level/Level.gd" id="1_2chin"]
+[ext_resource type="PackedScene" uid="uid://bsbtm18fhi1fu" path="res://Scenes/Buildings/BuildingFG3_b.tscn" id="2_2n6h5"]
+[ext_resource type="PackedScene" uid="uid://dxne21x0ea6ht" path="res://Scenes/Buildings/BuildingFG4_b.tscn" id="3_22bgk"]
+[ext_resource type="PackedScene" uid="uid://b2qi7gfk2g4oy" path="res://Scenes/Buildings/BuildingFG5.tscn" id="4_aivki"]
+[ext_resource type="PackedScene" uid="uid://ccdgfdwu6vuqj" path="res://Scenes/Buildings/BuildingFG6.tscn" id="5_e7wo7"]
+[ext_resource type="PackedScene" uid="uid://bjqq8h4wisnwg" path="res://Scenes/Buildings/BuildingFG7_b.tscn" id="6_te3nu"]
+[ext_resource type="PackedScene" uid="uid://dyiom864sked4" path="res://Scenes/Buildings/BuildingFG8_b.tscn" id="7_pga7w"]
+[ext_resource type="PackedScene" uid="uid://c6kpmv6vfhhpc" path="res://Scenes/Buildings/BuildingFG1_b.tscn" id="8_d0dc6"]
+[ext_resource type="PackedScene" uid="uid://dl8j3e4ff4iuw" path="res://Scenes/Buildings/BuildingMG1.tscn" id="9_cnm3r"]
+[ext_resource type="PackedScene" uid="uid://6qtbsycu4utl" path="res://Scenes/Buildings/BuildingMG2_b.tscn" id="10_vh7jd"]
+[ext_resource type="PackedScene" uid="uid://d2rh0rl5xx8w2" path="res://Scenes/Buildings/BuildingMG3_b.tscn" id="11_odg6y"]
+[ext_resource type="PackedScene" uid="uid://cg40ouic3cm3v" path="res://Scenes/Buildings/BuildingMG4_b.tscn" id="12_oumpo"]
+[ext_resource type="PackedScene" uid="uid://b4rp13ga5l4go" path="res://Scenes/Buildings/BuildingMG5.tscn" id="13_t0s5u"]
+[ext_resource type="PackedScene" uid="uid://hkt5ccvolabb" path="res://Scenes/Buildings/BuildingMG6.tscn" id="14_q7ouy"]
+[ext_resource type="PackedScene" uid="uid://davwwc0gopfu8" path="res://Scenes/Buildings/BuildingBG1.tscn" id="15_jelm3"]
+[ext_resource type="PackedScene" uid="uid://d2shuh05agkkb" path="res://Scenes/Buildings/BuildingBG2.tscn" id="16_qs88m"]
+[ext_resource type="PackedScene" uid="uid://dhsyra65autqd" path="res://Scenes/Buildings/BuildingBG3.tscn" id="17_0yx3r"]
+[ext_resource type="PackedScene" uid="uid://cvdk844k0m0c2" path="res://Scenes/Buildings/BuildingBG4.tscn" id="18_u53gc"]
+[ext_resource type="PackedScene" uid="uid://ywh2wiabvugm" path="res://Scenes/Buildings/BuildingBG5.tscn" id="19_s2iv8"]
+[ext_resource type="PackedScene" uid="uid://by540i5vyurk6" path="res://Scenes/Buildings/BuildingBG6.tscn" id="20_eh13v"]
+[ext_resource type="PackedScene" uid="uid://dck3wqdu83dns" path="res://Scenes/Buildings/BuildingBG7.tscn" id="21_0t053"]
+[ext_resource type="PackedScene" uid="uid://cdad8mj0lha77" path="res://Scenes/Entities/Coin.tscn" id="22_4rsrw"]
+[ext_resource type="Script" path="res://Scenes/Level/ParallaxBackgroundScroll.gd" id="23_w3gsx"]
+[ext_resource type="Texture2D" uid="uid://b1htek331jg1g" path="res://Assets/Backgrounds/Stars Background.png" id="24_cr68d"]
+[ext_resource type="Texture2D" uid="uid://cb8w35sl2wgw0" path="res://Assets/Backgrounds/Clouds Background.png" id="25_u1l7k"]
+[ext_resource type="Script" path="res://Scenes/Level/PathFollow2D.gd" id="26_gsxy1"]
+[ext_resource type="PackedScene" uid="uid://batt6i6cbkfnt" path="res://Scenes/Level/StartBuildingBG.tscn" id="27_rdfu6"]
+[ext_resource type="PackedScene" uid="uid://28xnsdqkn3k" path="res://Scenes/Level/StartBuildingMG.tscn" id="28_7s12l"]
+[ext_resource type="PackedScene" uid="uid://bwxx1acu6nycg" path="res://Scenes/Level/StartBuilding.tscn" id="29_2fuv8"]
+[ext_resource type="PackedScene" uid="uid://jopj67sfeyd4" path="res://Scenes/Entities/Player.tscn" id="30_cg4k8"]
+[ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="31_5k073"]
+[ext_resource type="Texture2D" uid="uid://dqhn4frrmsfmb" path="res://Assets/Coins/Coin.png" id="32_ltwhd"]
+[ext_resource type="Texture2D" uid="uid://w51wklgig7tt" path="res://Assets/GUI/back_button.png" id="33_iivjq"]
 
 [sub_resource type="Curve2D" id="Curve2D_jqfty"]
 _data = {
@@ -73,21 +73,21 @@ size = Vector2(629.75, 110)
 size = Vector2(205.5, 380.5)
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_hi33k")
-fg_buildings = Array[PackedScene]([ExtResource("3_8uc6k"), ExtResource("3_8uc6k"), ExtResource("4_mt2dv"), ExtResource("4_mt2dv"), ExtResource("6_hj8ur"), ExtResource("7_1fdn6"), ExtResource("7_uhcxe"), ExtResource("7_uhcxe"), ExtResource("8_s141t"), ExtResource("8_s141t"), ExtResource("8_eyt81"), ExtResource("8_eyt81")])
-mg_buildings = Array[PackedScene]([ExtResource("4_6cigh"), ExtResource("10_62587"), ExtResource("11_fcsg1"), ExtResource("12_lkhef"), ExtResource("14_tg3fu"), ExtResource("15_6jfh0"), ExtResource("4_6cigh"), ExtResource("10_62587"), ExtResource("15_6jfh0")])
-bg_buildings = Array[PackedScene]([ExtResource("6_x6g3h"), ExtResource("7_42axd"), ExtResource("18_qm8r5"), ExtResource("19_dm54y"), ExtResource("20_cd36b"), ExtResource("21_pi3ct"), ExtResource("22_egj70")])
-coin = ExtResource("22_dow26")
+script = ExtResource("1_2chin")
+fg_buildings = Array[PackedScene]([ExtResource("2_2n6h5"), ExtResource("2_2n6h5"), ExtResource("3_22bgk"), ExtResource("3_22bgk"), ExtResource("4_aivki"), ExtResource("5_e7wo7"), ExtResource("6_te3nu"), ExtResource("6_te3nu"), ExtResource("7_pga7w"), ExtResource("7_pga7w"), ExtResource("8_d0dc6"), ExtResource("8_d0dc6")])
+mg_buildings = Array[PackedScene]([ExtResource("9_cnm3r"), ExtResource("10_vh7jd"), ExtResource("11_odg6y"), ExtResource("12_oumpo"), ExtResource("13_t0s5u"), ExtResource("14_q7ouy"), ExtResource("9_cnm3r"), ExtResource("10_vh7jd"), ExtResource("14_q7ouy")])
+bg_buildings = Array[PackedScene]([ExtResource("15_jelm3"), ExtResource("16_qs88m"), ExtResource("17_0yx3r"), ExtResource("18_u53gc"), ExtResource("19_s2iv8"), ExtResource("20_eh13v"), ExtResource("21_0t053")])
+coin = ExtResource("22_4rsrw")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-script = ExtResource("8_syn6b")
+script = ExtResource("23_w3gsx")
 
 [node name="Stars" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.05, 0.025)
 motion_mirroring = Vector2(320, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Stars"]
-texture = ExtResource("8_y7bud")
+texture = ExtResource("24_cr68d")
 centered = false
 
 [node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -95,7 +95,7 @@ motion_scale = Vector2(0.1, 0.05)
 motion_mirroring = Vector2(320, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
-texture = ExtResource("9_jdmu5")
+texture = ExtResource("25_u1l7k")
 centered = false
 offset = Vector2(0, -15)
 
@@ -115,9 +115,9 @@ curve = SubResource("Curve2D_jqfty")
 [node name="PathFollow2D" type="PathFollow2D" parent="BG/Path2D"]
 position = Vector2(360, 190)
 rotation = 3.14159
-script = ExtResource("28_l8fg3")
+script = ExtResource("26_gsxy1")
 
-[node name="StartBuilding" parent="BG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("26_h0awk")]
+[node name="StartBuilding" parent="BG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("27_rdfu6")]
 position = Vector2(360, 185)
 rotation = 3.14159
 
@@ -142,9 +142,9 @@ curve = SubResource("Curve2D_ooip8")
 [node name="PathFollow2D" type="PathFollow2D" parent="MG/Path2D"]
 position = Vector2(360, 180)
 rotation = 3.14159
-script = ExtResource("28_l8fg3")
+script = ExtResource("26_gsxy1")
 
-[node name="StartBuilding" parent="MG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("27_3ftoj")]
+[node name="StartBuilding" parent="MG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("28_7s12l")]
 position = Vector2(360, 180)
 rotation = 3.14159
 
@@ -167,13 +167,13 @@ curve = SubResource("Curve2D_aaxsb")
 [node name="PathFollow2D" type="PathFollow2D" parent="FG/Path2D"]
 position = Vector2(360, 200)
 rotation = 3.14159
-script = ExtResource("28_l8fg3")
+script = ExtResource("26_gsxy1")
 
-[node name="StartBuilding" parent="FG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("26_6dkg1")]
+[node name="StartBuilding" parent="FG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("29_2fuv8")]
 position = Vector2(359, 205)
 rotation = 3.14159
 
-[node name="Player" parent="FG" instance=ExtResource("6_lh7b0")]
+[node name="Player" parent="FG" instance=ExtResource("30_cg4k8")]
 position = Vector2(26.6667, 63.3333)
 
 [node name="CanvasModulate3" type="CanvasModulate" parent="FG"]
@@ -195,7 +195,7 @@ offset_left = 17.0
 offset_top = 3.0
 offset_right = 77.0
 offset_bottom = 14.0
-theme = ExtResource("28_43x3w")
+theme = ExtResource("31_5k073")
 text = "Score: 0
 "
 label_settings = SubResource("LabelSettings_ry1ex")
@@ -211,7 +211,7 @@ offset_left = 36.0
 offset_top = 18.0
 offset_right = 84.0
 offset_bottom = 29.0
-theme = ExtResource("28_43x3w")
+theme = ExtResource("31_5k073")
 text = "0
 "
 label_settings = SubResource("LabelSettings_ry1ex")
@@ -223,7 +223,7 @@ offset_left = 184.0
 offset_top = 3.0
 offset_right = 303.0
 offset_bottom = 26.0
-theme = ExtResource("28_43x3w")
+theme = ExtResource("31_5k073")
 theme_override_font_sizes/font_size = 4
 text = "Hi Score: 0
 "
@@ -237,7 +237,7 @@ offset_left = 17.0
 offset_top = 15.0
 offset_right = 33.0
 offset_bottom = 31.0
-texture = ExtResource("32_26rxc")
+texture = ExtResource("32_ltwhd")
 
 [node name="DeadGui" type="Control" parent="Control"]
 visible = false
@@ -253,7 +253,7 @@ offset_left = 68.0
 offset_top = 65.0
 offset_right = 132.0
 offset_bottom = 75.0
-theme = ExtResource("28_43x3w")
+theme = ExtResource("31_5k073")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/hover = SubResource("StyleBoxEmpty_jx5l8")
 disabled = true
@@ -274,7 +274,7 @@ offset_left = 63.0
 offset_top = 99.0
 offset_right = 255.0
 offset_bottom = 129.0
-theme = ExtResource("28_43x3w")
+theme = ExtResource("31_5k073")
 theme_override_font_sizes/font_size = 16
 disabled = true
 action_mode = 0
@@ -293,7 +293,7 @@ offset_left = 61.0
 offset_top = 153.0
 offset_right = 253.0
 offset_bottom = 183.0
-theme = ExtResource("28_43x3w")
+theme = ExtResource("31_5k073")
 theme_override_font_sizes/font_size = 16
 disabled = true
 action_mode = 0
@@ -320,10 +320,10 @@ offset_left = 82.0
 offset_top = 27.0
 offset_right = 93.0
 offset_bottom = 38.0
-theme = ExtResource("28_43x3w")
+theme = ExtResource("31_5k073")
 disabled = true
 action_mode = 0
-icon = ExtResource("33_0joj5")
+icon = ExtResource("33_iivjq")
 
 [node name="BuildingGaps" type="Timer" parent="."]
 wait_time = 10.0

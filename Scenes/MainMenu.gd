@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _on_play_button_pressed() -> void:
 	Sound.play_button_sound()
-	get_tree().change_scene_to_file("res://Scenes/Level.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level/Level.tscn")
 
 @onready var buttons_main = $CanvasLayer3/Control1
 @onready var buttons_settings = $CanvasLayer3/Settings

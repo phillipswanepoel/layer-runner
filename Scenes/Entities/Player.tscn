@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://jopj67sfeyd4"]
 
-[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_5mqt7"]
+[ext_resource type="Script" path="res://Scenes/Entities/Player.gd" id="1_5mqt7"]
 [ext_resource type="Texture2D" uid="uid://2sx5rob7dg63" path="res://Assets/Character/Character Smallest Running Anim-Sheet.png" id="2_gkj4p"]
 [ext_resource type="Texture2D" uid="uid://0dw8lo1jkon" path="res://Assets/Character/Character Smallest Jump.png" id="2_oso2y"]
 [ext_resource type="Texture2D" uid="uid://b6fa618f0utl7" path="res://Assets/Character/Character Big Running Anim-Sheet.png" id="3_g4sbv"]
