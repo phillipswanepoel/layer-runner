@@ -28,37 +28,9 @@ range_layer_max = -1
 texture = ExtResource("2_t0xhd")
 texture_scale = 0.06
 
-[node name="PointLight2D3" type="PointLight2D" parent="."]
-position = Vector2(47.5, -13.3333)
-color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.5
-range_layer_min = -1
-range_layer_max = -1
-texture = ExtResource("2_t0xhd")
-texture_scale = 0.05
-
-[node name="PointLight2D4" type="PointLight2D" parent="."]
-position = Vector2(10.8333, -15)
-color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.3
-range_layer_min = -1
-range_layer_max = -1
-texture = ExtResource("2_t0xhd")
-texture_scale = 0.03
-
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(40, -42)
 occluder = SubResource("OccluderPolygon2D_xk5xg")
-
-[node name="PointLight2D5" type="PointLight2D" parent="."]
-position = Vector2(35.8333, -37.5)
-scale = Vector2(0.759549, 1)
-color = Color(1, 0.643137, 0.321569, 1)
-energy = 0.3
-range_layer_min = -3
-range_layer_max = -3
-texture = ExtResource("2_t0xhd")
-texture_scale = 0.09
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(62.5, -53.3333)

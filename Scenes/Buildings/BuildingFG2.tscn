@@ -31,31 +31,3 @@ range_layer_min = -1
 range_layer_max = -1
 texture = ExtResource("2_lh8pw")
 texture_scale = 0.05
-
-[node name="PointLight2D3" type="PointLight2D" parent="."]
-position = Vector2(7.5, -34.1667)
-color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.65
-range_layer_min = -1
-range_layer_max = -1
-texture = ExtResource("2_lh8pw")
-texture_scale = 0.04
-
-[node name="PointLight2D4" type="PointLight2D" parent="."]
-position = Vector2(31.6667, -16.6667)
-color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.4
-range_layer_min = -1
-range_layer_max = -1
-texture = ExtResource("2_lh8pw")
-texture_scale = 0.03
-
-[node name="PointLight2D5" type="PointLight2D" parent="."]
-position = Vector2(20.8333, -34.8766)
-scale = Vector2(0.434028, 0.979239)
-color = Color(1, 0.643137, 0.321569, 1)
-energy = 0.2
-range_layer_min = -3
-range_layer_max = -3
-texture = ExtResource("2_lh8pw")
-texture_scale = 0.09

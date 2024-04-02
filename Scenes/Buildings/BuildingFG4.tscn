@@ -31,22 +31,3 @@ range_layer_min = -1
 range_layer_max = -1
 texture = ExtResource("2_p6kiw")
 texture_scale = 0.06
-
-[node name="PointLight2D3" type="PointLight2D" parent="."]
-position = Vector2(33.3333, -20.8333)
-color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.4
-range_layer_min = -1
-range_layer_max = -1
-texture = ExtResource("2_p6kiw")
-texture_scale = 0.04
-
-[node name="PointLight2D5" type="PointLight2D" parent="."]
-position = Vector2(20.8333, -35.8333)
-scale = Vector2(0.488281, 1)
-color = Color(1, 0.643137, 0.321569, 1)
-energy = 0.2
-range_layer_min = -3
-range_layer_max = -3
-texture = ExtResource("2_p6kiw")
-texture_scale = 0.08

@@ -8,6 +8,7 @@ var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 @onready var player = $FG/Player
 func _ready():	
+	HiScore.score = 0
 	player.change_player_layer.connect(_on_player_layer_change)
 	change_hi_score(HiScore.hi_score)
 	
@@ -172,8 +173,8 @@ func _on_coin_consumed() -> void:
 	
 @onready var dead_gui = $Control/DeadGui
 func toggle_dead_gui():	
-	restart_button.disabled = !restart_button.disabled	
-	upgrade_button.disabled = !upgrade_button.disabled
+	for button in dead_gui.get_children():
+		button.disabled = !button.disabled			
 	dead_gui.visible = !dead_gui.visible	
 	
 @onready var upgrade_gui = $Control/UpgradeGui
@@ -191,3 +192,5 @@ func _on_upgrade_back_button_pressed() -> void:
 	toggle_dead_gui()
 	toggle_upgrade_gui()
 	
+func _on_main_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")

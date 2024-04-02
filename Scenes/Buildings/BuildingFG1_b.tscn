@@ -19,33 +19,6 @@ visible = false
 position = Vector2(20, -39.1667)
 polygon = PackedVector2Array(-20, 39.1667, -20, -36.6666, 2.5, -36.6666, 2.5, -43.3333, 43.3333, -43.3333, 43.3333, 39.1667)
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(45.8333, -70)
-color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.7
-range_layer_min = -1
-range_layer_max = -1
-texture = ExtResource("2_vqist")
-texture_scale = 0.06
-
-[node name="PointLight2D3" type="PointLight2D" parent="."]
-position = Vector2(13.3333, -45)
-color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.5
-range_layer_min = -1
-range_layer_max = -1
-texture = ExtResource("2_vqist")
-texture_scale = 0.05
-
-[node name="PointLight2D4" type="PointLight2D" parent="."]
-position = Vector2(48.3333, -25)
-color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.6
-range_layer_min = -1
-range_layer_max = -1
-texture = ExtResource("2_vqist")
-texture_scale = 0.04
-
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(40, -45)
 occluder = SubResource("OccluderPolygon2D_06sdj")

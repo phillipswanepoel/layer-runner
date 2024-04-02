@@ -31,24 +31,5 @@ range_layer_max = -3
 texture = ExtResource("2_34crr")
 texture_scale = 0.07
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(26.3636, -24.5455)
-color = Color(0.917647, 0.517647, 0, 1)
-energy = 0.4
-range_layer_min = -3
-range_layer_max = -3
-texture = ExtResource("2_34crr")
-texture_scale = 0.04
-
-[node name="PointLight2D5" type="PointLight2D" parent="."]
-position = Vector2(20, -45)
-scale = Vector2(0.387397, 0.815147)
-color = Color(1, 0.643137, 0.321569, 1)
-energy = 0.2
-range_layer_min = -3
-range_layer_max = -3
-texture = ExtResource("2_34crr")
-texture_scale = 0.11
-
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(31.8182, -64.5455)
