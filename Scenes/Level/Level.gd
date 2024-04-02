@@ -179,14 +179,18 @@ func toggle_dead_gui():
 	
 @onready var upgrade_gui = $Control/UpgradeGui
 @onready var upgrade_back_button = $Control/UpgradeGui/UpgradeBackButton
+@onready var upgrade_button_container = $Control/UpgradeGui/UpgradeContainer
 func toggle_upgrade_gui():
 	upgrade_gui.visible = !upgrade_gui.visible
 	upgrade_back_button.disabled = !upgrade_back_button.disabled
+	for button in upgrade_button_container.get_children():
+		button.disabled = !button.disabled	
 
 @onready var upgrade_button = $Control/DeadGui/UpgradeButton
 func _on_upgrade_button_pressed() -> void:
 	toggle_dead_gui()
 	toggle_upgrade_gui()
+	upgrade_button_container.refresh()
 	
 func _on_upgrade_back_button_pressed() -> void:
 	toggle_dead_gui()

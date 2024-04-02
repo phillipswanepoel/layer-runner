@@ -13,7 +13,6 @@ config_version=5
 config/name="Layer Runner"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [audio]
 
@@ -23,6 +22,8 @@ buses/default_bus_layout="res://Scenes/Sound/default_bus_layout.tres"
 
 Sound="*res://Scenes/Sound/Sound.tscn"
 HiScore="*res://Autoload/HiScore.gd"
+Upgrades="*res://Autoload/Upgrades.tscn"
+HelperFunctions="*res://Autoload/HelperFunctions.gd"
 
 [display]
 

@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm04ynafowkfu"]
+[gd_scene load_steps=4 format=3 uid="uid://cm04ynafowkfu"]
 
 [ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="1_wbw7l"]
 [ext_resource type="Texture2D" uid="uid://yo5na8cpyku" path="res://Assets/GUI/double_jump.png" id="2_70nci"]
+[ext_resource type="Script" path="res://Scenes/Upgrades/DoubleJump.gd" id="3_cr7v0"]
 
 [node name="DoubleJump" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
 theme = ExtResource("1_wbw7l")
+disabled = true
 icon = ExtResource("2_70nci")
+script = ExtResource("3_cr7v0")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

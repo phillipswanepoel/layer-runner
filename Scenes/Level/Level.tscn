@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=44 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level/Level.gd" id="1_2chin"]
 [ext_resource type="PackedScene" uid="uid://bsbtm18fhi1fu" path="res://Scenes/Buildings/BuildingFG3_b.tscn" id="2_2n6h5"]
@@ -33,6 +33,7 @@
 [ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="31_5k073"]
 [ext_resource type="Texture2D" uid="uid://dqhn4frrmsfmb" path="res://Assets/Coins/Coin.png" id="32_ltwhd"]
 [ext_resource type="Texture2D" uid="uid://w51wklgig7tt" path="res://Assets/GUI/back_button.png" id="33_iivjq"]
+[ext_resource type="Script" path="res://Scenes/Level/UpgradeContainer.gd" id="33_o55ry"]
 
 [sub_resource type="Curve2D" id="Curve2D_jqfty"]
 _data = {
@@ -179,9 +180,6 @@ position = Vector2(26.6667, 63.3333)
 [node name="CanvasModulate3" type="CanvasModulate" parent="FG"]
 color = Color(0.8, 0.8, 0.8, 1)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(160, 90)
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -308,10 +306,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Container" type="VBoxContainer" parent="Control/UpgradeGui"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="UpgradeContainer" type="VBoxContainer" parent="Control/UpgradeGui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 51.0
+offset_top = -4.0
+offset_right = 237.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("31_5k073")
+alignment = 1
+script = ExtResource("33_o55ry")
 
 [node name="UpgradeBackButton" type="Button" parent="Control/UpgradeGui"]
 self_modulate = Color(0.50974, 0.333475, 0.165109, 1)
@@ -349,6 +359,9 @@ shape = SubResource("RectangleShape2D_xl6fj")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2(532, 94)
 shape = SubResource("RectangleShape2D_xl6fj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 90)
 
 [connection signal="timeout" from="BG/BGTimer" to="." method="_on_bg_timer_timeout"]
 [connection signal="timeout" from="MG/MGTimer" to="." method="_on_mg_timer_timeout"]
