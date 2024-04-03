@@ -14,8 +14,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var speeds = [50.0, 40.0, 30.0]
 @onready var jumps = [-300.0, -280.0, -260.0]
 
+@onready var double_jump_upgraded : bool = false
+var upgrades = []
 func _ready() -> void:
 	anim_sprite.play("fg_run")	
+	upgrades = Upgrades.get_activated_upgrade_names()	
+	if "DoubleJump" in upgrades:
+		double_jump_upgraded = true
+		
 
 signal change_player_layer(new_layer)
 func change_layer(dir : int):	
@@ -50,6 +56,7 @@ func change_layer(dir : int):
 	
 
 var current_layer : int = 0
+var double_jump_used : bool = false
 func _physics_process(delta):
 	#handle layer shifting		
 	var will_collide = false
@@ -76,11 +83,16 @@ func _physics_process(delta):
 		anim_sprite.play(animation_jumps[current_layer])
 	else:
 		anim_sprite.play(animations[current_layer])
+		double_jump_used = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY		
-
+	elif Input.is_action_just_pressed("ui_accept") and double_jump_upgraded and not double_jump_used:
+		velocity.y = JUMP_VELOCITY
+		double_jump_used = true
+		
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var is_running : bool = false

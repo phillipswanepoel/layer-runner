@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=37 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level/Level.gd" id="1_2chin"]
 [ext_resource type="PackedScene" uid="uid://bsbtm18fhi1fu" path="res://Scenes/Buildings/BuildingFG3_b.tscn" id="2_2n6h5"]
@@ -30,10 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://28xnsdqkn3k" path="res://Scenes/Level/StartBuildingMG.tscn" id="28_7s12l"]
 [ext_resource type="PackedScene" uid="uid://bwxx1acu6nycg" path="res://Scenes/Level/StartBuilding.tscn" id="29_2fuv8"]
 [ext_resource type="PackedScene" uid="uid://jopj67sfeyd4" path="res://Scenes/Entities/Player.tscn" id="30_cg4k8"]
-[ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="31_5k073"]
-[ext_resource type="Texture2D" uid="uid://dqhn4frrmsfmb" path="res://Assets/Coins/Coin.png" id="32_ltwhd"]
-[ext_resource type="Texture2D" uid="uid://w51wklgig7tt" path="res://Assets/GUI/back_button.png" id="33_iivjq"]
-[ext_resource type="Script" path="res://Scenes/Level/UpgradeContainer.gd" id="33_o55ry"]
+[ext_resource type="PackedScene" uid="uid://cei8wnkygsihh" path="res://Scenes/GUI/LevelGUI.tscn" id="31_5x3ll"]
 
 [sub_resource type="Curve2D" id="Curve2D_jqfty"]
 _data = {
@@ -52,20 +49,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 360, 200, 0, 0, 0, 0, -700, 200)
 }
 point_count = 2
-
-[sub_resource type="LabelSettings" id="LabelSettings_ry1ex"]
-font_size = 8
-shadow_size = 0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jx5l8"]
-
-[sub_resource type="InputEventKey" id="InputEventKey_gthan"]
-device = -1
-keycode = 32
-unicode = 32
-
-[sub_resource type="Shortcut" id="Shortcut_ciqjb"]
-events = [SubResource("InputEventKey_gthan")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbb60"]
 size = Vector2(629.75, 110)
@@ -180,160 +163,7 @@ position = Vector2(26.6667, 63.3333)
 [node name="CanvasModulate3" type="CanvasModulate" parent="FG"]
 color = Color(0.8, 0.8, 0.8, 1)
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ScoreLabel" type="Label" parent="Control"]
-self_modulate = Color(1, 0.380392, 0.313726, 1)
-layout_mode = 0
-offset_left = 17.0
-offset_top = 3.0
-offset_right = 77.0
-offset_bottom = 14.0
-theme = ExtResource("31_5k073")
-text = "Score: 0
-"
-label_settings = SubResource("LabelSettings_ry1ex")
-
-[node name="ScoreTimer" type="Timer" parent="Control/ScoreLabel"]
-wait_time = 0.1
-autostart = true
-
-[node name="CoinLabel" type="Label" parent="Control"]
-self_modulate = Color(1, 0.380392, 0.313726, 1)
-layout_mode = 0
-offset_left = 36.0
-offset_top = 18.0
-offset_right = 84.0
-offset_bottom = 29.0
-theme = ExtResource("31_5k073")
-text = "0
-"
-label_settings = SubResource("LabelSettings_ry1ex")
-
-[node name="HiScoreLabel" type="Label" parent="Control"]
-self_modulate = Color(1, 0.380392, 0.313726, 1)
-layout_mode = 0
-offset_left = 184.0
-offset_top = 3.0
-offset_right = 303.0
-offset_bottom = 26.0
-theme = ExtResource("31_5k073")
-theme_override_font_sizes/font_size = 4
-text = "Hi Score: 0
-"
-label_settings = SubResource("LabelSettings_ry1ex")
-horizontal_alignment = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control"]
-self_modulate = Color(0.65098, 0.517647, 0.364706, 1)
-layout_mode = 0
-offset_left = 17.0
-offset_top = 15.0
-offset_right = 33.0
-offset_bottom = 31.0
-texture = ExtResource("32_ltwhd")
-
-[node name="DeadGui" type="Control" parent="Control"]
-visible = false
-anchors_preset = 0
-
-[node name="RestartButton" type="Button" parent="Control/DeadGui"]
-self_modulate = Color(0.603922, 0.34902, 0, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 3.4
-anchor_bottom = 0.7
-offset_left = 68.0
-offset_top = 65.0
-offset_right = 132.0
-offset_bottom = 75.0
-theme = ExtResource("31_5k073")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/hover = SubResource("StyleBoxEmpty_jx5l8")
-disabled = true
-action_mode = 0
-shortcut = SubResource("Shortcut_ciqjb")
-shortcut_feedback = false
-shortcut_in_tooltip = false
-text = "Restart?"
-flat = true
-
-[node name="UpgradeButton" type="Button" parent="Control/DeadGui"]
-self_modulate = Color(0.603922, 0.34902, 0, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 3.4
-anchor_bottom = 0.7
-offset_left = 63.0
-offset_top = 99.0
-offset_right = 255.0
-offset_bottom = 129.0
-theme = ExtResource("31_5k073")
-theme_override_font_sizes/font_size = 16
-disabled = true
-action_mode = 0
-shortcut_feedback = false
-shortcut_in_tooltip = false
-text = "Upgrades"
-flat = true
-
-[node name="MainMenuButton" type="Button" parent="Control/DeadGui"]
-self_modulate = Color(0.603922, 0.34902, 0, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 3.4
-anchor_bottom = 0.7
-offset_left = 61.0
-offset_top = 153.0
-offset_right = 253.0
-offset_bottom = 183.0
-theme = ExtResource("31_5k073")
-theme_override_font_sizes/font_size = 16
-disabled = true
-action_mode = 0
-shortcut_feedback = false
-shortcut_in_tooltip = false
-text = "Main Menu"
-flat = true
-
-[node name="UpgradeGui" type="Control" parent="Control"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="UpgradeContainer" type="VBoxContainer" parent="Control/UpgradeGui"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 51.0
-offset_top = -4.0
-offset_right = 237.0
-offset_bottom = 143.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("31_5k073")
-alignment = 1
-script = ExtResource("33_o55ry")
-
-[node name="UpgradeBackButton" type="Button" parent="Control/UpgradeGui"]
-self_modulate = Color(0.50974, 0.333475, 0.165109, 1)
-layout_mode = 0
-offset_left = 82.0
-offset_top = 27.0
-offset_right = 93.0
-offset_bottom = 38.0
-theme = ExtResource("31_5k073")
-disabled = true
-action_mode = 0
-icon = ExtResource("33_iivjq")
+[node name="LevelGUI" parent="." instance=ExtResource("31_5x3ll")]
 
 [node name="BuildingGaps" type="Timer" parent="."]
 wait_time = 10.0
@@ -366,10 +196,5 @@ position = Vector2(160, 90)
 [connection signal="timeout" from="BG/BGTimer" to="." method="_on_bg_timer_timeout"]
 [connection signal="timeout" from="MG/MGTimer" to="." method="_on_mg_timer_timeout"]
 [connection signal="timeout" from="FG/FGTimer" to="." method="_on_fg_timer_timeout"]
-[connection signal="timeout" from="Control/ScoreLabel/ScoreTimer" to="." method="_on_score_timer_timeout"]
-[connection signal="pressed" from="Control/DeadGui/RestartButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Control/DeadGui/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
-[connection signal="pressed" from="Control/DeadGui/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="Control/UpgradeGui/UpgradeBackButton" to="." method="_on_upgrade_back_button_pressed"]
 [connection signal="timeout" from="BuildingGaps" to="." method="_on_building_gaps_timeout"]
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]

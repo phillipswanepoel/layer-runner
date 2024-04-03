@@ -5,16 +5,11 @@ extends Node2D
 # 1. Movement speed
 # 2. Collision layer
 var rng = RandomNumberGenerator.new()
+@onready var gui = $LevelGUI
 # Called when the node enters the scene tree for the first time.
 @onready var player = $FG/Player
-func _ready():	
-	HiScore.score = 0
+func _ready():		
 	player.change_player_layer.connect(_on_player_layer_change)
-	change_hi_score(HiScore.hi_score)
-	
-@onready var hi_score_label : Label = $Control/HiScoreLabel
-func change_hi_score(new_score : int):
-	hi_score_label.text = "Hi Score: " + str(new_score)
 	
 @onready var layers = [$FG, $MG, $BG]
 func _on_player_layer_change(new_layer: int):		
@@ -145,56 +140,16 @@ func spawn_coin(pos : Vector2, layer: int):
 	layers_paths[layer].add_child(path_follow)
 	path_follow.add_child(coin_instance)	
 	coin_instance.set_layer(layer)	
+	
+func _on_coin_consumed() -> void:		
+	gui.coin_consumed()
 
 func _on_building_gaps_timeout() -> void:	
 	rand_ceiling += 0.25
-	rand_floor += 0.25
+	rand_floor += 0.25	
 
-func _on_button_pressed() -> void:
-	HiScore.reset_score()
-	get_tree().reload_current_scene()
-	
-@onready var restart_button = $Control/DeadGui/RestartButton
 func _on_death_zone_body_entered(_body: Node2D) -> void:
-	HiScore.new_score(HiScore.score)
-	change_hi_score(HiScore.score)
-	Sound.play_death_sound()	
-	toggle_dead_gui()
-	$Control/ScoreLabel/ScoreTimer.queue_free()	
-	
-@onready var score_label : Label = $Control/ScoreLabel
-func _on_score_timer_timeout() -> void:
-	HiScore.score += 1
-	score_label.text = 'Score: ' + str(HiScore.score)
-	
-@onready var coin_label : Label = $Control/CoinLabel
-func _on_coin_consumed() -> void:	
-	coin_label.text = str(HiScore.coin_count)
-	
-@onready var dead_gui = $Control/DeadGui
-func toggle_dead_gui():	
-	for button in dead_gui.get_children():
-		button.disabled = !button.disabled			
-	dead_gui.visible = !dead_gui.visible	
-	
-@onready var upgrade_gui = $Control/UpgradeGui
-@onready var upgrade_back_button = $Control/UpgradeGui/UpgradeBackButton
-@onready var upgrade_button_container = $Control/UpgradeGui/UpgradeContainer
-func toggle_upgrade_gui():
-	upgrade_gui.visible = !upgrade_gui.visible
-	upgrade_back_button.disabled = !upgrade_back_button.disabled
-	for button in upgrade_button_container.get_children():
-		button.disabled = !button.disabled	
-
-@onready var upgrade_button = $Control/DeadGui/UpgradeButton
-func _on_upgrade_button_pressed() -> void:
-	toggle_dead_gui()
-	toggle_upgrade_gui()
-	upgrade_button_container.refresh()
-	
-func _on_upgrade_back_button_pressed() -> void:
-	toggle_dead_gui()
-	toggle_upgrade_gui()
-	
-func _on_main_menu_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+	HiScore.new_score(HiScore.score)	
+	Sound.play_death_sound()
+	gui.change_hi_score(HiScore.score)	
+	gui.toggle_dead_gui()	
