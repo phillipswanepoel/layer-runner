@@ -86,9 +86,9 @@ func _physics_process(delta):
 		double_jump_used = false
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY		
-	elif Input.is_action_just_pressed("ui_accept") and double_jump_upgraded and not double_jump_used:
+	elif Input.is_action_just_pressed("jump") and double_jump_upgraded and not double_jump_used:
 		velocity.y = JUMP_VELOCITY
 		double_jump_used = true
 		

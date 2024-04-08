@@ -2,6 +2,7 @@ extends Control
 
 func _ready():				
 	change_hi_score(HiScore.hi_score)
+	coin_label.text = str(HiScore.coin_count)
 	
 @onready var hi_score_label : Label = $HiScoreLabel
 func change_hi_score(new_score : int):
@@ -50,6 +51,9 @@ func _on_upgrade_back_button_pressed() -> void:
 func _on_main_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 
-
 func _on_upgrade_container_refresh_coin_count() -> void:
 	coin_label.text = str(HiScore.coin_count)
+	
+signal upgrade_cd_pressed(upgrade_name)
+func _on_cd_container_upgrade_cd_pressed(upgrade_name: Variant) -> void:
+	upgrade_cd_pressed.emit(upgrade_name)

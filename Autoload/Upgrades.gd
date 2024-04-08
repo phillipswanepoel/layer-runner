@@ -2,6 +2,7 @@ extends Node2D
 
 var all_upgrades : Array[PackedScene] = []
 @export var all_upgrade_names : Array[String] = []
+@export var all_upgrade_has_hotkey : Array[bool] = []
 var activated_upgrade_names : Array[String] = []
 
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +22,25 @@ func get_unactivated_upgrades() -> Array[PackedScene]:
 	for upgrade_name in get_unactivated_upgrade_names():
 		out.append(load("res://Scenes/Upgrades/" + upgrade_name + ".tscn"))
 	return out
+	
+func get_unactivated_upgrades_hotkeys() -> Array[PackedScene]:
+	var out : Array[PackedScene] = []
+	var count = 0
+	for upgrade_name in all_upgrade_names:
+		if all_upgrade_has_hotkey[count] and upgrade_name in get_unactivated_upgrade_names():
+			out.append(load("res://Scenes/Upgrades/Hotkeys/" + upgrade_name + "CD.tscn"))
+		count+=1		
+	return out
+	
+func get_activated_upgrades_hotkeys() -> Array[PackedScene]:
+	var out : Array[PackedScene] = []
+	var count = 0
+	for upgrade_name in all_upgrade_names:
+		if all_upgrade_has_hotkey[count] and upgrade_name in get_activated_upgrade_names():
+			out.append(load("res://Scenes/Upgrades/Hotkeys/" + upgrade_name + "CD.tscn"))
+		count+=1		
+	return out
+	
 	
 func get_activated_upgrade_names() -> Array[String]:
 	return activated_upgrade_names

@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dck3wqdu83dns" path="res://Scenes/Buildings/BuildingBG7.tscn" id="2_kxdsk"]
 
-[node name="StartBuilding" type="Node2D"]
+[node name="StartBuilding" type="PathFollow2D" groups=["bg_followers", "path_followers"]]
 modulate = Color(0.666667, 0.666667, 0.666667, 1)
+rotates = false
 
 [node name="BuildingFg20" parent="." groups=["start"] instance=ExtResource("2_kxdsk")]
 z_index = -6

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cei8wnkygsihh"]
+[gd_scene load_steps=11 format=3 uid="uid://cei8wnkygsihh"]
 
 [ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="1_jrg1e"]
 [ext_resource type="Script" path="res://Scenes/GUI/LevelGUI.gd" id="1_wdns4"]
 [ext_resource type="Texture2D" uid="uid://dqhn4frrmsfmb" path="res://Assets/Coins/Coin.png" id="2_4xlsm"]
 [ext_resource type="Script" path="res://Scenes/Level/UpgradeContainer.gd" id="3_vjp5a"]
 [ext_resource type="Texture2D" uid="uid://w51wklgig7tt" path="res://Assets/GUI/back_button.png" id="4_ehq87"]
+[ext_resource type="Script" path="res://Scenes/GUI/CDContainer.gd" id="6_v5wk3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ry1ex"]
 font_size = 8
@@ -167,14 +168,27 @@ script = ExtResource("3_vjp5a")
 [node name="UpgradeBackButton" type="Button" parent="UpgradeGui"]
 self_modulate = Color(0.50974, 0.333475, 0.165109, 1)
 layout_mode = 0
-offset_left = 82.0
-offset_top = 27.0
-offset_right = 93.0
-offset_bottom = 38.0
+offset_left = 53.0
+offset_top = 76.0
+offset_right = 64.0
+offset_bottom = 87.0
 theme = ExtResource("1_jrg1e")
 disabled = true
 action_mode = 0
 icon = ExtResource("4_ehq87")
+
+[node name="UpgradeCDGUI" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CDContainer" type="HBoxContainer" parent="UpgradeCDGUI"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 144.0
+offset_right = 316.0
+offset_bottom = 176.0
+script = ExtResource("6_v5wk3")
 
 [connection signal="timeout" from="ScoreLabel/ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="pressed" from="DeadGui/RestartButton" to="." method="_on_restart_button_pressed"]
@@ -182,3 +196,4 @@ icon = ExtResource("4_ehq87")
 [connection signal="pressed" from="DeadGui/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
 [connection signal="refresh_coin_count" from="UpgradeGui/UpgradeContainer" to="." method="_on_upgrade_container_refresh_coin_count"]
 [connection signal="pressed" from="UpgradeGui/UpgradeBackButton" to="." method="_on_upgrade_back_button_pressed"]
+[connection signal="upgrade_cd_pressed" from="UpgradeCDGUI/CDContainer" to="." method="_on_cd_container_upgrade_cd_pressed"]

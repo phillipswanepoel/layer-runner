@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bms8uuxojgtle"]
+[gd_scene load_steps=34 format=3 uid="uid://bms8uuxojgtle"]
 
 [ext_resource type="Script" path="res://Scenes/Level/Level.gd" id="1_2chin"]
 [ext_resource type="PackedScene" uid="uid://bsbtm18fhi1fu" path="res://Scenes/Buildings/BuildingFG3_b.tscn" id="2_2n6h5"]
@@ -25,9 +25,6 @@
 [ext_resource type="Script" path="res://Scenes/Level/ParallaxBackgroundScroll.gd" id="23_w3gsx"]
 [ext_resource type="Texture2D" uid="uid://b1htek331jg1g" path="res://Assets/Backgrounds/Stars Background.png" id="24_cr68d"]
 [ext_resource type="Texture2D" uid="uid://cb8w35sl2wgw0" path="res://Assets/Backgrounds/Clouds Background.png" id="25_u1l7k"]
-[ext_resource type="Script" path="res://Scenes/Level/PathFollow2D.gd" id="26_gsxy1"]
-[ext_resource type="PackedScene" uid="uid://batt6i6cbkfnt" path="res://Scenes/Level/StartBuildingBG.tscn" id="27_rdfu6"]
-[ext_resource type="PackedScene" uid="uid://28xnsdqkn3k" path="res://Scenes/Level/StartBuildingMG.tscn" id="28_7s12l"]
 [ext_resource type="PackedScene" uid="uid://bwxx1acu6nycg" path="res://Scenes/Level/StartBuilding.tscn" id="29_2fuv8"]
 [ext_resource type="PackedScene" uid="uid://jopj67sfeyd4" path="res://Scenes/Entities/Player.tscn" id="30_cg4k8"]
 [ext_resource type="PackedScene" uid="uid://cei8wnkygsihh" path="res://Scenes/GUI/LevelGUI.tscn" id="31_5x3ll"]
@@ -96,15 +93,6 @@ autostart = true
 position = Vector2(0, -5)
 curve = SubResource("Curve2D_jqfty")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="BG/Path2D"]
-position = Vector2(360, 190)
-rotation = 3.14159
-script = ExtResource("26_gsxy1")
-
-[node name="StartBuilding" parent="BG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("27_rdfu6")]
-position = Vector2(360, 185)
-rotation = 3.14159
-
 [node name="CanvasModulate" type="CanvasModulate" parent="BG"]
 color = Color(0.517647, 0.482353, 0.611765, 1)
 
@@ -123,15 +111,6 @@ autostart = true
 [node name="Path2D" type="Path2D" parent="MG"]
 curve = SubResource("Curve2D_ooip8")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="MG/Path2D"]
-position = Vector2(360, 180)
-rotation = 3.14159
-script = ExtResource("26_gsxy1")
-
-[node name="StartBuilding" parent="MG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("28_7s12l")]
-position = Vector2(360, 180)
-rotation = 3.14159
-
 [node name="CanvasModulate" type="CanvasModulate" parent="MG"]
 color = Color(0.537255, 0.584314, 0.662745, 1)
 
@@ -148,14 +127,10 @@ autostart = true
 position = Vector2(0, 5)
 curve = SubResource("Curve2D_aaxsb")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="FG/Path2D"]
-position = Vector2(360, 200)
-rotation = 3.14159
-script = ExtResource("26_gsxy1")
-
-[node name="StartBuilding" parent="FG/Path2D/PathFollow2D" groups=["start"] instance=ExtResource("29_2fuv8")]
-position = Vector2(359, 205)
-rotation = 3.14159
+[node name="StartBuilding" parent="FG/Path2D" instance=ExtResource("29_2fuv8")]
+position = Vector2(-10.9999, 0)
+progress = 371.0
+v_offset = -200.0
 
 [node name="Player" parent="FG" instance=ExtResource("30_cg4k8")]
 position = Vector2(26.6667, 63.3333)
@@ -173,12 +148,12 @@ autostart = true
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(190, 283)
+position = Vector2(183, 357)
 shape = SubResource("RectangleShape2D_jbb60")
 debug_color = Color(0.764706, 0.415686, 0.45098, 0.419608)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(179, -101)
+position = Vector2(184, -171)
 shape = SubResource("RectangleShape2D_jbb60")
 debug_color = Color(0.764706, 0.415686, 0.45098, 0.419608)
 
@@ -193,8 +168,16 @@ shape = SubResource("RectangleShape2D_xl6fj")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 90)
 
+[node name="UpgradeTimers" type="Node" parent="."]
+
+[node name="TimeSlow" type="Timer" parent="UpgradeTimers"]
+wait_time = 4.0
+one_shot = true
+
 [connection signal="timeout" from="BG/BGTimer" to="." method="_on_bg_timer_timeout"]
 [connection signal="timeout" from="MG/MGTimer" to="." method="_on_mg_timer_timeout"]
 [connection signal="timeout" from="FG/FGTimer" to="." method="_on_fg_timer_timeout"]
+[connection signal="upgrade_cd_pressed" from="LevelGUI" to="." method="_on_level_gui_upgrade_cd_pressed"]
 [connection signal="timeout" from="BuildingGaps" to="." method="_on_building_gaps_timeout"]
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
+[connection signal="timeout" from="UpgradeTimers/TimeSlow" to="." method="_on_time_slow_timeout"]

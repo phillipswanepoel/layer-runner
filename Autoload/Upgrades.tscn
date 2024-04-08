@@ -4,4 +4,5 @@
 
 [node name="Upgrades" type="Node2D"]
 script = ExtResource("1_n04p7")
-all_upgrade_names = Array[String](["DoubleJump"])
+all_upgrade_names = Array[String](["DoubleJump", "TimeSlow"])
+all_upgrade_has_hotkey = Array[bool]([false, true])

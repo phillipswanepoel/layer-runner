@@ -15,50 +15,51 @@
 [ext_resource type="Texture2D" uid="uid://dvnwrqwdj1iv8" path="res://Assets/GUI/WS.png" id="12_8v26e"]
 [ext_resource type="Texture2D" uid="uid://bw5sev87g0umx" path="res://Assets/FX/light.png" id="14_ca11v"]
 
-[node name="StartBuilding" type="Node2D"]
+[node name="StartBuilding" type="PathFollow2D" groups=["fg_followers", "path_followers"]]
 modulate = Color(0.733333, 0.733333, 0.733333, 1)
+rotates = false
 
 [node name="BuildingFg1" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
-position = Vector2(0, 181)
+position = Vector2(-10, 188.4)
 
 [node name="BuildingFg2" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
-position = Vector2(66, 181)
+position = Vector2(56, 188.4)
 
 [node name="BuildingFg4" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
-position = Vector2(135, 181)
+position = Vector2(125, 188.4)
 
 [node name="BuildingFg5" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
-position = Vector2(264, 181)
+position = Vector2(254, 188.4)
 
 [node name="BuildingFg12" parent="." groups=["start"] instance=ExtResource("3_3og0l")]
-position = Vector2(-3, 228)
+position = Vector2(-13, 235.4)
 
 [node name="BuildingFg9" parent="." groups=["start"] instance=ExtResource("1_ftikd")]
-position = Vector2(202, 181)
+position = Vector2(192, 188.4)
 
 [node name="BuildingFg3" parent="." groups=["start"] instance=ExtResource("4_xbbof")]
-position = Vector2(156, 212)
+position = Vector2(146, 219.4)
 
 [node name="BuildingFg8" parent="." groups=["start"] instance=ExtResource("5_wvbcq")]
-position = Vector2(123, 198)
+position = Vector2(113, 205.4)
 
 [node name="BuildingFg6" parent="." groups=["start"] instance=ExtResource("6_ck72x")]
-position = Vector2(7, 198)
+position = Vector2(-3, 205.4)
 
 [node name="BuildingFg10" parent="." groups=["start"] instance=ExtResource("7_gqy2q")]
-position = Vector2(201, 211)
+position = Vector2(191, 218.4)
 
 [node name="BuildingFg13" parent="." groups=["start"] instance=ExtResource("6_ck72x")]
-position = Vector2(209, 209)
+position = Vector2(199, 216.4)
 
 [node name="BuildingFg14" parent="." groups=["start"] instance=ExtResource("4_xbbof")]
-position = Vector2(274, 230)
+position = Vector2(264, 237.4)
 
 [node name="BuildingFg7" parent="." groups=["start"] instance=ExtResource("8_ioax7")]
-position = Vector2(60, 196)
+position = Vector2(50, 203.4)
 
 [node name="BuildingFg15" parent="." groups=["start"] instance=ExtResource("5_wvbcq")]
-position = Vector2(317, 203)
+position = Vector2(307, 210.4)
 
 [node name="Destruct Timer" type="Timer" parent="."]
 wait_time = 8.0
@@ -66,12 +67,12 @@ one_shot = true
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(478, 41)
+position = Vector2(468, 48.4)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("8_qbitp")
 
 [node name="PointLight2D4" type="PointLight2D" parent="."]
-position = Vector2(479, 28)
+position = Vector2(469, 35.4)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.85
 range_layer_min = -1
@@ -80,35 +81,35 @@ texture = ExtResource("14_ca11v")
 texture_scale = 0.2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 462.0
-offset_top = 51.0
-offset_right = 536.0
-offset_bottom = 80.0
+offset_left = 452.0
+offset_top = 58.4
+offset_right = 526.0
+offset_bottom = 87.4
 theme = ExtResource("9_5jq3q")
 theme_override_font_sizes/normal_font_size = 8
 text = "Jump"
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(276, 39)
+position = Vector2(266, 46.4)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("9_hamgi")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(276, 18)
+position = Vector2(266, 25.4)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("10_32tk3")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 251.0
-offset_top = 51.0
-offset_right = 325.0
-offset_bottom = 80.0
+offset_left = 241.0
+offset_top = 58.4
+offset_right = 315.0
+offset_bottom = 87.4
 theme = ExtResource("9_5jq3q")
 theme_override_font_sizes/normal_font_size = 8
 text = "move"
 
 [node name="PointLight2D3" type="PointLight2D" parent="."]
-position = Vector2(262, 3)
+position = Vector2(252, 10.4)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.85
 range_layer_min = -1
@@ -117,35 +118,35 @@ texture = ExtResource("14_ca11v")
 texture_scale = 0.2
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(841, 38)
+position = Vector2(831, 45.4)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11_yndk5")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
-position = Vector2(819, 38)
+position = Vector2(809, 45.4)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12_8v26e")
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
-offset_left = 815.0
-offset_top = 51.0
-offset_right = 920.0
-offset_bottom = 103.0
+offset_left = 805.0
+offset_top = 58.4
+offset_right = 910.0
+offset_bottom = 110.4
 theme = ExtResource("9_5jq3q")
 theme_override_font_sizes/normal_font_size = 8
 text = "swap"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="."]
-offset_left = 807.0
-offset_top = 59.0
-offset_right = 912.0
-offset_bottom = 111.0
+offset_left = 797.0
+offset_top = 66.4
+offset_right = 902.0
+offset_bottom = 118.4
 theme = ExtResource("9_5jq3q")
 theme_override_font_sizes/normal_font_size = 8
 text = "layers"
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(830, 7)
+position = Vector2(820, 14.4)
 color = Color(0.917647, 0.517647, 0, 1)
 energy = 0.85
 range_layer_min = -1

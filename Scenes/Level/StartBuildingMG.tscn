@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dl8j3e4ff4iuw" path="res://Scenes/Buildings/BuildingMG1.tscn" id="5_mnsnj"]
 [ext_resource type="PackedScene" uid="uid://dmbdwch8ega88" path="res://Scenes/Buildings/BuildingMG2.tscn" id="6_dwg27"]
 
-[node name="StartBuilding" type="Node2D"]
+[node name="StartBuilding" type="PathFollow2D" groups=["mg_followers", "path_followers"]]
 modulate = Color(0.733333, 0.733333, 0.733333, 1)
+rotates = false
 
 [node name="BuildingFg17" parent="." groups=["start"] instance=ExtResource("5_mnsnj")]
 z_index = -6

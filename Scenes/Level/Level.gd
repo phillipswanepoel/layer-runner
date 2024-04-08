@@ -24,6 +24,8 @@ var bg_speed_factor : float = 0.3
 var cum_delta : float = 0
 func _physics_process(delta):
 	var distance = speed * delta
+	if time_slow_activated:
+		distance = distance/2.0
 	var path_followers = get_tree().get_nodes_in_group("path_followers")
 	
 	for pf in path_followers:
@@ -153,3 +155,13 @@ func _on_death_zone_body_entered(_body: Node2D) -> void:
 	Sound.play_death_sound()
 	gui.change_hi_score(HiScore.score)	
 	gui.toggle_dead_gui()	
+
+@onready var time_slow_activated : bool = false
+func _on_level_gui_upgrade_cd_pressed(upgrade_name: Variant) -> void:
+	#activate upgrade effect
+	if upgrade_name == "TimeSlow":
+		time_slow_activated = true
+		$UpgradeTimers/TimeSlow.start()
+
+func _on_time_slow_timeout() -> void:
+	time_slow_activated = false
