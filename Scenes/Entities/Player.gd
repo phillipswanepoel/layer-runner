@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-var SPEED : float = 50.0
-var JUMP_VELOCITY : float = -300.0
+var SPEED : float = 70.0
+var JUMP_VELOCITY : float = -350.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -11,8 +11,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var collision_shapes = [$fgCollision, $mgCollision, $bgCollision]
 @onready var animations = ["fg_run", "mg_run", "bg_run"]
 @onready var animation_jumps = ["fg_jump", "mg_jump", "bg_jump"]
-@onready var speeds = [50.0, 40.0, 30.0]
-@onready var jumps = [-300.0, -280.0, -260.0]
+@onready var speeds = [70.0, 60.0, 50.0]
+@onready var jumps = [-350.0, -325.0, -300.0]
 
 @onready var double_jump_upgraded : bool = false
 var upgrades = []
@@ -79,7 +79,10 @@ func _physics_process(delta):
 	
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		if velocity.y > 0:
+			velocity.y += gravity * delta * 1.3
+		else:			
+			velocity.y += gravity * delta
 		anim_sprite.play(animation_jumps[current_layer])
 	else:
 		anim_sprite.play(animations[current_layer])
@@ -87,7 +90,7 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY		
+		velocity.y = JUMP_VELOCITY
 	elif Input.is_action_just_pressed("jump") and double_jump_upgraded and not double_jump_used:
 		velocity.y = JUMP_VELOCITY
 		double_jump_used = true
