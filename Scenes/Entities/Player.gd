@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 var SPEED : float = 70.0
 var JUMP_VELOCITY : float = -350.0
+var JUMP_VELOCITY_SMALL : float = -150.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -12,7 +13,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animations = ["fg_run", "mg_run", "bg_run"]
 @onready var animation_jumps = ["fg_jump", "mg_jump", "bg_jump"]
 @onready var speeds = [70.0, 60.0, 50.0]
-@onready var jumps = [-350.0, -325.0, -300.0]
+@onready var jumps = [-350.0, -320.0, -290.0]
+@onready var jumps_small = [-150.0, -130.0, -110.0]
 
 @onready var double_jump_upgraded : bool = false
 var upgrades = []
@@ -53,10 +55,15 @@ func change_layer(dir : int):
 	#change movement
 	SPEED = speeds[current_layer]
 	JUMP_VELOCITY = jumps[current_layer]
+	JUMP_VELOCITY_SMALL = jumps_small[current_layer]
+	
+func _jump_cut():
+	pass
 	
 
 var current_layer : int = 0
 var double_jump_used : bool = false
+var jump_timer : float = 0.0
 func _physics_process(delta):
 	#handle layer shifting		
 	var will_collide = false
@@ -94,6 +101,9 @@ func _physics_process(delta):
 	elif Input.is_action_just_pressed("jump") and double_jump_upgraded and not double_jump_used:
 		velocity.y = JUMP_VELOCITY
 		double_jump_used = true
+	if Input.is_action_just_released("jump"):
+		if velocity.y < JUMP_VELOCITY_SMALL:
+			velocity.y = JUMP_VELOCITY_SMALL
 		
 	
 	# Get the input direction and handle the movement/deceleration.
