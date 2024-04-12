@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://c83n6oier06i8"]
+
+[ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="1_s4hsa"]
+[ext_resource type="Texture2D" uid="uid://b3bc40sp2jwdw" path="res://Assets/GUI/teleport.png" id="2_4srtt"]
+[ext_resource type="Script" path="res://Scenes/Upgrades/Hotkeys/TeleportCD.gd" id="3_c2027"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df72b"]
+bg_color = Color(0.603922, 0.34902, 0, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vk0jk"]
+size = Vector2(32, 32)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uuivb"]
+size = Vector2(32, 32)
+
+[node name="Teleport" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_s4hsa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_df72b")
+icon = ExtResource("2_4srtt")
+script = ExtResource("3_c2027")
+cooldown = 5.0
+
+[node name="Sweep" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+fill_mode = 5
+texture_over = SubResource("PlaceholderTexture2D_vk0jk")
+texture_progress = SubResource("PlaceholderTexture2D_uuivb")
+tint_over = Color(0, 0, 0, 0)
+tint_progress = Color(0, 0, 0, 0.415686)
+
+[node name="Timer" type="Timer" parent="Sweep"]
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("1_s4hsa")
+theme_override_colors/font_color = Color(1, 0.92549, 0.839216, 1)
+theme_override_font_sizes/font_size = 8
+text = "2"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="Sweep/Timer" to="." method="_on_timer_timeout"]

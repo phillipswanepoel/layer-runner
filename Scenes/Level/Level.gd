@@ -15,7 +15,7 @@ func _ready():
 func _on_player_layer_change(new_layer: int):		
 	player.reparent(layers[new_layer])
 
-var speed : float = 60
+var speed : float = 60.0
 var progress : float = 0.0
 var fg_speed_factor : float = 0.8
 var mg_speed_factor : float = 0.6
@@ -162,6 +162,8 @@ func _on_level_gui_upgrade_cd_pressed(upgrade_name: Variant) -> void:
 	if upgrade_name == "TimeSlow":
 		time_slow_activated = true
 		$UpgradeTimers/TimeSlow.start()
+	if upgrade_name == "Teleport":
+		player.teleport()
 
 func _on_time_slow_timeout() -> void:
 	time_slow_activated = false

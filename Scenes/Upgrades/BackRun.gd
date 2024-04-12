@@ -2,5 +2,5 @@ extends UpgradeButton
 
 func _ready() -> void:
 	super._ready()
-	upgrade_name = "DoubleJump"
+	upgrade_name = "BackRun"
 	has_hotkey = false

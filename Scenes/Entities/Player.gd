@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var SPEED : float = 70.0
+var SPEED : float = 65.0
 var JUMP_VELOCITY : float = -350.0
 var JUMP_VELOCITY_SMALL : float = -150.0
 
@@ -12,18 +12,23 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var collision_shapes = [$fgCollision, $mgCollision, $bgCollision]
 @onready var animations = ["fg_run", "mg_run", "bg_run"]
 @onready var animation_jumps = ["fg_jump", "mg_jump", "bg_jump"]
-@onready var speeds = [70.0, 60.0, 50.0]
+@onready var speeds = [65.0, 55.0, 45.0]
 @onready var jumps = [-350.0, -320.0, -290.0]
 @onready var jumps_small = [-150.0, -130.0, -110.0]
 
 @onready var double_jump_upgraded : bool = false
+@onready var back_run_upgraded : bool = false
+@onready var teleport_upgraded : bool = false
 var upgrades = []
 func _ready() -> void:
 	anim_sprite.play("fg_run")	
 	upgrades = Upgrades.get_activated_upgrade_names()	
 	if "DoubleJump" in upgrades:
 		double_jump_upgraded = true
-		
+	if "BackRun" in upgrades:
+		back_run_upgraded = true
+	if "Teleport" in upgrades:
+		teleport_upgraded = true		
 
 signal change_player_layer(new_layer)
 func change_layer(dir : int):	
@@ -58,7 +63,15 @@ func change_layer(dir : int):
 	JUMP_VELOCITY_SMALL = jumps_small[current_layer]
 	
 func _jump_cut():
-	pass
+	pass	
+	
+func teleport():
+	var dir = 0
+	if velocity.x >= 0:
+		dir = 1
+	elif velocity.x < 0:
+		dir = -1		
+	position.x += 70*dir
 	
 
 var current_layer : int = 0
@@ -110,8 +123,11 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var is_running : bool = false
 	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+	if direction:		
+		if back_run_upgraded and velocity.x < 0:
+			velocity.x = direction * SPEED * 1.6
+		else:			
+			velocity.x = direction * SPEED
 		is_running = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

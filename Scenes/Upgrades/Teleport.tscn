@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1nlqoeyiv56c"]
+
+[ext_resource type="Theme" uid="uid://dqk3bpubsidfh" path="res://Assets/GUI/theme_1.tres" id="1_60b0c"]
+[ext_resource type="Texture2D" uid="uid://b3bc40sp2jwdw" path="res://Assets/GUI/teleport.png" id="2_e2dmj"]
+[ext_resource type="Script" path="res://Scenes/Upgrades/Teleport.gd" id="3_67map"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df72b"]
+bg_color = Color(0.603922, 0.34902, 0, 1)
+
+[node name="Teleport" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_60b0c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_df72b")
+icon = ExtResource("2_e2dmj")
+script = ExtResource("3_67map")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 21.0
+offset_right = 31.0
+offset_bottom = 31.0
+theme = ExtResource("1_60b0c")
+theme_override_colors/font_color = Color(1, 0.92549, 0.839216, 1)
+theme_override_font_sizes/font_size = 8
+text = "2"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
