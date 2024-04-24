@@ -190,6 +190,18 @@ offset_right = 316.0
 offset_bottom = 176.0
 script = ExtResource("6_v5wk3")
 
+[node name="Timer" type="Timer" parent="UpgradeCDGUI/CDContainer"]
+wait_time = 3.0
+
+[node name="HelpText" type="Label" parent="UpgradeCDGUI/CDContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_jrg1e")
+theme_override_font_sizes/font_size = 8
+text = "Press 1,2,3 to use upgrade"
+
 [connection signal="timeout" from="ScoreLabel/ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="pressed" from="DeadGui/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="DeadGui/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
@@ -197,3 +209,4 @@ script = ExtResource("6_v5wk3")
 [connection signal="refresh_coin_count" from="UpgradeGui/UpgradeContainer" to="." method="_on_upgrade_container_refresh_coin_count"]
 [connection signal="pressed" from="UpgradeGui/UpgradeBackButton" to="." method="_on_upgrade_back_button_pressed"]
 [connection signal="upgrade_cd_pressed" from="UpgradeCDGUI/CDContainer" to="." method="_on_cd_container_upgrade_cd_pressed"]
+[connection signal="timeout" from="UpgradeCDGUI/CDContainer/Timer" to="UpgradeCDGUI/CDContainer" method="_on_timer_timeout"]

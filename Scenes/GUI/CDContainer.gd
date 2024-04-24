@@ -5,6 +5,9 @@ signal upgrade_cd_pressed(upgrade_name)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
 	add_buttons()
+	if Upgrades.upgrade_count > 0 && Upgrades.upgrade_count < 3:
+		$HelpText.visible = true
+		$Timer.start()
 	
 func add_shortcut(number : int, button) -> void:
 	var shortcut = Shortcut.new()
@@ -40,4 +43,7 @@ func refresh():
 	for child in get_children():
 		child.queue_free()	
 						
-	add_buttons()		
+	add_buttons()
+
+func _on_timer_timeout() -> void:
+	$HelpText.visible = false

@@ -4,6 +4,7 @@ var all_upgrades : Array[PackedScene] = []
 @export var all_upgrade_names : Array[String] = []
 @export var all_upgrade_has_hotkey : Array[bool] = []
 var activated_upgrade_names : Array[String] = []
+var upgrade_count : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +13,7 @@ func _ready() -> void:
 	
 func upgrade_pressed(upgrade_name : String):
 	activated_upgrade_names.append(upgrade_name)
+	upgrade_count += 1
 	
 func get_unactivated_upgrade_names():
 	var unactivated_upgrade_names = HelperFunctions.subtract(all_upgrade_names, activated_upgrade_names)
@@ -39,8 +41,7 @@ func get_activated_upgrades_hotkeys() -> Array[PackedScene]:
 		if all_upgrade_has_hotkey[count] and upgrade_name in get_activated_upgrade_names():
 			out.append(load("res://Scenes/Upgrades/Hotkeys/" + upgrade_name + "CD.tscn"))
 		count+=1		
-	return out
-	
+	return out	
 	
 func get_activated_upgrade_names() -> Array[String]:
 	return activated_upgrade_names
